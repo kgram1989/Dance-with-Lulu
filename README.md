@@ -33,4 +33,4 @@ Settings and stickers are stored only in the browser on your device.
 
 1. In the repository, open **Settings → Pages**.
 2. Under **Build and deployment**, set **Source** to *Deploy from a branch*, pick `main` and `/ (root)`, then **Save**.
-3. After a minute the site is live at `https://kgram1989.github.io/Dance-Practice/`.
+3. After a minute the site is live at `https://kgram1989.github.io/Dance-with-Lulu/`.
