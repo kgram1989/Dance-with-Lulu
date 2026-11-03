@@ -20,7 +20,7 @@ It's built the same way as [Back Exercises](https://github.com/kgram1989/Back-Ex
 ## Features
 
 - **Move cards**: each one shows the move's main pose. Press play to watch Lulu dance it to an 8-count. A count bubble and beat dots show where you are, the current step is highlighted, and orange footprints and arrows show where her foot goes next. Coloured trails follow her hands, and claps, toe taps, jumps and spins get little effects.
-- **Count-in**: every move starts with "5, 6, 7, 8" so kids can get ready.
+- **Countdown**: every move starts with "3, 2, 1, Go!" so kids can get ready.
 - **Dance Party**: plays all eight moves in a row, full screen, with music, spoken cues ("Next up: Grapevine!", "Last time!"), Back / Pause / Skip, and confetti at the end. It keeps the screen awake.
 - **Music**: a cheerful beat (kick, clap, hi-hat, bass and arpeggio) generated in the browser with Web Audio, so there are no audio files and no copyrighted music.
 - **Settings**: speed (Slow 72, Medium 92, Fast 112 beats per minute) and repeats (2, 3 or 4 eight-counts of each move).

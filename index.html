@@ -317,7 +317,7 @@
       <ul>
         <li>Watch a move once, then press play again and copy Lulu, like a mirror.</li>
         <li>The <strong>orange footprints</strong> show where Lulu's foot goes next.</li>
-        <li>Dancers count to 8. Lulu counts <strong>5, 6, 7, 8</strong> first so you can get ready.</li>
+        <li>Each move is counted to 8. Before it starts, Lulu counts down <strong>3, 2, 1, Go!</strong> so you can get ready.</li>
         <li>Start on <strong>Slow</strong>. Go faster when the move feels easy.</li>
       </ul>
     </div>
@@ -869,7 +869,7 @@
   if (typeof days !== 'object' || !days) days = {};
 
   // ---------- Timeline (in beats) ----------
-  // card: count-in 5-6-7-8, the move N times, a ta-da, then loop. party: a hello wave, count-in, the move N times.
+  // card: countdown 3-2-1-Go, the move N times, a ta-da, then loop. party: a hello wave, count-in, the move N times.
   function buildTimeline(mv, reps, mode) {
     const kf = [], spans = [];
     const push = (b, pose, o) => kf.push(Object.assign({ b, pose }, o || {}));
@@ -890,7 +890,7 @@
     const bob = Object.assign({}, S, { hy: S.hy + 2 });
     push(b, S, { ease: 'io' });
     for (let i = 0; i < 3; i++) { push(b + i + 0.5, bob); push(b + i + 1, S); }
-    ['5', '6', '7', '8'].forEach((n, i) => spans.push({ b0: b + i, b1: b + i + 1, label: `Get ready: ${['5', '5, 6', '5, 6, 7', '5, 6, 7, 8!'][i]}`, count: n, step: 0, kind: 'lead', rep: 0 }));
+    ['3', '2', '1', 'Go!'].forEach((n, i) => spans.push({ b0: b + i, b1: b + i + 1, label: i < 3 ? `Get ready… ${n}` : 'Go!', count: n, step: 0, kind: 'lead', rep: 0 }));
     b += 4;
     const m0 = b; // count 1: the music's bars line up with this beat
     for (let r = 0; r < reps; r++) {
@@ -1220,7 +1220,7 @@
       const chord = CHORDS[Math.floor(mod(M, 16) / 4)];
       if (window.__danceTrace && whole) window.__danceTrace.push({ mode: pl.mode, beat: +beat.toFixed(2), kind, count: sp.count, label: sp.label, bar: M });
       if (kind === 'lead') {
-        if (whole) tone(sp.count === '8' ? 1568 : 1175, 0.09, 'sine', 0.3);
+        if (whole) tone(sp.count === 'Go!' ? 1568 : 1175, 0.09, 'sine', 0.3);
         return;
       }
       if (whole) {
@@ -1398,14 +1398,14 @@
         c.subEl.textContent = `Count ${c.mv.key}: ${c.mv.counts[c.mv.key - 1].replace(/[!…]/g, '')}`;
       } else {
         c.phaseEl.textContent = sp.label;
-        const where = sp.kind === 'lead' ? 'Counting in' : sp.kind === 'fin' ? 'All done. Here it comes again!' : `Round ${sp.rep + 1} of ${settings.reps}`;
+        const where = sp.kind === 'lead' ? 'Countdown' : sp.kind === 'fin' ? 'All done. Here it comes again!' : `Round ${sp.rep + 1} of ${settings.reps}`;
         c.subEl.textContent = c.pl.playing ? where : `Paused · ${where}`;
       }
       c.stepEls.forEach((li, i) => li.classList.toggle('active', !c.fresh && i === sp.step));
       const active = !c.fresh && sp.kind === 'move' ? Number(sp.count) - 1 : -1;
       c.beatEls.forEach((b, i) => b.classList.toggle('on', i === active));
     }
-    setBubble(c.pl.stage, c.fresh ? '' : sp.count, sp.kind === 'lead', c.pl.playing);
+    setBubble(c.pl.stage, c.fresh ? '' : sp.count, sp.kind === 'lead' && sp.count !== 'Go!', c.pl.playing);
   }
   function planLine(c) {
     c.planEl.textContent = `8 counts · ${settings.reps} times · ${settings.speed[0].toUpperCase() + settings.speed.slice(1)}`;
@@ -1577,9 +1577,9 @@
         else if (sp.kind === 'move' && sp.count === '1' && sp.rep > 0) say('Again!');
       }
     }
-    const where = sp.kind === 'intro' ? 'Get ready' : sp.kind === 'lead' ? 'Counting in' : `Round ${sp.rep + 1} of ${settings.reps}`;
+    const where = sp.kind === 'intro' ? 'Get ready' : sp.kind === 'lead' ? 'Countdown' : `Round ${sp.rep + 1} of ${settings.reps}`;
     pt_.sub.textContent = where + (PT.running ? '' : ' · paused');
-    setBubble(pl.stage, sp.count, sp.kind === 'lead', PT.running);
+    setBubble(pl.stage, sp.count, sp.kind === 'lead' && sp.count !== 'Go!', PT.running);
     const before = PT.totals.slice(0, PT.idx).reduce((a, b) => a + b, 0);
     const grand = PT.totals.reduce((a, b) => a + b, 0);
     pt_.bar.style.width = `${Math.min(100, ((before + pl.beat) / grand) * 100).toFixed(1)}%`;
