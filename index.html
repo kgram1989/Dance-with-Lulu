@@ -477,8 +477,6 @@
           <path class="star" data-p="star"/>
           <path class="tutu2" data-p="sk2"/><path class="tutu" data-p="sk1"/>
         </g>
-        <g data-p="armL"><path class="skin" data-p="uaL"/><path class="shirt" data-p="slL"/><path class="skin" data-p="faL"/><path class="skin" data-p="fgL"/><circle class="skin" data-p="hdL" r="4"/></g>
-        <g data-p="armR"><path class="skin" data-p="uaR"/><path class="shirt" data-p="slR"/><path class="skin" data-p="faR"/><path class="skin" data-p="fgR"/><circle class="skin" data-p="hdR" r="4"/></g>
         <g data-p="head">
           <circle class="hair" cx="0" cy="-18" r="19.6"/>
           <g data-p="ptL"><ellipse class="hair" cx="-24.5" cy="-19" rx="6.6" ry="9.6" transform="rotate(38 -24.5 -19)"/><g transform="translate(-17.5 -26) rotate(-35)"><path class="bow" d="M0 0L-4.6-3.4V3.4ZM0 0L4.6-3.4V3.4Z"/><circle class="bow" r="1.7"/></g></g>
@@ -500,6 +498,8 @@
           <path class="hair" data-p="bangs" d="M-18 -19C-18.6 -33 -8 -37.6 0 -37.6C8 -37.6 18.6 -33 18 -19C15.5 -24.5 12 -25.5 9 -23.5C7 -27.6 3 -27.6 0 -25C-3 -27.6 -7 -27.6 -9 -23.5C-12 -25.5 -15.5 -24.5 -18 -19Z"/>
           <g data-p="backView" opacity="0"><circle class="hair" cx="0" cy="-17.6" r="18.8"/><path class="hair-line" d="M0 -36V-4M-6 -33Q-3 -20 -5 -6M6 -33Q3 -20 5 -6"/></g>
         </g>
+        <g data-p="armL"><path class="skin" data-p="uaL"/><path class="shirt" data-p="slL"/><path class="skin" data-p="faL"/><path class="skin" data-p="fgL"/><circle class="skin" data-p="hdL" r="4"/></g>
+        <g data-p="armR"><path class="skin" data-p="uaR"/><path class="shirt" data-p="slR"/><path class="skin" data-p="faR"/><path class="skin" data-p="fgR"/><circle class="skin" data-p="hdR" r="4"/></g>
       </g>
       <g data-p="fx">
         <g class="burst" data-p="burst" opacity="0"><line x1="0" y1="-7" x2="0" y2="-12"/><line x1="5" y1="-5" x2="8.5" y2="-8.5"/><line x1="7" y1="0" x2="12" y2="0"/><line x1="-5" y1="-5" x2="-8.5" y2="-8.5"/><line x1="-7" y1="0" x2="-12" y2="0"/><line x1="5" y1="5" x2="8.5" y2="8.5"/><line x1="-5" y1="5" x2="-8.5" y2="8.5"/></g>
@@ -583,7 +583,7 @@
     down: [78, 86],
     hips: reach(-3, 25),
     clap: reach(-10.5, 12),
-    clapHigh: reach(-10.5, -45.5),
+    clapHigh: reach(-12.5, -40),
     out: [-2, -6],
     outLow: reach(34, 24),
     v: [-48, -52],
@@ -594,7 +594,7 @@
     pointDown: reach(-25, 30),
     ballet1: reach(-7, 33),
     ballet2: reach(39, 9),
-    ballet5: reach(-9, -45),
+    ballet5: reach(-10, -38),
     skirt: reach(17, 32),
   };
 
@@ -607,14 +607,22 @@
   });
   const feet = (l, r, y = FLOOR) => ({ Lf: [l, y], Rf: [r, y] });
 
-  const lerpAng = (a, b, k) => a + ((((b - a) % 360) + 540) % 360 - 180) * k;
+  const wrap180 = (d) => ((((d) % 360) + 540) % 360) - 180;
+  const lerpAng = (a, b, k) => a + wrap180(b - a) * k;
+  // Arms: the upper arm turns the short way and the elbow bend changes smoothly, like a real elbow.
+  // (Turning the forearm on its own would swing it across her face.)
+  function lerpArm(a, b, k) {
+    const u = lerpAng(a[0], b[0], k);
+    const bendA = wrap180(a[1] - a[0]), bendB = wrap180(b[1] - b[0]);
+    return [u, u + bendA + wrap180(bendB - bendA) * k];
+  }
   function lerpPose(a, b, k) {
     const o = {};
     for (const key in a) {
       const va = a[key], vb = key in b ? b[key] : va;
       if (key === 'back') o.back = va || vb;
       else if (key === 'turn') o.turn = va + ((((vb - va) % 360) + 360) % 360) * k; // always spin forward
-      else if (key === 'LA' || key === 'RA') o[key] = [lerpAng(va[0], vb[0], k), lerpAng(va[1], vb[1], k)];
+      else if (key === 'LA' || key === 'RA') o[key] = lerpArm(va, vb, k);
       else if (Array.isArray(va)) o[key] = [va[0] + (vb[0] - va[0]) * k, va[1] + (vb[1] - va[1]) * k];
       else o[key] = va + (vb - va) * k;
     }
@@ -627,8 +635,10 @@
     const W = (v) => add(hip, rotv(v, p.t));
     const j = { hip, neck: W(NECK) };
     for (const [s, sign] of [['L', -1], ['R', 1]]) {
-      const sh = W([SH[0] * sign, SH[1]]);
       const A = p[s + 'A'];
+      // Raising an arm lifts the shoulder up and out a little, so arms overhead clear her (big) head.
+      const up = Math.pow(clamp(-Math.sin(A[0] * RAD), 0, 1), 1.5);
+      const sh = W([(SH[0] + 3 * up) * sign, SH[1] - 7 * up]);
       const ang = (a) => (sign > 0 ? a : 180 - a) + p.t;
       const el = add(sh, dir(ang(A[0])), L.ua);
       const ha = add(el, dir(ang(A[1])), L.fa);
@@ -675,8 +685,9 @@
   const wigR = P(swayBase, { hx: 155, t: -4, n: -3, mouth: 1, eyes: 1 });
 
   const rbBase = P({ hy: 134, ...feet(136, 164) });
-  const rbLeft = P(rbBase, { hx: 154, t: -9, n: -9, RA: [138, 138], LA: [42, 42] });
-  const rbTop = P(rbBase, { hy: 131, RA: [-74, -80], LA: [-74, -80], mouth: 1, Lt: 0.4, Rt: 0.4 });
+  const rbSide = P(rbBase, { hy: 132, LA: [-4, -8], RA: [-4, -8] });
+  const rbTop = P(rbBase, { hy: 129, LA: reach(-10, -39), RA: reach(-10, -39), mouth: 1, eyes: 1, Lt: 0.6, Rt: 0.6 });
+  const rbLow = P(rbBase, { hy: 137, LA: [70, 74], RA: [70, 74] });
 
   const discoStart = P({ hy: 134, ...feet(136, 164), LA: ARM.hips, RA: ARM.hips });
   const discoUpR = P(discoStart, { hx: 145, t: 3, n: 9, RA: ARM.pointUp, Rp: 1, mouth: 1 });
@@ -753,19 +764,19 @@
     },
     {
       id: 'rainbow', name: 'Rainbow Arms', level: 1, color: '#7c4ddb', icon: 'rainbow',
-      say: 'Paint a big rainbow over your head with both arms!',
-      poses: { start: rbLeft, top: rbTop, right: mirror(rbLeft) },
-      start: 'start', key: 1,
-      pattern: [[1, 'top', { ease: 'in' }], [2, 'right', { ease: 'out' }], [3, 'top', { ease: 'in' }], [4, 'start', { ease: 'out' }], [5, 'top', { ease: 'in' }], [6, 'right', { ease: 'out' }], [7, 'top', { ease: 'in' }], [8, 'start', { ease: 'out' }]],
-      counts: ['Up…', '…and over', 'Up…', '…and over', 'Up…', '…and over', 'Up…', '…and over'],
+      say: 'Float your arms out and up, and paint a big rainbow!',
+      poses: { start: rbBase, side: rbSide, top: rbTop, low: rbLow },
+      start: 'start', key: 2,
+      pattern: [[1, 'side', { ease: 'in' }], [2, 'top', { ease: 'out' }], [3, 'side', { ease: 'in' }], [4, 'low', { ease: 'out' }], [5, 'side', { ease: 'in' }], [6, 'top', { ease: 'out' }], [7, 'side', { ease: 'in' }], [8, 'low', { ease: 'out' }]],
+      counts: ['Out…', 'Up high!', 'Out…', 'And down', 'Out…', 'Up high!', 'Out…', 'And down'],
       stepMap: [1, 2, 3, 3, 1, 2, 3, 3],
       steps: [
-        'Feet apart. Reach both arms down to one side.',
-        'Sweep your arms up high over your head…',
-        '…and down to the other side, like painting a rainbow!',
-        'Now paint it back the other way.',
+        'Stand with your feet apart, arms down by your sides.',
+        'Float your arms out to the sides…',
+        '…and up high until your hands nearly touch. That\'s the top of your rainbow!',
+        'Now float them back out and down, slowly.',
       ],
-      tip: 'Keep it smooth and slow, and lean your body with your arms.',
+      tip: 'Watch the colours Lulu\'s hands leave behind. Can you paint the same rainbow? Slow and smooth!',
     },
     {
       id: 'disco', name: 'Disco Point', level: 2, color: '#0ca678', icon: 'bolt',
@@ -867,18 +878,21 @@
     if (mode === 'loop') {
       push(0, S);
       for (const [c, name, o] of mv.pattern) push(c, mv.poses[name], o);
-      return { kf, spans: [{ b0: 0, b1: 8, label: '', count: '', step: -1, kind: 'move', rep: 0 }], total: 8, loop: true };
+      return { kf, spans: [{ b0: 0, b1: 8, label: '', count: '', step: -1, kind: 'move', rep: 0 }], total: 8, loop: true, m0: 0 };
     }
     if (mode === 'party') {
-      for (let i = 0; i < 6; i++) { push(i, HELLO.w1); push(i + 0.5, HELLO.w2); }
-      spans.push({ b0: 0, b1: 6, label: `Next up: ${mv.name}!`, count: '', step: -1, kind: 'intro', rep: 0 });
-      b = 6;
+      // Long enough for the spoken "Next up…" line (about 5 seconds) at every speed, so it never talks over the count-in.
+      const intro = Math.max(6, 2 * Math.ceil(bpm() * 5 / 120));
+      for (let i = 0; i < intro; i++) { push(i, HELLO.w1); push(i + 0.5, HELLO.w2); }
+      spans.push({ b0: 0, b1: intro, label: `Next up: ${mv.name}!`, count: '', step: -1, kind: 'intro', rep: 0 });
+      b = intro;
     }
     const bob = Object.assign({}, S, { hy: S.hy + 2 });
     push(b, S, { ease: 'io' });
     for (let i = 0; i < 3; i++) { push(b + i + 0.5, bob); push(b + i + 1, S); }
-    ['5', '6', '7', '8'].forEach((n, i) => spans.push({ b0: b + i, b1: b + i + 1, label: i < 2 ? 'Get ready…' : i === 2 ? 'Here we go!' : 'Go!', count: n, step: 0, kind: 'lead', rep: 0 }));
+    ['5', '6', '7', '8'].forEach((n, i) => spans.push({ b0: b + i, b1: b + i + 1, label: `Get ready: ${['5', '5, 6', '5, 6, 7', '5, 6, 7, 8!'][i]}`, count: n, step: 0, kind: 'lead', rep: 0 }));
     b += 4;
+    const m0 = b; // count 1: the music's bars line up with this beat
     for (let r = 0; r < reps; r++) {
       for (const [c, name, o] of mv.pattern) push(b + c - 1, mv.poses[name], o);
       mv.counts.forEach((label, i) => spans.push({ b0: b + i, b1: b + i + 1, label, count: String(i + 1), step: mv.stepMap[i], kind: 'move', rep: r }));
@@ -890,10 +904,10 @@
       push(b + 2.5, HELLO.yay);
       push(b + 4, S, { ease: 'io' });
       spans.push({ b0: b, b1: b + 4, label: 'Ta-da! Great dancing!', count: '★', step: -1, kind: 'fin', rep: reps - 1 });
-      return { kf, spans, total: b + 4, loop: true };
+      return { kf, spans, total: b + 4, loop: true, m0 };
     }
     push(b, lastPose);
-    return { kf, spans, total: b, loop: false };
+    return { kf, spans, total: b, loop: false, m0 };
   }
   const wrapBeat = (pl, b) => pl.loop ? ((b % pl.total) + pl.total) % pl.total : clamp(b, 0, pl.total - 1e-6);
 
@@ -909,7 +923,9 @@
       case 'io': k = ease(x); break;
       case 'in': k = x * x; break;
       case 'out': k = 1 - (1 - x) * (1 - x); break;
-      default: { const w = Math.min(0.7, len); k = ease(clamp((local - (len - w)) / w, 0, 1)); }
+      // 'hit' (default): land the pose exactly on the count and hold it for about half a beat,
+      // so what you see matches the count on screen; then move into the next count.
+      default: { const w = Math.min(0.55, len); k = ease(clamp((local - (len - w)) / w, 0, 1)); }
     }
     const pose = lerpPose(A.pose, B.pose, k);
     if (B.jump) {
@@ -1046,6 +1062,7 @@
     setPlan(pl);
     return pl;
   }
+  const armTicks = (pl) => { pl.tickFrom = Math.ceil(pl.beat * 2 - 1e-6) - 1; };
   function setPlan(pl) {
     Object.assign(pl, buildTimeline(pl.mv, settings.reps, pl.mode));
     pl.keyBeat = pl.mode === 'card' ? 4 + (pl.mv.key - 1) + 0.01 : 0;
@@ -1192,23 +1209,28 @@
   function musicTick(pl, halfIdx) {
     if (!settings.music || !actx || actx.state !== 'running') return;
     try {
-      const beat = halfIdx / 2;
+      const beat = wrapBeat(pl, halfIdx / 2 + 0.001) - 0.001;
       const [, sp] = spanAt(pl, beat + 0.001);
       const kind = sp ? sp.kind : 'move';
-      const B = Math.floor(beat + 0.001), whole = halfIdx % 2 === 0;
-      const chord = CHORDS[Math.floor(((B % 16) + 16) % 16 / 4)];
+      const whole = halfIdx % 2 === 0;
+      // Count everything from count 1, so bars, chords and claps line up with the dancer's counts.
+      const mod = (x, n) => ((x % n) + n) % n;
+      const m = Math.round((beat - pl.m0) * 2); // half-beats since count 1
+      const M = Math.floor(m / 2);
+      const chord = CHORDS[Math.floor(mod(M, 16) / 4)];
+      if (window.__danceTrace && whole) window.__danceTrace.push({ mode: pl.mode, beat: +beat.toFixed(2), kind, count: sp.count, label: sp.label, bar: M });
       if (kind === 'lead') {
-        if (whole) { const n = ((B % 4) + 4) % 4; tone(n === 3 ? 1568 : 1175, 0.09, 'sine', 0.3); }
+        if (whole) tone(sp.count === '8' ? 1568 : 1175, 0.09, 'sine', 0.3);
         return;
       }
       if (whole) {
         if (kind !== 'intro') kick();
-        if (B % 2 === 1 && kind !== 'intro') noise(1800, 'bandpass', 0.14, 0.45);
-        tone(chord[0] / (B % 2 ? 2 : 4), 0.3, 'triangle', 0.32);
+        if (mod(M, 2) === 1 && kind !== 'intro') noise(1800, 'bandpass', 0.14, 0.45);
+        tone(chord[0] / (mod(M, 2) ? 2 : 4), 0.3, 'triangle', 0.32);
       } else {
         noise(7500, 'highpass', 0.04, 0.12);
       }
-      tone(chord[ARP[((halfIdx % 8) + 8) % 8]] * 2, 0.22, 'triangle', 0.07);
+      tone(chord[ARP[mod(m, 8)]] * 2, 0.22, 'triangle', 0.07);
       if (kind === 'fin' && whole && sp && Math.abs(beat - sp.b0) < 0.01) [523.25, 659.25, 783.99, 1046.5].forEach((f, i) => tone(f, 0.35, 'triangle', 0.12, i * 0.08));
     } catch (e) { /* audio unavailable */ }
   }
@@ -1217,7 +1239,9 @@
     pl.beat += dt * bpm() / 60000;
     pl.ms += dt;
     if (withMusic) {
-      const h0 = Math.floor(prev * 2 + 1e-6), h1 = Math.floor(pl.beat * 2 + 1e-6);
+      // tickFrom is set when playback starts, so the beat it starts on (count "5") is heard too.
+      const h0 = pl.tickFrom != null ? pl.tickFrom : Math.floor(prev * 2 + 1e-6), h1 = Math.floor(pl.beat * 2 + 1e-6);
+      pl.tickFrom = null;
       if (h1 > h0 && h1 - h0 < 4) for (let h = h0 + 1; h <= h1; h++) musicTick(pl, h);
     }
     return prev;
@@ -1344,7 +1368,7 @@
   function updateDid(c) {
     const on = !!stickers[c.mv.id];
     c.did.classList.toggle('earned', on);
-    c.did.innerHTML = `<span class="mini">${iconSvg(c.mv.icon)}</span>${on ? 'Sticker earned! Dance it again' : 'I can do it! Get my sticker'}`;
+    c.did.innerHTML = `<span class="mini">${iconSvg(c.mv.icon)}</span>${on ? 'Sticker earned!' : 'I can do it! Get my sticker'}`;
   }
   function updateToggle(c) {
     c.toggle.innerHTML = c.pl.playing ? ICON_PAUSE : ICON_PLAY;
@@ -1358,6 +1382,7 @@
       if (c.fresh) { c.pl.beat = 0; c.fresh = false; }
     }
     c.pl.playing = on;
+    if (on) armTicks(c.pl);
     updateToggle(c);
     c.lastKey = '';
     renderCard(c);
@@ -1486,6 +1511,7 @@
     PT.idx = i;
     const mv = MOVES[i];
     PT.pl = createPlayer(createStage(pt_.stage, mv), mv, 'party');
+    armTicks(PT.pl);
     pt_.main.style.setProperty('--mc', mv.color);
     PT.lastKey = '';
     pt_.count.textContent = `Move ${i + 1} of ${MOVES.length}`;
@@ -1498,7 +1524,7 @@
   function setRunning(on) {
     PT.running = on;
     pt_.play.innerHTML = on ? `${ICON_PAUSE}Pause` : `${ICON_PLAY}Play`;
-    if (on) { ensureAudio(); lockScreen(); PT.lastKey = ''; } else { hush(); unlockScreen(); }
+    if (on) { ensureAudio(); lockScreen(); PT.lastKey = ''; if (PT.pl) armTicks(PT.pl); } else { hush(); unlockScreen(); }
     if (PT.pl) { PT.lastKey = ''; renderParty(); }
   }
   function openParty() {
@@ -1574,14 +1600,16 @@
   }
   for (const id of ['startParty', 'startParty2']) $(id).addEventListener('click', openParty);
   pt_.play.addEventListener('click', () => setRunning(!PT.running));
-  $('ptPrev').addEventListener('click', () => { loadMove(PT.pl.beat > 8 ? PT.idx : Math.max(0, PT.idx - 1)); });
+  // Back: once the count-in has started, restart this move; during its intro, go to the previous move.
+  $('ptPrev').addEventListener('click', () => { loadMove(PT.pl.beat > PT.pl.spans[0].b1 + 1 ? PT.idx : Math.max(0, PT.idx - 1)); });
   $('ptNext').addEventListener('click', () => { if (PT.idx < MOVES.length - 1) loadMove(PT.idx + 1); else finishParty(); });
   $('ptClose').addEventListener('click', () => dlg.close());
   $('ptFinish').addEventListener('click', () => dlg.close());
   $('ptAgain').addEventListener('click', openParty);
   $('ptMusic').addEventListener('click', () => { settings.music = !settings.music; saveSettings(); updateMusicBtns(); });
   $('ptVoice').addEventListener('click', () => { settings.voice = !settings.voice; saveSettings(); updateMusicBtns(); if (!settings.voice) hush(); });
-  dlg.addEventListener('keydown', (e) => { if (e.key === ' ' && e.target === document.body || (e.key === ' ' && e.target.tagName !== 'BUTTON')) { e.preventDefault(); if (pt_.done.hidden) setRunning(!PT.running); } });
+  // Space bar pauses and resumes (unless a button has focus, where Space already presses it).
+  dlg.addEventListener('keydown', (e) => { if (e.key === ' ' && e.target.tagName !== 'BUTTON') { e.preventDefault(); if (pt_.done.hidden) setRunning(!PT.running); } });
   dlg.addEventListener('close', () => { PT.running = false; hush(); unlockScreen(); });
   document.addEventListener('visibilitychange', () => {
     last = performance.now();
@@ -1627,7 +1655,7 @@
   drawPlayer(hero.pl, false);
   requestAnimationFrame(frame);
 
-  if (/[?&]debug\b/.test(location.search)) window.__dance = { cards, MOVES, hero, evalAt, drawPlayer, renderCard, PT, openParty, finishParty, tickParty, settings };
+  if (/[?&]debug\b/.test(location.search)) window.__dance = { cards, MOVES, HERO_MOVE, hero, evalAt, solve, buildTimeline, spanAt, drawPlayer, renderCard, PT, openParty, finishParty, tickParty, settings };
 })();
 </script>
 </body>
