@@ -1,0 +1,1634 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dance with Lulu</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Eight beginner dance moves for kids, taught by Lulu, an animated dancer. Watch each move with counts and footprints, then dance along to a Dance Party with music and spoken cues.">
+<meta name="theme-color" content="#d6337f">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dance with Lulu">
+<meta property="og:description" content="Eight beginner dance moves for kids, with music, counts and a sticker book.">
+<meta property="og:url" content="https://kgram1989.github.io/dance-practice/">
+<meta property="og:image" content="https://kgram1989.github.io/dance-practice/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Lulu, a cartoon girl in a pink shirt and purple tutu, doing a disco point, a star jump and a curtsy">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23d6337f'/%3E%3Cpath d='M16 5.5l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L16 20.4l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z' fill='%23ffd23f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+  /* Layout: a playful dance-studio page. Lulu greets you in the hero, then a grid of move cards, each a little stage. */
+  :root {
+    --font-display: "Fredoka", ui-rounded, "Arial Rounded MT Bold", "Trebuchet MS", system-ui, sans-serif;
+    --font-body: "Nunito", ui-rounded, "Segoe UI", system-ui, -apple-system, sans-serif;
+
+    --bg: #fff6fa; --dot-a: rgba(214, 51, 127, .08); --dot-b: rgba(124, 77, 219, .07);
+    --surface: #ffffff; --surface-2: #fcecf4; --text: #2a2140; --muted: #6b6183; --border: #f0d8e5;
+    --accent: #d6337f; --accent-press: #a82263; --accent-soft: #fde2ef; --on-accent: #ffffff;
+    --purple: #7c4ddb; --sun: #ffc23d; --teal: #12a097; --cue: #f26b0f;
+    --warn-bg: #fff6dc; --warn-border: #f2d47e; --warn-text: #5f4300;
+    --off: #e9dfe6;
+    /* Lulu */
+    --skin: #c98b62; --skin-shade: #a86b47; --hair: #3b2216; --cheek: #ff7d9b; --eye: #2a1a14; --mouth: #9b2a3c; --tongue: #ff8fa3;
+    --shirt: #ff5c9d; --star: #ffd23f; --tutu: #b58cff; --tutu-2: #9466f2; --legs: #16a39a; --shoe: #ffcf33; --sole: #ffffff; --bow: #ffd23f;
+    /* stage */
+    --wall: #f7f0ff; --wall-2: #efe4ff; --floor: #f3c995; --floor-2: #dfa86f; --spot: #fffbe6; --note: #c86dd7;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #170f25; --dot-a: rgba(255, 111, 174, .07); --dot-b: rgba(166, 128, 255, .07);
+      --surface: #221a35; --surface-2: #2c2244; --text: #f5effc; --muted: #b9add3; --border: #3b2f58;
+      --accent: #ff6fae; --accent-press: #c9447f; --accent-soft: #42213a; --on-accent: #22091a;
+      --purple: #a98bff; --sun: #ffcf5a; --teal: #3fd0c5; --cue: #ff9a4d;
+      --warn-bg: #2e2513; --warn-border: #6d5a23; --warn-text: #f6dda0;
+      --off: #3a3050;
+      --wall: #261c3e; --wall-2: #2e2249; --floor: #6d4b36; --floor-2: #563a29; --spot: #fff1b8; --note: #e59bf0;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #170f25; --dot-a: rgba(255, 111, 174, .07); --dot-b: rgba(166, 128, 255, .07);
+    --surface: #221a35; --surface-2: #2c2244; --text: #f5effc; --muted: #b9add3; --border: #3b2f58;
+    --accent: #ff6fae; --accent-press: #c9447f; --accent-soft: #42213a; --on-accent: #22091a;
+    --purple: #a98bff; --sun: #ffcf5a; --teal: #3fd0c5; --cue: #ff9a4d;
+    --warn-bg: #2e2513; --warn-border: #6d5a23; --warn-text: #f6dda0;
+    --off: #3a3050;
+    --wall: #261c3e; --wall-2: #2e2249; --floor: #6d4b36; --floor-2: #563a29; --spot: #fff1b8; --note: #e59bf0;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; color: var(--text); font: 17px/1.55 var(--font-body);
+    background-color: var(--bg);
+    background-image: radial-gradient(var(--dot-a) 2px, transparent 2.5px), radial-gradient(var(--dot-b) 2px, transparent 2.5px);
+    background-size: 44px 44px, 60px 60px; background-position: 0 0, 22px 30px;
+  }
+  .wrap { max-width: 1140px; margin: 0 auto; padding-block: 22px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  h1, h2, h3, .display { font-family: var(--font-display); font-weight: 600; text-wrap: balance; }
+  .visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  button, select, input { font: inherit; }
+  button {
+    font-family: var(--font-display); font-size: 0.98rem; font-weight: 600; letter-spacing: 0.01em;
+    border: 2px solid var(--border); background: var(--surface); color: var(--text);
+    border-radius: 999px; padding: 7px 16px; cursor: pointer; min-height: 40px;
+    display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+    transition: transform .08s, border-color .15s, box-shadow .08s;
+  }
+  button:hover { border-color: var(--accent); }
+  button:active { transform: translateY(1px); }
+  button:focus-visible, a:focus-visible { outline: 3px solid var(--purple); outline-offset: 2px; }
+  button.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 4px 0 var(--accent-press); }
+  button.primary:active { box-shadow: 0 1px 0 var(--accent-press); transform: translateY(3px); }
+  button.big { font-size: 1.15rem; padding: 12px 24px; min-height: 52px; }
+  button svg { width: 15px; height: 15px; fill: currentColor; flex: none; }
+  button[aria-pressed="false"] { color: var(--muted); }
+
+  /* ---------- hero ---------- */
+  .hero { display: grid; gap: 18px; align-items: center; grid-template-columns: 1fr; position: relative; margin-bottom: 26px; }
+  @media (min-width: 760px) { .hero { grid-template-columns: 1.15fr 1fr; gap: 28px; } }
+  .hero-text { min-width: 0; }
+  .kicker { font-family: var(--font-display); font-weight: 600; color: var(--purple); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; margin: 0 0 6px; }
+  .hero h1 { font-size: clamp(2.6rem, 7vw, 4.4rem); line-height: 1; margin: 0 0 14px; letter-spacing: -0.01em; }
+  .hero h1 .name { color: var(--accent); display: inline-block; transform: rotate(-3deg); }
+  .lede { color: var(--muted); max-width: 46ch; margin: 0 0 20px; font-size: 1.1rem; }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .hero-btns a { color: var(--accent); font-family: var(--font-display); font-weight: 600; text-decoration: none; padding: 8px 4px; }
+  .hero-btns a:hover { text-decoration: underline; }
+  .hero-stage { background: var(--surface); border: 2px solid var(--border); border-radius: 28px; overflow: hidden; max-width: 440px; width: 100%; justify-self: center; transform: rotate(1.5deg); box-shadow: 0 10px 0 var(--surface-2); }
+  .hero-stage .stage { border: 0; }
+  .hero-stage .count-bubble { display: none; }
+  @media (min-width: 760px) { .hero-stage { margin-top: 46px; } }
+  .theme-btn { position: absolute; top: 0; right: 0; min-height: 36px; padding: 5px 12px; font-size: 0.85rem; }
+  @media (max-width: 759px) { .hero-text { padding-right: 84px; } .hero-stage { max-width: 320px; } }
+
+  /* ---------- panels ---------- */
+  .info-grid, .me-grid { display: grid; gap: 14px; grid-template-columns: 1fr; margin-bottom: 14px; }
+  @media (min-width: 760px) { .info-grid { grid-template-columns: 1fr 1fr; } .me-grid { grid-template-columns: 1fr 1.15fr; } }
+  .me-grid { margin-bottom: 32px; }
+  .panel { background: var(--surface); border: 2px solid var(--border); border-radius: 20px; padding: 16px 20px; min-width: 0; }
+  .panel h2 { font-size: 1.15rem; margin: 0 0 8px; color: var(--text); }
+  .panel ul { margin: 0; padding-left: 1.2em; }
+  .panel li { margin: 4px 0; }
+  .panel li::marker { color: var(--accent); }
+  .panel.warn { background: var(--warn-bg); border-color: var(--warn-border); color: var(--warn-text); }
+  .panel.warn li::marker { color: currentColor; }
+  .hint { font-size: 0.88rem; color: var(--muted); margin: 10px 0 0; }
+
+  .set-row { display: flex; align-items: center; gap: 8px 12px; flex-wrap: wrap; margin: 8px 0; }
+  .set-row > .lbl { font-family: var(--font-display); font-weight: 600; width: 5.2em; flex: none; }
+  .seg { display: inline-flex; flex-wrap: wrap; gap: 4px; background: var(--surface-2); border-radius: 999px; padding: 4px; }
+  .seg button { border: 0; background: transparent; min-height: 34px; padding: 4px 14px; box-shadow: none; }
+  .seg button[aria-checked="true"] { background: var(--accent); color: var(--on-accent); }
+  .seg button .sub { font-family: var(--font-body); font-weight: 600; font-size: 0.75rem; opacity: .8; }
+
+  .stickers { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; margin: 6px 0 4px; }
+  @media (max-width: 480px) { .stickers { grid-template-columns: repeat(4, 1fr); } }
+  .sticker { aspect-ratio: 1; max-width: 100%; border-radius: 50%; display: grid; place-items: center; border: 2px dashed var(--off); color: var(--off); position: relative; }
+  .sticker svg { width: 56%; height: 56%; }
+  .sticker.on { background: var(--mc); border: 3px solid var(--surface); color: #fff; box-shadow: 0 0 0 2px var(--mc), 0 3px 0 2px rgba(0,0,0,.12); transform: rotate(var(--tilt, -6deg)); }
+  .sticker.pop { animation: pop .6s cubic-bezier(.3,1.6,.5,1); }
+  @keyframes pop { 0% { transform: scale(.3) rotate(-40deg); } 100% { transform: scale(1) rotate(var(--tilt, -6deg)); } }
+  .sticker-count { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .sticker-count .big { font-family: var(--font-display); font-weight: 700; font-size: 2rem; line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-top: 12px; }
+  .week div { text-align: center; font-size: 0.75rem; color: var(--muted); font-weight: 700; display: grid; justify-items: center; gap: 2px; }
+  .week svg { width: 26px; height: 26px; fill: var(--off); }
+  .week .on svg { fill: var(--sun); }
+  .week .is-today { color: var(--text); }
+  .link-btn { border: 0; background: none; padding: 0; min-height: 0; color: var(--muted); font-family: var(--font-body); font-size: 0.85rem; text-decoration: underline; font-weight: 600; }
+  .confirm { display: inline-flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 0.88rem; }
+  .confirm button { min-height: 32px; padding: 3px 12px; font-size: 0.85rem; }
+
+  /* ---------- toolbar & grid ---------- */
+  .toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; margin: 0 0 16px; }
+  .toolbar h2 { margin: 0; font-size: clamp(1.6rem, 4vw, 2.1rem); }
+  .grid { display: grid; gap: 20px; grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1060px) { .grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+  .card { background: var(--surface); border: 2px solid var(--border); border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+  .card-head { display: flex; align-items: center; gap: 6px 10px; padding: 14px 16px 10px; flex-wrap: wrap; }
+  .num { font-family: var(--font-display); font-weight: 700; color: #fff; background: var(--mc); border-radius: 50%; width: 32px; height: 32px; display: grid; place-items: center; font-size: 1rem; flex: none; }
+  .card-head h3 { margin: 0; font-size: 1.3rem; line-height: 1.15; flex: 1 1 6em; min-width: 0; }
+  .level { font-size: 0.78rem; font-weight: 800; color: var(--muted); display: inline-flex; align-items: center; gap: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .level svg { width: 12px; height: 12px; fill: var(--sun); }
+  .level svg.dim { fill: var(--off); }
+  .plan-line { flex-basis: 100%; font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+
+  .stage { position: relative; background: var(--wall); border-top: 2px solid var(--border); }
+  .stage svg.scene { display: block; width: 100%; height: auto; }
+  .count-bubble {
+    position: absolute; top: 10px; left: 10px; min-width: 46px; height: 46px; padding: 0 8px; border-radius: 999px;
+    display: grid; place-items: center; font: 700 1.6rem/1 var(--font-display); font-variant-numeric: tabular-nums;
+    background: var(--mc, var(--accent)); color: #fff; box-shadow: 0 3px 0 rgba(0,0,0,.15);
+  }
+  .count-bubble.lead { background: var(--surface); color: var(--muted); border: 2px solid var(--border); }
+  .count-bubble:empty { display: none; }
+  .beats { display: flex; justify-content: center; gap: 6px; padding: 8px 12px; background: var(--surface); border-top: 2px solid var(--border); }
+  .beats span { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font: 600 0.78rem/1 var(--font-display); color: var(--muted); background: var(--surface-2); transition: background .1s, color .1s, transform .1s; }
+  .beats span.on { background: var(--mc); color: #fff; transform: scale(1.18); }
+
+  .hud { display: flex; align-items: center; gap: 12px; padding: 10px 16px; min-height: 64px; border-top: 2px solid var(--border); }
+  .phase { flex: 1; min-width: 0; }
+  .phase strong { display: block; font: 600 1.25rem/1.2 var(--font-display); }
+  .phase span { font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+  .controls { display: flex; gap: 6px; }
+  .controls button { width: 44px; height: 44px; padding: 0; }
+  .controls .toggle { background: var(--mc); border-color: var(--mc); color: #fff; }
+  .controls .toggle svg { width: 17px; height: 17px; }
+
+  .steps { padding: 4px 16px 16px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .steps ol, .pt-side ol { margin: 0; padding-left: 1.4em; }
+  .steps li, .pt-side li { margin: 4px 0; padding-left: 2px; }
+  .steps li::marker, .pt-side li::marker { font-family: var(--font-display); font-weight: 600; color: var(--muted); }
+  li.active { color: var(--accent); font-weight: 800; }
+  li.active::marker { color: var(--accent); }
+  .tip { margin: 0; font-size: 0.92rem; color: var(--muted); background: var(--surface-2); border-radius: 14px; padding: 8px 12px; }
+  .tip b { color: var(--text); }
+  .did { margin-top: auto; }
+  .did-btn { width: 100%; border-style: dashed; }
+  .did-btn.earned { border-style: solid; border-color: var(--mc); color: var(--text); }
+  .did-btn .mini { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--off); color: #fff; }
+  .did-btn.earned .mini { background: var(--mc); }
+  .did-btn .mini svg { width: 14px; height: 14px; }
+
+  footer { margin-top: 32px; font-size: 0.9rem; color: var(--muted); text-align: center; }
+
+  /* ---------- Lulu ---------- */
+  .fig path, .fig circle, .fig ellipse { stroke: none; }
+  .skin { fill: var(--skin); } .ear, .nose { fill: var(--skin-shade); }
+  .hair { fill: var(--hair); } .bow { fill: var(--bow); }
+  .shirt { fill: var(--shirt); } .star { fill: var(--star); }
+  .tutu { fill: var(--tutu); } .tutu2 { fill: var(--tutu-2); }
+  .legs { fill: var(--legs); } .shoe { fill: var(--shoe); } .sole { fill: var(--sole); }
+  .eye { fill: var(--eye); } .eye-hi { fill: #fff; }
+  .fig .lash, .fig .happy { fill: none; stroke: var(--eye); stroke-width: 1.4; stroke-linecap: round; }
+  .fig .smile { fill: none; stroke: var(--mouth); stroke-width: 1.6; stroke-linecap: round; }
+  .mouth { fill: var(--mouth); } .tongue { fill: var(--tongue); }
+  .cheek { fill: var(--cheek); opacity: .5; }
+  .hair-line { fill: none !important; stroke: #5a3626 !important; stroke-width: 1.2; stroke-linecap: round; }
+  /* stage */
+  .wall { fill: var(--wall); } .wall-band { fill: var(--wall-2); }
+  .floor { fill: var(--floor); } .board { stroke: var(--floor-2); stroke-width: .7; }
+  .spot { fill: url(#spotGrad); }
+  .shadow { fill: #000; filter: url(#softBlur); }
+  .string { fill: none; stroke: var(--muted); stroke-width: .6; opacity: .6; }
+  .note { fill: var(--note); font: 700 14px var(--font-body); }
+  .hint-mark { fill: none; stroke: var(--cue); stroke-width: 1.4; stroke-dasharray: 2.6 1.8; }
+  .hint-arrow { fill: none; stroke: var(--cue); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .burst line { stroke: var(--sun); stroke-width: 2.2; stroke-linecap: round; }
+  .ripple { fill: none; stroke: var(--cue); stroke-width: 1.3; }
+  .dust { fill: var(--floor-2); }
+  .spark { fill: var(--sun); }
+  .swoosh { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 12 7; }
+
+  /* ---------- Dance Party ---------- */
+  dialog.party { width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: var(--bg); color: var(--text); }
+  dialog.party::backdrop { background: rgba(20, 8, 30, .55); }
+  .pt { min-height: 100%; display: flex; flex-direction: column; max-width: 1180px; margin: 0 auto; gap: 12px; padding-block: max(12px, env(safe-area-inset-top, 0px)) max(14px, env(safe-area-inset-bottom, 0px)); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .pt-top { display: flex; align-items: center; gap: 8px 10px; flex-wrap: wrap; }
+  .pt-top .titles { flex: 1 1 220px; min-width: 0; }
+  .pt-count { font-size: 0.88rem; color: var(--muted); font-weight: 700; }
+  .pt-top h2 { margin: 0; font-size: clamp(1.4rem, 4vw, 2rem); line-height: 1.15; }
+  .pt-toggles { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+  .pt-toggles button { min-height: 36px; padding: 4px 12px; font-size: 0.9rem; }
+  .pt-progress { height: 10px; background: var(--surface-2); border-radius: 99px; overflow: hidden; }
+  .pt-progress i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), var(--purple)); border-radius: 99px; }
+  .pt-body { display: grid; gap: 14px; grid-template-columns: 1fr; flex: 1; align-content: start; }
+  @media (min-width: 900px) { .pt-body { grid-template-columns: 1.55fr 1fr; } }
+  .pt-main { background: var(--surface); border: 2px solid var(--border); border-radius: 24px; overflow: hidden; min-width: 0; }
+  .pt-main .stage { border-top: 0; }
+  .pt-main .stage svg.scene { max-height: calc(100vh - 290px); max-height: calc(100dvh - 290px); min-height: 220px; margin: 0 auto; }
+  .pt-main .count-bubble { top: 14px; left: 14px; min-width: 64px; height: 64px; font-size: 2.3rem; }
+  .pt-hud { display: flex; align-items: center; gap: 16px; padding: 12px 18px; border-top: 2px solid var(--border); }
+  .pt-hud .phase strong { font-size: clamp(1.4rem, 3.5vw, 1.9rem); }
+  .pt-hud .phase span { font-size: 0.95rem; }
+  .pt-side { background: var(--surface); border: 2px solid var(--border); border-radius: 24px; padding: 16px 20px; min-width: 0; display: flex; flex-direction: column; gap: 10px; font-size: 1.05rem; }
+  .pt-side h3 { margin: 0; font-size: 1rem; color: var(--muted); }
+  .pt-controls { display: flex; justify-content: center; align-items: center; gap: 14px; padding: 6px 0 2px; position: sticky; bottom: 0; background: var(--bg); }
+  .pt-controls button { min-height: 52px; padding: 10px 20px; font-size: 1.05rem; }
+  .pt-controls .big { min-width: 130px; }
+  @media (max-width: 380px) { .pt-controls { gap: 8px; } .pt-controls button { padding: 8px 12px; } .pt-controls .big { min-width: 100px; } }
+  @media (orientation: landscape) and (max-height: 540px) {
+    .pt { height: 100vh; height: 100dvh; min-height: 0; padding-block: 8px 6px; gap: 6px; }
+    .pt-top h2 { font-size: 1.2rem; }
+    .pt-body { flex: 1; min-height: 0; grid-template-columns: minmax(0, 1.4fr) minmax(220px, 1fr); }
+    .pt-main { display: flex; flex-direction: column; min-height: 0; }
+    .pt-main .stage svg.scene { max-height: calc(100dvh - 190px); min-height: 0; }
+    .pt-hud { padding: 6px 12px; }
+    .pt-side { overflow: auto; padding: 10px 14px; font-size: 0.95rem; }
+    .pt-controls button { min-height: 42px; padding: 6px 16px; }
+  }
+  .pt-done { text-align: center; padding: 40px 16px; display: grid; gap: 16px; justify-items: center; align-content: center; flex: 1; }
+  .pt-done h2 { margin: 0; font-size: clamp(2rem, 6vw, 3rem); color: var(--accent); }
+  .pt-done p { margin: 0; color: var(--muted); max-width: 44ch; font-size: 1.1rem; }
+  .pt-done .stickers { width: min(100%, 520px); }
+  .pt-done-stage { width: min(100%, 300px); border-radius: 24px; overflow: hidden; border: 2px solid var(--border); }
+  .pt-done-stage .count-bubble { display: none; }
+  .confetti { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 50; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-stage, .hero h1 .name, .sticker.on { transform: none; }
+    .sticker.pop { animation: none; }
+    .beats span.on { transform: none; }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="spotGrad">
+      <stop offset="0" stop-color="var(--spot)" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="var(--spot)" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softBlur" x="-30%" y="-300%" width="160%" height="700%"><feGaussianBlur stdDeviation="1.6"/></filter>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="hero-text">
+      <p class="kicker">8 beginner dance moves for kids</p>
+      <h1>Dance with <span class="name">Lulu!</span></h1>
+      <p class="lede">Hi, I'm Lulu! Press play on any move to watch me dance it, step by step. When you're ready, start a Dance Party and we'll do all the moves together, with music.</p>
+      <div class="hero-btns">
+        <button type="button" class="primary big" id="startParty"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg><span>Start Dance Party</span></button>
+        <a href="#moves">See all the moves</a>
+      </div>
+    </div>
+    <div class="hero-stage" id="heroStage"></div>
+    <button type="button" class="theme-btn" id="themeBtn" aria-label="Colour theme: automatic">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0 12.5V2.5a5.5 5.5 0 0 1 0 11z"/></svg><span>Auto</span>
+    </button>
+  </header>
+
+  <section class="info-grid" aria-label="How to dance along and staying safe">
+    <div class="panel">
+      <h2>How to dance along</h2>
+      <ul>
+        <li>Watch a move once, then press play again and copy Lulu, like a mirror.</li>
+        <li>The <strong>orange footprints</strong> show where Lulu's foot goes next.</li>
+        <li>Dancers count to 8. Lulu counts <strong>5, 6, 7, 8</strong> first so you can get ready.</li>
+        <li>Start on <strong>Slow</strong>. Go faster when the move feels easy.</li>
+      </ul>
+    </div>
+    <div class="panel warn" role="note">
+      <h2>Dance safely</h2>
+      <ul>
+        <li>Clear some space so you can stretch your arms out wide.</li>
+        <li>Dance in bare feet or sneakers. Socks can be slippery!</li>
+        <li>Ask a grown-up to be nearby, and drink some water after.</li>
+        <li>If anything hurts, stop and tell a grown-up.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="me-grid" aria-label="Dance settings and sticker book">
+    <div class="panel">
+      <h2>Dance settings</h2>
+      <div class="set-row">
+        <span class="lbl" id="speedLbl">Speed</span>
+        <div class="seg" role="radiogroup" aria-labelledby="speedLbl" id="speedSeg">
+          <button type="button" role="radio" data-v="slow">Slow</button>
+          <button type="button" role="radio" data-v="medium">Medium</button>
+          <button type="button" role="radio" data-v="fast">Fast</button>
+        </div>
+      </div>
+      <div class="set-row">
+        <span class="lbl" id="repLbl">Repeats</span>
+        <div class="seg" role="radiogroup" aria-labelledby="repLbl" id="repSeg">
+          <button type="button" role="radio" data-v="2">2 times</button>
+          <button type="button" role="radio" data-v="3">3 times</button>
+          <button type="button" role="radio" data-v="4">4 times</button>
+        </div>
+      </div>
+      <div class="set-row">
+        <span class="lbl">Music</span>
+        <button type="button" id="musicBtn" aria-pressed="true">Music on</button>
+      </div>
+      <p class="hint">Repeats is how many 8-counts of each move you dance. These settings are saved on this device.</p>
+    </div>
+    <div class="panel">
+      <h2>My sticker book</h2>
+      <div class="sticker-count"><span class="big" id="stickerNum">0</span><span id="stickerOf">of 8 stickers</span></div>
+      <div class="stickers" id="stickerBook"></div>
+      <div class="week" id="week" aria-label="Days you danced this week"></div>
+      <p class="hint">Earn a sticker by pressing <strong>I can do it!</strong> on a move, or by dancing it in a Dance Party. Gold stars show the days you danced. <span id="resetWrap"><button type="button" class="link-btn" id="resetBtn">Start a new sticker book</button></span></p>
+    </div>
+  </section>
+
+  <div class="toolbar" id="moves">
+    <h2>The moves</h2>
+    <button type="button" class="primary" id="startParty2"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg><span>Start Dance Party</span></button>
+  </div>
+
+  <main class="grid" id="grid"></main>
+
+  <footer>
+    <p>Have fun, and dance like nobody's watching! Saved settings and stickers stay on this device only.</p>
+  </footer>
+</div>
+
+<dialog id="party" class="party" aria-labelledby="ptTitle">
+  <div class="pt">
+    <div class="pt-top">
+      <div class="titles">
+        <div class="pt-count" id="ptCount"></div>
+        <h2 id="ptTitle"></h2>
+      </div>
+      <div class="pt-toggles">
+        <button type="button" id="ptMusic" aria-pressed="true">Music on</button>
+        <button type="button" id="ptVoice" aria-pressed="true">Voice on</button>
+        <button type="button" id="ptClose" aria-label="Close Dance Party"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 2.4 8 6.9l4.5-4.5 1.1 1.1L9.1 8l4.5 4.5-1.1 1.1L8 9.1l-4.5 4.5-1.1-1.1L6.9 8 2.4 3.5z"/></svg></button>
+      </div>
+    </div>
+    <div class="pt-progress" aria-hidden="true"><i id="ptBar"></i></div>
+    <div class="pt-body" id="ptBody">
+      <div class="pt-main" id="ptMain">
+        <div id="ptStage"></div>
+        <div class="beats" id="ptBeats" aria-hidden="true"></div>
+        <div class="pt-hud">
+          <div class="phase"><strong id="ptLabel"></strong><span id="ptSub"></span></div>
+        </div>
+      </div>
+      <aside class="pt-side">
+        <h3>Steps</h3>
+        <ol id="ptSteps"></ol>
+        <p class="tip" id="ptTip"></p>
+      </aside>
+    </div>
+    <div class="pt-controls" id="ptControls">
+      <button type="button" id="ptPrev" aria-label="Previous move"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 2h2v12H3zM14 2.5v11L6 8z"/></svg>Back</button>
+      <button type="button" class="primary big" id="ptPlay">Pause</button>
+      <button type="button" id="ptNext" aria-label="Skip to next move">Skip<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M11 2h2v12h-2zM2 2.5v11L10 8z"/></svg></button>
+    </div>
+    <div class="pt-done" id="ptDone" hidden>
+      <div class="pt-done-stage" id="ptDoneStage"></div>
+      <h2>You did it, superstar!</h2>
+      <p id="ptDoneText"></p>
+      <div class="stickers" id="ptDoneStickers"></div>
+      <div class="hero-btns" style="justify-content:center">
+        <button type="button" class="primary" id="ptAgain">Dance again</button>
+        <button type="button" id="ptFinish">Close</button>
+      </div>
+    </div>
+    <div class="visually-hidden" aria-live="polite" id="ptLive"></div>
+  </div>
+</dialog>
+
+<template id="cardTpl">
+  <article class="card">
+    <div class="card-head">
+      <span class="num"></span>
+      <h3></h3>
+      <span class="level"></span>
+      <span class="plan-line"></span>
+    </div>
+    <div class="stage-slot"></div>
+    <div class="beats" aria-hidden="true"></div>
+    <div class="hud">
+      <div class="phase"><strong></strong><span></span></div>
+      <div class="controls">
+        <button type="button" class="toggle"></button>
+        <button type="button" class="restart"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2a6 6 0 1 0 6 6h-2a4 4 0 1 1-1.2-2.8L9 7h5V2l-1.8 1.8A6 6 0 0 0 8 2z"/></svg></button>
+      </div>
+    </div>
+    <div class="steps">
+      <ol></ol>
+      <div class="did"><button type="button" class="did-btn"></button></div>
+    </div>
+  </article>
+</template>
+
+<template id="stageTpl">
+  <div class="stage">
+    <svg class="scene" viewBox="20 0 260 215" role="img">
+      <title></title>
+      <rect class="wall" x="20" y="0" width="260" height="200"/>
+      <rect class="wall-band" x="20" y="150" width="260" height="50"/>
+      <g class="bunting"></g>
+      <rect class="floor" x="20" y="199" width="260" height="16"/>
+      <path class="board" d="M20 206.5H280M60 199v7.5M130 199v7.5M200 199v7.5M250 199v7.5M95 206.5V215M165 206.5V215M235 206.5V215"/>
+      <ellipse class="spot" cx="150" cy="200" rx="80" ry="10"/>
+      <g class="notes" data-p="notes"><text class="note" x="0" y="0">&#9834;</text><text class="note" x="0" y="0">&#9835;</text><text class="note" x="0" y="0">&#9834;</text></g>
+      <ellipse class="shadow" data-p="shadow" cx="150" cy="200.5" rx="22" ry="2.6" opacity="0.2"/>
+      <g class="hints">
+        <ellipse class="hint-mark" data-p="mkL" rx="8.5" ry="2.6" opacity="0"/><ellipse class="hint-mark" data-p="mkR" rx="8.5" ry="2.6" opacity="0"/>
+        <path class="hint-arrow" data-p="arL" opacity="0"/><path class="hint-arrow" data-p="arR" opacity="0"/>
+      </g>
+      <g data-p="trails"></g>
+      <g class="fig" data-p="fig">
+        <g data-p="legs">
+          <g data-p="legL"><path class="legs" data-p="thL"/><path class="legs" data-p="shL"/><ellipse class="sole" data-p="soleL"/><ellipse class="shoe" data-p="shoeL"/></g>
+          <g data-p="legR"><path class="legs" data-p="thR"/><path class="legs" data-p="shR"/><ellipse class="sole" data-p="soleR"/><ellipse class="shoe" data-p="shoeR"/></g>
+        </g>
+        <g data-p="torso">
+          <rect class="skin" x="-4.2" y="-46" width="8.4" height="14" rx="4"/>
+          <path class="shirt" d="M-10.5 -4L-10.2 -12C-11.4 -20 -12.6 -27 -13.4 -33Q-13.8 -38.6 -8 -39Q0 -33.6 8 -39Q13.8 -38.6 13.4 -33C12.6 -27 11.4 -20 10.2 -12L10.5 -4Z"/>
+          <path class="star" data-p="star"/>
+          <path class="tutu2" data-p="sk2"/><path class="tutu" data-p="sk1"/>
+        </g>
+        <g data-p="armL"><path class="skin" data-p="uaL"/><path class="shirt" data-p="slL"/><path class="skin" data-p="faL"/><path class="skin" data-p="fgL"/><circle class="skin" data-p="hdL" r="4"/></g>
+        <g data-p="armR"><path class="skin" data-p="uaR"/><path class="shirt" data-p="slR"/><path class="skin" data-p="faR"/><path class="skin" data-p="fgR"/><circle class="skin" data-p="hdR" r="4"/></g>
+        <g data-p="head">
+          <circle class="hair" cx="0" cy="-18" r="19.6"/>
+          <g data-p="ptL"><ellipse class="hair" cx="-24.5" cy="-19" rx="6.6" ry="9.6" transform="rotate(38 -24.5 -19)"/><g transform="translate(-17.5 -26) rotate(-35)"><path class="bow" d="M0 0L-4.6-3.4V3.4ZM0 0L4.6-3.4V3.4Z"/><circle class="bow" r="1.7"/></g></g>
+          <g data-p="ptR"><ellipse class="hair" cx="24.5" cy="-19" rx="6.6" ry="9.6" transform="rotate(-38 24.5 -19)"/><g transform="translate(17.5 -26) rotate(35)"><path class="bow" d="M0 0L-4.6-3.4V3.4ZM0 0L4.6-3.4V3.4Z"/><circle class="bow" r="1.7"/></g></g>
+          <circle class="ear" cx="-17.2" cy="-15" r="3.2"/><circle class="ear" cx="17.2" cy="-15" r="3.2"/>
+          <circle class="skin" cx="0" cy="-17" r="17.5"/>
+          <g data-p="face">
+            <ellipse class="cheek" cx="-10.6" cy="-9.6" rx="3.3" ry="2.1"/><ellipse class="cheek" cx="10.6" cy="-9.6" rx="3.3" ry="2.1"/>
+            <ellipse class="nose" cx="0" cy="-11.6" rx="1.3" ry="0.95"/>
+            <g data-p="eyesOpen">
+              <ellipse class="eye" cx="-6.2" cy="-15" rx="2.4" ry="3.1"/><ellipse class="eye" cx="6.2" cy="-15" rx="2.4" ry="3.1"/>
+              <circle class="eye-hi" cx="-5.4" cy="-16.2" r="0.9"/><circle class="eye-hi" cx="7" cy="-16.2" r="0.9"/>
+              <path class="lash" d="M-8.4 -17l-1.9-1.2M8.4 -17l1.9-1.2"/>
+            </g>
+            <path class="happy" data-p="eyesHappy" d="M-8.7 -14Q-6.2 -17.8 -3.7 -14M3.7 -14Q6.2 -17.8 8.7 -14" opacity="0"/>
+            <path class="smile" data-p="mouthS" d="M-4 -7.4Q0 -3.6 4 -7.4"/>
+            <g data-p="mouthO" opacity="0"><path class="mouth" d="M-4.5 -8Q0 0.4 4.5 -8Q0 -6.6 -4.5 -8Z"/><ellipse class="tongue" cx="0" cy="-3.4" rx="2.2" ry="1.1"/></g>
+          </g>
+          <path class="hair" data-p="bangs" d="M-18 -19C-18.6 -33 -8 -37.6 0 -37.6C8 -37.6 18.6 -33 18 -19C15.5 -24.5 12 -25.5 9 -23.5C7 -27.6 3 -27.6 0 -25C-3 -27.6 -7 -27.6 -9 -23.5C-12 -25.5 -15.5 -24.5 -18 -19Z"/>
+          <g data-p="backView" opacity="0"><circle class="hair" cx="0" cy="-17.6" r="18.8"/><path class="hair-line" d="M0 -36V-4M-6 -33Q-3 -20 -5 -6M6 -33Q3 -20 5 -6"/></g>
+        </g>
+      </g>
+      <g data-p="fx">
+        <g class="burst" data-p="burst" opacity="0"><line x1="0" y1="-7" x2="0" y2="-12"/><line x1="5" y1="-5" x2="8.5" y2="-8.5"/><line x1="7" y1="0" x2="12" y2="0"/><line x1="-5" y1="-5" x2="-8.5" y2="-8.5"/><line x1="-7" y1="0" x2="-12" y2="0"/><line x1="5" y1="5" x2="8.5" y2="8.5"/><line x1="-5" y1="5" x2="-8.5" y2="8.5"/></g>
+        <ellipse class="ripple" data-p="ripple" rx="6" ry="1.5" opacity="0"/>
+        <g data-p="dust" opacity="0"><circle class="dust" data-p="d1" r="2.5"/><circle class="dust" data-p="d2" r="2"/><circle class="dust" data-p="d3" r="2.5"/><circle class="dust" data-p="d4" r="2"/></g>
+        <g data-p="sparks" opacity="0"></g>
+        <g data-p="swoosh" opacity="0"><path class="swoosh" data-p="sw1"/><path class="swoosh" data-p="sw2"/></g>
+      </g>
+    </svg>
+    <div class="count-bubble" aria-hidden="true"></div>
+  </div>
+</template>
+
+<script>
+(() => {
+  'use strict';
+  const SVGNS = 'http://www.w3.org/2000/svg';
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* storage unavailable */ } },
+  };
+  const mqReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let reduceMotion = mqReduce.matches;
+
+  // ---------- Geometry helpers ----------
+  const RAD = Math.PI / 180;
+  const dir = (deg) => [Math.cos(deg * RAD), Math.sin(deg * RAD)];
+  const add = (p, v, s = 1) => [p[0] + v[0] * s, p[1] + v[1] * s];
+  const sub = (a, b) => [a[0] - b[0], a[1] - b[1]];
+  const norm = (v) => { const d = Math.hypot(v[0], v[1]) || 1; return [v[0] / d, v[1] / d]; };
+  const rotv = (v, deg) => { const c = Math.cos(deg * RAD), s = Math.sin(deg * RAD); return [v[0] * c - v[1] * s, v[0] * s + v[1] * c]; };
+  const clamp = (x, lo, hi) => Math.min(hi, Math.max(lo, x));
+  const f1 = (v) => v.toFixed(1);
+  const pt = (p) => `${f1(p[0])} ${f1(p[1])}`;
+  const ease = (x) => 0.5 - 0.5 * Math.cos(Math.PI * x);
+  const smooth = (a, b, x) => { const t = clamp((x - a) / (b - a), 0, 1); return t * t * (3 - 2 * t); };
+
+  // Two-bone inverse kinematics. s = +1 / -1 picks which way the middle joint bends.
+  function ik(root, target, a, b, s) {
+    const dx = target[0] - root[0], dy = target[1] - root[1];
+    let d = Math.hypot(dx, dy);
+    const base = Math.atan2(dy, dx);
+    d = Math.min(Math.max(d, Math.abs(a - b) + 0.01), a + b - 0.01);
+    const off = Math.acos((a * a + d * d - b * b) / (2 * a * d));
+    const u = base + s * off;
+    const mid = [root[0] + a * Math.cos(u), root[1] + a * Math.sin(u)];
+    const l = Math.atan2(target[1] - mid[1], target[0] - mid[0]);
+    return [mid, [mid[0] + b * Math.cos(l), mid[1] + b * Math.sin(l)]];
+  }
+  // Rounded, tapered limb from a (radius r1) to b (radius r2).
+  function capsule(a, b, r1, r2) {
+    const d = norm(sub(b, a));
+    const n = [-d[1], d[0]];
+    return `M${pt(add(a, n, r1))}L${pt(add(b, n, r2))}A${f1(r2)} ${f1(r2)} 0 0 0 ${pt(add(b, n, -r2))}` +
+           `L${pt(add(a, n, -r1))}A${f1(r1)} ${f1(r1)} 0 0 0 ${pt(add(a, n, r1))}Z`;
+  }
+  const setAttrs = (el, o) => { for (const k in o) el.setAttribute(k, typeof o[k] === 'number' ? f1(o[k]) : o[k]); };
+  function starPath(cx, cy, R, r, n = 5) {
+    let d = '';
+    for (let i = 0; i < n * 2; i++) {
+      const a = -90 + i * (180 / n), rr = i % 2 ? r : R;
+      d += (i ? 'L' : 'M') + pt([cx + rr * Math.cos(a * RAD), cy + rr * Math.sin(a * RAD)]);
+    }
+    return d + 'Z';
+  }
+
+  // ---------- Body model ----------
+  // Lulu faces us. Lengths in scene units; the floor (ankle line) is at y = 193.
+  const L = { ua: 24, fa: 23, th: 30, sh: 29 };
+  const SH = [14, -36], HJ = [7, 2], NECK = [0, -41];
+  const FLOOR = 193;
+
+  // Arm poses use [upper arm, forearm] angles in a mirrored frame:
+  // 0 = straight out to the side, 90 = down, -90 = up, 180 = across the body. Same numbers work for both arms.
+  function reach(dx, dy, bend = 1) {
+    const a = ik([0, 0], [dx, dy], L.ua, L.fa, 1), b = ik([0, 0], [dx, dy], L.ua, L.fa, -1);
+    const [el, ha] = (a[0][0] > b[0][0]) === (bend > 0) ? a : b;
+    return [Math.atan2(el[1], el[0]) / RAD, Math.atan2(ha[1] - el[1], ha[0] - el[0]) / RAD];
+  }
+  const ARM = {
+    down: [78, 86],
+    hips: reach(-3, 25),
+    clap: reach(-10.5, 12),
+    clapHigh: reach(-10.5, -45.5),
+    out: [-2, -6],
+    outLow: reach(34, 24),
+    v: [-48, -52],
+    up: [-84, -88],
+    wave1: [-16, -98],
+    wave2: [-16, -58],
+    pointUp: [-44, -46],
+    pointDown: reach(-25, 30),
+    ballet1: reach(-7, 33),
+    ballet2: reach(39, 9),
+    ballet5: reach(-9, -45),
+    skirt: reach(17, 32),
+  };
+
+  const BASE = { hx: 150, hy: 133, t: 0, n: 0, LA: ARM.down, RA: ARM.down, Lf: [143, FLOOR], Rf: [157, FLOOR], Lt: 0, Rt: 0, turn: 0, mouth: 0, sk: 0, Lp: 0, Rp: 0, eyes: 0, back: '' };
+  const P = (...o) => Object.assign({}, BASE, ...o);
+  const mirror = (p) => Object.assign({}, p, {
+    hx: 300 - p.hx, t: -p.t, n: -p.n, LA: p.RA, RA: p.LA,
+    Lf: [300 - p.Rf[0], p.Rf[1]], Rf: [300 - p.Lf[0], p.Lf[1]],
+    Lt: p.Rt, Rt: p.Lt, Lp: p.Rp, Rp: p.Lp, back: p.back === 'L' ? 'R' : p.back === 'R' ? 'L' : '',
+  });
+  const feet = (l, r, y = FLOOR) => ({ Lf: [l, y], Rf: [r, y] });
+
+  const lerpAng = (a, b, k) => a + ((((b - a) % 360) + 540) % 360 - 180) * k;
+  function lerpPose(a, b, k) {
+    const o = {};
+    for (const key in a) {
+      const va = a[key], vb = key in b ? b[key] : va;
+      if (key === 'back') o.back = va || vb;
+      else if (key === 'turn') o.turn = va + ((((vb - va) % 360) + 360) % 360) * k; // always spin forward
+      else if (key === 'LA' || key === 'RA') o[key] = [lerpAng(va[0], vb[0], k), lerpAng(va[1], vb[1], k)];
+      else if (Array.isArray(va)) o[key] = [va[0] + (vb[0] - va[0]) * k, va[1] + (vb[1] - va[1]) * k];
+      else o[key] = va + (vb - va) * k;
+    }
+    return o;
+  }
+
+  // Joint positions for a pose.
+  function solve(p) {
+    const hip = [p.hx, p.hy];
+    const W = (v) => add(hip, rotv(v, p.t));
+    const j = { hip, neck: W(NECK) };
+    for (const [s, sign] of [['L', -1], ['R', 1]]) {
+      const sh = W([SH[0] * sign, SH[1]]);
+      const A = p[s + 'A'];
+      const ang = (a) => (sign > 0 ? a : 180 - a) + p.t;
+      const el = add(sh, dir(ang(A[0])), L.ua);
+      const ha = add(el, dir(ang(A[1])), L.fa);
+      const hj = W([HJ[0] * sign, HJ[1]]);
+      const an = p[s + 'f'];
+      let [kn] = ik(hj, an, L.th, L.sh, sign > 0 ? -1 : 1);
+      // Seen from the front, a bent knee mostly points at us, so only part of the bend shows sideways.
+      const mid = [(hj[0] + an[0]) / 2, (hj[1] + an[1]) / 2];
+      kn = [mid[0] + (kn[0] - mid[0]) * 0.5, mid[1] + (kn[1] - mid[1]) * 0.5];
+      Object.assign(j, { ['sh' + s]: sh, ['el' + s]: el, ['ha' + s]: ha, ['hj' + s]: hj, ['kn' + s]: kn, ['an' + s]: an });
+    }
+    return j;
+  }
+
+  // ---------- The moves ----------
+  // pattern: [count (1–8, halves allowed), pose name, options]. Options: ease ('hit' default, 'in', 'out', 'io'),
+  // jump (height), fx ('clap', 'tap', 'land', 'sparkle').
+  const HELLO = {
+    w1: P({ RA: ARM.wave1, mouth: 1, n: 4 }),
+    w2: P({ RA: ARM.wave2, mouth: 1, n: 4, hy: 134.5 }),
+    yay: P({ LA: ARM.v, RA: ARM.v, mouth: 1, eyes: 1, hy: 131, Lt: 0.3, Rt: 0.3, sk: 0.5 }),
+  };
+  const ICONS = {
+    note: '<path d="M9 17.5a3 3 0 1 1-2-2.8V5.2l11-2.4v12.4a3 3 0 1 1-2-2.8V7.1l-7 1.5z" fill="currentColor"/>',
+    burst: '<path d="M12 1.5l2.6 7.9L22.5 12l-7.9 2.6L12 22.5l-2.6-7.9L1.5 12l7.9-2.6z" fill="currentColor"/>',
+    heart: '<path d="M12 21s-8.5-5.4-8.5-11.4A4.6 4.6 0 0 1 12 7a4.6 4.6 0 0 1 8.5 2.6C20.5 15.6 12 21 12 21z" fill="currentColor"/>',
+    rainbow: '<path d="M2.5 18a9.5 9.5 0 0 1 19 0M6.5 18a5.5 5.5 0 0 1 11 0" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>',
+    bolt: '<path d="M13.5 1.5 4 13.5h7l-1.5 9 10-12.5h-7z" fill="currentColor"/>',
+    flower: '<g fill="currentColor"><circle cx="12" cy="6.5" r="4"/><circle cx="17.2" cy="10.3" r="4"/><circle cx="15.2" cy="16.5" r="4"/><circle cx="8.8" cy="16.5" r="4"/><circle cx="6.8" cy="10.3" r="4"/></g><circle cx="12" cy="12" r="3" fill="rgba(0,0,0,.25)"/>',
+    star: '<path d="M12 2l3 6.3 6.9.9-5 4.8 1.3 6.8L12 17.5l-6.2 3.3L7.1 14l-5-4.8 6.9-.9z" fill="currentColor"/>',
+    crown: '<path d="M3 19h18l-1.2-11-5 4.2L12 5l-2.8 7.2-5-4.2z" fill="currentColor"/>',
+  };
+
+  const stepL = P({ hx: 138, hy: 134, t: -3, n: -6, ...feet(132, 144), Rt: 1, LA: ARM.clap, RA: ARM.clap, eyes: 1 });
+  const stepWide = P({ hx: 150, hy: 136, ...feet(130, 170), LA: ARM.outLow, RA: ARM.outLow, mouth: 1 });
+
+  const bounceStand = P({ hy: 134, ...feet(136, 164) });
+  const bounceDown = P({ hy: 139, ...feet(136, 164), LA: ARM.outLow, RA: ARM.outLow });
+  const bounceClap = P({ hy: 132, ...feet(136, 164), LA: ARM.clap, RA: ARM.clap, eyes: 1 });
+  const bounceHigh = P({ hy: 131, ...feet(136, 164), LA: ARM.clapHigh, RA: ARM.clapHigh, mouth: 1, Lt: 0.4, Rt: 0.4 });
+
+  const swayBase = P({ hy: 134, ...feet(137, 163), LA: ARM.hips, RA: ARM.hips });
+  const swayR = P(swayBase, { hx: 157, t: -5, n: -5 });
+  const wigR = P(swayBase, { hx: 155, t: -4, n: -3, mouth: 1, eyes: 1 });
+
+  const rbBase = P({ hy: 134, ...feet(136, 164) });
+  const rbLeft = P(rbBase, { hx: 154, t: -9, n: -9, RA: [138, 138], LA: [42, 42] });
+  const rbTop = P(rbBase, { hy: 131, RA: [-74, -80], LA: [-74, -80], mouth: 1, Lt: 0.4, Rt: 0.4 });
+
+  const discoStart = P({ hy: 134, ...feet(136, 164), LA: ARM.hips, RA: ARM.hips });
+  const discoUpR = P(discoStart, { hx: 145, t: 3, n: 9, RA: ARM.pointUp, Rp: 1, mouth: 1 });
+  const discoDownR = P(discoStart, { hx: 155, hy: 136, t: -2, n: -5, RA: ARM.pointDown, Rp: 1 });
+
+  const gv = {
+    start: P({ hx: 122, ...feet(116, 128) }),
+    g1: P({ hx: 131, hy: 135, t: 2, ...feet(116, 146), LA: ARM.outLow, RA: ARM.outLow }),
+    g2: P({ hx: 152, hy: 134, ...feet(158, 146), back: 'L', LA: ARM.outLow, RA: ARM.outLow }),
+    g3: P({ hx: 171, hy: 135, t: 2, ...feet(158, 186), back: 'L', LA: ARM.outLow, RA: ARM.outLow }),
+    g4: P({ hx: 178, hy: 134, n: 6, ...feet(172, 184), Lt: 1, LA: ARM.clap, RA: ARM.clap, mouth: 1 }),
+  };
+
+  const sjIn = P({ ...feet(144, 156) });
+  const sjStar = P({ hy: 137, ...feet(121, 179), LA: ARM.v, RA: ARM.v, mouth: 1, sk: 0.7 });
+  const sjLand = P({ hy: 139, ...feet(141, 159), LA: ARM.outLow, RA: ARM.outLow, eyes: 1 });
+
+  const twReady = P({ ...feet(145, 155), LA: ARM.ballet1, RA: ARM.ballet1 });
+  const twPlie = P({ hy: 139, ...feet(139, 161), LA: ARM.ballet2, RA: ARM.ballet2 });
+  const twRise = P({ hy: 128, ...feet(146, 154, 189), Lt: 1, Rt: 1, LA: ARM.ballet5, RA: ARM.ballet5, mouth: 1 });
+  const twCurtsy = P({ hy: 140, t: -3, n: -12, ...feet(143, 137), back: 'R', LA: ARM.skirt, RA: ARM.skirt, eyes: 1 });
+
+  const MOVES = [
+    {
+      id: 'steptouch', name: 'Step-Touch', level: 1, color: '#ff5c9d', icon: 'note',
+      say: 'Step to the side, then tap your toe and clap!',
+      poses: { start: stepL, wide: stepWide, tR: mirror(stepL) },
+      start: 'start', key: 2,
+      pattern: [[1, 'wide'], [2, 'tR', { fx: 'clap tap' }], [3, 'wide'], [4, 'start', { fx: 'clap tap' }], [5, 'wide'], [6, 'tR', { fx: 'clap tap' }], [7, 'wide'], [8, 'start', { fx: 'clap tap' }]],
+      counts: ['Step', 'Clap!', 'Step', 'Clap!', 'Step', 'Clap!', 'Step', 'Clap!'],
+      stepMap: [1, 2, 3, 3, 4, 4, 4, 4],
+      steps: [
+        'Stand with your feet together.',
+        'Step out to the side.',
+        'Bring your other foot in next to it. Tap your toe and clap!',
+        'Now step the other way, then tap and clap.',
+        'Keep going side to side with the beat.',
+      ],
+      tip: 'Keep your knees soft and bouncy, like a spring.',
+    },
+    {
+      id: 'bounce', name: 'Bounce & Clap', level: 1, color: '#f59f00', icon: 'burst',
+      say: 'Bend your knees and bounce, then clap!',
+      poses: { start: bounceStand, down: bounceDown, clap: bounceClap, high: bounceHigh },
+      start: 'start', key: 4,
+      pattern: [[1, 'down'], [2, 'clap', { fx: 'clap' }], [3, 'down'], [4, 'high', { fx: 'clap' }], [5, 'down'], [6, 'clap', { fx: 'clap' }], [7, 'down'], [8, 'high', { fx: 'clap' }]],
+      counts: ['Bounce', 'Clap!', 'Bounce', 'Clap high!', 'Bounce', 'Clap!', 'Bounce', 'Clap high!'],
+      stepMap: [1, 2, 3, 3, 4, 4, 4, 4],
+      steps: [
+        'Stand with your feet a little apart.',
+        'Bend your knees and bounce down.',
+        'Pop back up and clap in front of you.',
+        'Bounce again, then clap up high over your head!',
+        'Keep bouncing to the beat.',
+      ],
+      tip: 'Bounce from your knees, not your back. Little bounces are fine!',
+    },
+    {
+      id: 'sway', name: 'Sway & Wiggle', level: 1, color: '#e64980', icon: 'heart',
+      say: 'Hands on your hips. Sway side to side, then wiggle!',
+      poses: { start: swayBase, R: swayR, L: mirror(swayR), wR: wigR, wL: mirror(wigR), tada: HELLO.yay },
+      start: 'start', key: 1,
+      pattern: [[1, 'R'], [2, 'L'], [3, 'R'], [4, 'L'], [5, 'wR'], [5.5, 'wL'], [6, 'wR'], [6.5, 'wL'], [7, 'wR'], [7.5, 'wL'], [8, 'tada', { fx: 'sparkle' }]],
+      counts: ['Sway', 'Sway', 'Sway', 'Sway', 'Wiggle', 'Wiggle', 'Wiggle', 'Ta-da!'],
+      stepMap: [1, 2, 1, 2, 3, 3, 3, 4],
+      steps: [
+        'Feet apart, hands on your hips.',
+        'Sway your hips to one side.',
+        'Then sway them to the other side.',
+        'Now do quick little sways: wiggle, wiggle, wiggle!',
+        'Throw your arms up high and say "ta-da!"',
+      ],
+      tip: 'Let your head tip a little with your hips. It looks extra groovy.',
+    },
+    {
+      id: 'rainbow', name: 'Rainbow Arms', level: 1, color: '#7c4ddb', icon: 'rainbow',
+      say: 'Paint a big rainbow over your head with both arms!',
+      poses: { start: rbLeft, top: rbTop, right: mirror(rbLeft) },
+      start: 'start', key: 1,
+      pattern: [[1, 'top', { ease: 'in' }], [2, 'right', { ease: 'out' }], [3, 'top', { ease: 'in' }], [4, 'start', { ease: 'out' }], [5, 'top', { ease: 'in' }], [6, 'right', { ease: 'out' }], [7, 'top', { ease: 'in' }], [8, 'start', { ease: 'out' }]],
+      counts: ['Up…', '…and over', 'Up…', '…and over', 'Up…', '…and over', 'Up…', '…and over'],
+      stepMap: [1, 2, 3, 3, 1, 2, 3, 3],
+      steps: [
+        'Feet apart. Reach both arms down to one side.',
+        'Sweep your arms up high over your head…',
+        '…and down to the other side, like painting a rainbow!',
+        'Now paint it back the other way.',
+      ],
+      tip: 'Keep it smooth and slow, and lean your body with your arms.',
+    },
+    {
+      id: 'disco', name: 'Disco Point', level: 2, color: '#0ca678', icon: 'bolt',
+      say: 'Point up to the sky, then down to your hip!',
+      poses: { start: discoStart, upR: discoUpR, downR: discoDownR, upL: mirror(discoUpR), downL: mirror(discoDownR) },
+      start: 'start', key: 1,
+      pattern: [[1, 'upR'], [2, 'downR'], [3, 'upR'], [4, 'downR'], [5, 'upL'], [6, 'downL'], [7, 'upL'], [8, 'downL']],
+      counts: ['Point up!', 'Down', 'Point up!', 'Down', 'Switch!', 'Down', 'Point up!', 'Down'],
+      stepMap: [1, 2, 1, 2, 3, 3, 3, 3],
+      steps: [
+        'Feet apart, hands on your hips.',
+        'Point one finger up high, to the corner of the room.',
+        'Bring it down across your body to your other hip.',
+        'Do it twice, then switch to your other arm!',
+      ],
+      tip: 'Push your hip out each time you point. Groovy!',
+    },
+    {
+      id: 'grapevine', name: 'Grapevine', level: 2, color: '#2f9e44', icon: 'flower',
+      say: 'Step to the side, cross behind, step, and tap!',
+      poses: { start: gv.start, ...gv, g5: mirror(gv.g1), g6: mirror(gv.g2), g7: mirror(gv.g3), g8: mirror(gv.g4) },
+      start: 'start', key: 2,
+      pattern: [[1, 'g1'], [2, 'g2'], [3, 'g3'], [4, 'g4', { fx: 'clap tap' }], [5, 'g5'], [6, 'g6'], [7, 'g7'], [8, 'g8', { fx: 'clap tap' }]],
+      counts: ['Side', 'Behind', 'Side', 'Tap!', 'Side', 'Behind', 'Side', 'Tap!'],
+      stepMap: [1, 2, 3, 4, 1, 2, 3, 4],
+      steps: [
+        'Stand on one side of your space, feet together.',
+        'Step to the side.',
+        'Cross your other foot behind it.',
+        'Step to the side again.',
+        'Tap your foot in and clap! Then go back the other way.',
+      ],
+      tip: '<b>Say it as you go:</b> "side, behind, side, tap!"',
+    },
+    {
+      id: 'starjump', name: 'Star Jump', level: 2, color: '#f08c00', icon: 'star',
+      say: 'Jump out into a big star, then jump back in!',
+      poses: { start: sjIn, star: sjStar, land: sjLand },
+      start: 'start', key: 7,
+      pattern: [[1, 'star', { jump: 9 }], [2, 'start', { jump: 7, fx: 'land' }], [3, 'star', { jump: 9 }], [4, 'start', { jump: 7, fx: 'land' }], [5, 'star', { jump: 9 }], [6, 'start', { jump: 7, fx: 'land' }], [7, 'star', { jump: 16, fx: 'sparkle' }], [8, 'land', { jump: 8, fx: 'land' }]],
+      counts: ['Jump out!', 'In', 'Out!', 'In', 'Out!', 'In', 'Big star!', 'Land'],
+      stepMap: [1, 2, 3, 3, 3, 3, 4, 4],
+      steps: [
+        'Stand tall, feet together, arms down.',
+        'Jump your feet apart and throw your arms up into a big star!',
+        'Jump back in, arms down.',
+        'Keep going: out, in, out, in.',
+        'Do one giant star jump, then land with soft, bendy knees.',
+      ],
+      tip: 'Land on the front of your feet, quiet as a cat.',
+    },
+    {
+      id: 'twirl', name: 'Ballerina Twirl', level: 3, color: '#ae3ec9', icon: 'crown',
+      say: 'Bend, rise up on your tiptoes, and spin all the way around!',
+      poses: { start: twReady, plie: twPlie, rise: twRise, half: P(twRise, { turn: 180, sk: 1, eyes: 1 }), full: P(twRise, { turn: 0, sk: 1, eyes: 1 }), curtsy: twCurtsy, tada: P(HELLO.yay, feet(145, 155)) },
+      start: 'start', key: 2,
+      pattern: [[1, 'plie'], [2, 'rise'], [3, 'half', { ease: 'in' }], [4, 'full', { ease: 'out' }], [5, 'curtsy', { ease: 'io' }], [7, 'tada', { fx: 'sparkle' }]],
+      counts: ['Bend', 'Rise up', 'Spin…', '…around!', 'Curtsy', 'Hold it', 'Ta-da!', 'Hold'],
+      stepMap: [1, 2, 3, 3, 4, 4, 4, 4],
+      steps: [
+        'Stand tall with your heels together.',
+        'Bend your knees and open your arms wide.',
+        'Rise up on your tiptoes with your arms in a circle over your head.',
+        'Turn all the way around on your tiptoes. Wheee!',
+        'Do a little curtsy, then finish with a big ta-da!',
+      ],
+      tip: '<b>Feeling dizzy?</b> Pick a spot on the wall, look at it as long as you can, and turn slowly.',
+    },
+  ];
+  const HERO_MOVE = {
+    id: 'hello', name: 'Hello', color: '#d6337f',
+    poses: { w1: HELLO.w1, w2: HELLO.w2, bob: P({ hy: 135, mouth: 1 }), yay: HELLO.yay, stand: P({ mouth: 1 }) },
+    start: 'stand',
+    pattern: [[1, 'w1'], [1.5, 'w2'], [2, 'w1'], [2.5, 'w2'], [3, 'w1'], [3.5, 'w2'], [4, 'w1'], [5, 'bob'], [6, 'yay', { jump: 8, fx: 'sparkle' }], [7, 'yay'], [8, 'stand', { ease: 'io' }]],
+    counts: ['', '', '', '', '', '', '', ''],
+  };
+
+  // ---------- Settings & saved progress ----------
+  const BPM = { slow: 72, medium: 92, fast: 112 };
+  const settings = Object.assign({ speed: 'slow', reps: 2, music: true, voice: true, theme: 'auto' }, store.get('lulu.settings', {}));
+  if (!(settings.speed in BPM)) settings.speed = 'slow';
+  if (![2, 3, 4].includes(Number(settings.reps))) settings.reps = 2;
+  settings.reps = Number(settings.reps);
+  if (!['auto', 'light', 'dark'].includes(settings.theme)) settings.theme = 'auto';
+  const saveSettings = () => store.set('lulu.settings', settings);
+  const bpm = () => BPM[settings.speed];
+  let stickers = store.get('lulu.stickers', {});
+  if (typeof stickers !== 'object' || !stickers) stickers = {};
+  let days = store.get('lulu.days', {});
+  if (typeof days !== 'object' || !days) days = {};
+
+  // ---------- Timeline (in beats) ----------
+  // card: count-in 5-6-7-8, the move N times, a ta-da, then loop. party: a hello wave, count-in, the move N times.
+  function buildTimeline(mv, reps, mode) {
+    const kf = [], spans = [];
+    const push = (b, pose, o) => kf.push(Object.assign({ b, pose }, o || {}));
+    const S = mv.poses[mv.start];
+    let b = 0;
+    if (mode === 'loop') {
+      push(0, S);
+      for (const [c, name, o] of mv.pattern) push(c, mv.poses[name], o);
+      return { kf, spans: [{ b0: 0, b1: 8, label: '', count: '', step: -1, kind: 'move', rep: 0 }], total: 8, loop: true };
+    }
+    if (mode === 'party') {
+      for (let i = 0; i < 6; i++) { push(i, HELLO.w1); push(i + 0.5, HELLO.w2); }
+      spans.push({ b0: 0, b1: 6, label: `Next up: ${mv.name}!`, count: '', step: -1, kind: 'intro', rep: 0 });
+      b = 6;
+    }
+    const bob = Object.assign({}, S, { hy: S.hy + 2 });
+    push(b, S, { ease: 'io' });
+    for (let i = 0; i < 3; i++) { push(b + i + 0.5, bob); push(b + i + 1, S); }
+    ['5', '6', '7', '8'].forEach((n, i) => spans.push({ b0: b + i, b1: b + i + 1, label: i < 2 ? 'Get ready…' : i === 2 ? 'Here we go!' : 'Go!', count: n, step: 0, kind: 'lead', rep: 0 }));
+    b += 4;
+    for (let r = 0; r < reps; r++) {
+      for (const [c, name, o] of mv.pattern) push(b + c - 1, mv.poses[name], o);
+      mv.counts.forEach((label, i) => spans.push({ b0: b + i, b1: b + i + 1, label, count: String(i + 1), step: mv.stepMap[i], kind: 'move', rep: r }));
+      b += 8;
+    }
+    const lastPose = kf[kf.length - 1].pose;
+    if (mode === 'card') {
+      push(b, HELLO.yay, { jump: 9, fx: 'sparkle' });
+      push(b + 2.5, HELLO.yay);
+      push(b + 4, S, { ease: 'io' });
+      spans.push({ b0: b, b1: b + 4, label: 'Ta-da! Great dancing!', count: '★', step: -1, kind: 'fin', rep: reps - 1 });
+      return { kf, spans, total: b + 4, loop: true };
+    }
+    push(b, lastPose);
+    return { kf, spans, total: b, loop: false };
+  }
+  const wrapBeat = (pl, b) => pl.loop ? ((b % pl.total) + pl.total) % pl.total : clamp(b, 0, pl.total - 1e-6);
+
+  function evalAt(pl, rawB) {
+    const b = wrapBeat(pl, rawB);
+    const kf = pl.kf;
+    let i = 0;
+    while (i < kf.length - 2 && kf[i + 1].b <= b) i++;
+    const A = kf[i], B = kf[i + 1] || A;
+    const len = Math.max(1e-6, B.b - A.b), local = b - A.b, x = clamp(local / len, 0, 1);
+    let k;
+    switch (B.ease) {
+      case 'io': k = ease(x); break;
+      case 'in': k = x * x; break;
+      case 'out': k = 1 - (1 - x) * (1 - x); break;
+      default: { const w = Math.min(0.7, len); k = ease(clamp((local - (len - w)) / w, 0, 1)); }
+    }
+    const pose = lerpPose(A.pose, B.pose, k);
+    if (B.jump) {
+      const lift = B.jump * Math.sin(Math.PI * k);
+      pose.hy -= lift; pose.Lf[1] -= lift; pose.Rf[1] -= lift;
+    } else {
+      for (const f of ['Lf', 'Rf']) {
+        const dx = Math.abs(B.pose[f][0] - A.pose[f][0]);
+        if (dx > 3) pose[f][1] -= Math.sin(Math.PI * k) * Math.min(9, 2 + dx * 0.22);
+      }
+    }
+    return { pose, i, k, x, A, B, b, age: local };
+  }
+  function spanAt(pl, rawB) {
+    const b = wrapBeat(pl, rawB);
+    for (let i = 0; i < pl.spans.length; i++) if (b < pl.spans[i].b1) return [i, pl.spans[i]];
+    return [pl.spans.length - 1, pl.spans[pl.spans.length - 1]];
+  }
+
+  // ---------- Stage ----------
+  const stageTpl = document.getElementById('stageTpl');
+  const TRAIL_COLORS = ['#ff5c9d', '#ffb02e', '#ffd23f', '#3fd0a0', '#4dabf7', '#9775fa'];
+  const SPARK_SPOTS = [[-34, -70, 1], [32, -78, 0.8], [-40, -30, 0.7], [38, -38, 0.9], [0, -98, 0.7]];
+  function createStage(host, mv, label) {
+    const el = stageTpl.content.firstElementChild.cloneNode(true);
+    el.querySelector('title').textContent = label || `Lulu dancing the ${mv.name}`;
+    el.style.setProperty('--mc', mv.color);
+    const parts = {};
+    el.querySelectorAll('[data-p]').forEach((n) => { parts[n.dataset.p] = n; });
+    // Bunting along the top of the wall.
+    const bunt = el.querySelector('.bunting');
+    const yAt = (x) => { const u = (x - 20) / 260; return 3 + 26 * u * (1 - u); };
+    let bd = `<path class="string" d="M20 3Q150 29 280 3"/>`;
+    const FLAGS = ['#ff5c9d', '#ffd23f', '#16a39a', '#9466f2', '#ff8c42'];
+    for (let i = 0, x = 30; x < 276; x += 16, i++) {
+      const y = yAt(x), y2 = yAt(x + 11);
+      bd += `<path fill="${FLAGS[i % FLAGS.length]}" d="M${f1(x)} ${f1(y)}L${f1(x + 11)} ${f1(y2)}L${f1(x + 5.5)} ${f1((y + y2) / 2 + 10)}Z" opacity=".9"/>`;
+    }
+    bunt.innerHTML = bd;
+    parts.star.setAttribute('d', starPath(0, -24, 5.6, 2.4));
+    // Hand trails: a few coloured dots that follow each hand while dancing.
+    const trails = [];
+    for (let i = 0; i < 6; i++) for (const s of ['L', 'R']) {
+      const c = document.createElementNS(SVGNS, 'circle');
+      c.setAttribute('r', f1(3.2 - i * 0.35)); c.setAttribute('fill', TRAIL_COLORS[i]); c.setAttribute('opacity', '0');
+      parts.trails.appendChild(c); trails.push({ c, i, s });
+    }
+    parts.sparks.innerHTML = SPARK_SPOTS.map(([x, y, s]) => `<path class="spark" transform="translate(${x} ${y}) scale(${s})" d="${starPath(0, 0, 6, 2.4, 4)}"/>`).join('');
+    host.replaceChildren(el);
+    return { el, parts, trails, bubble: el.querySelector('.count-bubble'), skirtKey: null, backKey: null, legOrder: '' };
+  }
+
+  function skirtPath(w, y1, n) {
+    let d = `M-10.6 -12L10.6 -12L${f1(w)} ${f1(y1)}`;
+    const seg = (2 * w) / n;
+    for (let i = 0; i < n; i++) { const x0 = w - i * seg; d += `Q${f1(x0 - seg / 2)} ${f1(y1 + 5)} ${f1(x0 - seg)} ${f1(y1)}`; }
+    return d + 'Z';
+  }
+
+  function drawFigure(st, p, o) {
+    const P_ = st.parts;
+    const j = solve(p);
+    // Spinning: squash sideways and show the back of her head when she faces away.
+    const c = Math.cos(p.turn * RAD);
+    const sx = 0.35 + 0.65 * Math.abs(c);
+    P_.fig.setAttribute('transform', Math.abs(sx - 1) < 0.002 ? '' : `translate(${f1(p.hx)} 0) scale(${sx.toFixed(3)} 1) translate(${f1(-p.hx)} 0)`);
+    const backView = c < 0;
+    if (st.backKey !== backView) {
+      st.backKey = backView;
+      P_.backView.setAttribute('opacity', backView ? 1 : 0);
+      P_.face.setAttribute('opacity', backView ? 0 : 1);
+      P_.bangs.setAttribute('opacity', backView ? 0 : 1);
+      P_.star.setAttribute('opacity', backView ? 0 : 1);
+    }
+
+    // Legs (the crossing leg goes behind).
+    const order = p.back === 'R' ? 'R' : 'L';
+    if (st.legOrder !== order) { st.legOrder = order; P_.legs.appendChild(order === 'R' ? P_.legL : P_.legR); }
+    for (const [s, sign] of [['L', -1], ['R', 1]]) {
+      const hj = j['hj' + s], kn = j['kn' + s], an = j['an' + s];
+      P_['th' + s].setAttribute('d', capsule(hj, kn, 6.4, 5.2));
+      P_['sh' + s].setAttribute('d', capsule(kn, an, 5.2, 4.1));
+      const tap = p[s + 't'];
+      const sc = [an[0] + sign * 1.3, an[1] + 3.4];
+      setAttrs(P_['shoe' + s], { cx: sc[0], cy: sc[1] - 0.4, rx: 7 - 1.8 * tap, ry: 3.9 + 0.9 * tap });
+      setAttrs(P_['sole' + s], { cx: sc[0], cy: sc[1] + 1.4, rx: 7.3 - 1.8 * tap, ry: 2.4 });
+    }
+
+    // Torso and tutu.
+    P_.torso.setAttribute('transform', `translate(${f1(p.hx)} ${f1(p.hy)}) rotate(${f1(p.t)})`);
+    const skKey = p.sk.toFixed(2);
+    if (st.skirtKey !== skKey) {
+      st.skirtKey = skKey;
+      const w = 21 + p.sk * 9, y1 = 9 - p.sk * 5;
+      P_.sk2.setAttribute('d', skirtPath(w + 2, y1 + 2, 6));
+      P_.sk1.setAttribute('d', skirtPath(w, y1, 5));
+    }
+
+    // Head.
+    P_.head.setAttribute('transform', `translate(${pt(j.neck)}) rotate(${f1(p.t + p.n)})`);
+    const fling = p.sk * 30;
+    P_.ptL.setAttribute('transform', `rotate(${f1(clamp(o.swing - p.n * 0.5 + fling, -45, 50))} -17.5 -26)`);
+    P_.ptR.setAttribute('transform', `rotate(${f1(clamp(o.swing - p.n * 0.5 - fling, -50, 45))} 17.5 -26)`);
+    const blink = o.clock != null && (o.clock % 3400) < 130 ? 0.12 : 1;
+    P_.eyesOpen.setAttribute('transform', blink === 1 ? '' : `translate(0 -15) scale(1 ${blink}) translate(0 15)`);
+    P_.eyesOpen.setAttribute('opacity', (1 - p.eyes).toFixed(2));
+    P_.eyesHappy.setAttribute('opacity', p.eyes.toFixed(2));
+    P_.mouthS.setAttribute('opacity', (1 - p.mouth).toFixed(2));
+    P_.mouthO.setAttribute('opacity', p.mouth.toFixed(2));
+
+    // Arms.
+    for (const s of ['L', 'R']) {
+      const sh = j['sh' + s], el = j['el' + s], ha = j['ha' + s];
+      const ud = norm(sub(el, sh)), fd = norm(sub(ha, el));
+      P_['ua' + s].setAttribute('d', capsule(sh, el, 3.5, 3.0));
+      P_['sl' + s].setAttribute('d', capsule(add(sh, ud, -1.5), add(sh, ud, 8.5), 5.6, 4.8));
+      P_['fa' + s].setAttribute('d', capsule(el, ha, 3.0, 2.6));
+      const hand = add(ha, fd, 1.4);
+      setAttrs(P_['hd' + s], { cx: hand[0], cy: hand[1] });
+      const pnt = p[s + 'p'];
+      P_['fg' + s].setAttribute('d', pnt > 0.05 ? capsule(hand, add(hand, fd, 6.5 * pnt), 1.5, 1.2) : '');
+    }
+
+    // Shadow: shrinks and fades when she's in the air.
+    const lift = FLOOR - Math.max(j.anL[1], j.anR[1]);
+    const air = clamp(lift / 18, 0, 1);
+    setAttrs(P_.shadow, { cx: (j.anL[0] + j.anR[0]) / 2, rx: (Math.abs(j.anR[0] - j.anL[0]) / 2 + 15) * (1 - 0.35 * air), opacity: (0.2 * (1 - 0.6 * air)).toFixed(3) });
+    return j;
+  }
+
+  // ---------- Player: a timeline bound to a stage ----------
+  function createPlayer(stage, mv, mode) {
+    const pl = { stage, mv, mode, beat: 0, ms: 0, playing: false };
+    setPlan(pl);
+    return pl;
+  }
+  function setPlan(pl) {
+    Object.assign(pl, buildTimeline(pl.mv, settings.reps, pl.mode));
+    pl.keyBeat = pl.mode === 'card' ? 4 + (pl.mv.key - 1) + 0.01 : 0;
+  }
+
+  function drawPlayer(pl, live) {
+    const st = pl.stage, P_ = st.parts;
+    const s = evalAt(pl, pl.beat);
+    const prev = evalAt(pl, pl.beat - 0.12);
+    const swing = clamp(-(s.pose.hx - prev.pose.hx) * 2.6 + (s.pose.hy - prev.pose.hy) * 1.5, -32, 32);
+    const j = drawFigure(st, s.pose, { swing, clock: live && !reduceMotion ? pl.ms : null });
+
+    // Hand trails.
+    const showTrail = live;
+    let samples = null;
+    if (showTrail) samples = [1, 2, 3, 4, 5, 6].map((i) => solve(evalAt(pl, pl.beat - i * 0.05).pose));
+    for (const t of st.trails) {
+      if (!showTrail) { t.c.setAttribute('opacity', '0'); continue; }
+      const q = samples[t.i]['ha' + t.s];
+      const before = t.i === 0 ? j['ha' + t.s] : samples[t.i - 1]['ha' + t.s];
+      const moving = Math.hypot(q[0] - before[0], q[1] - before[1]) > 0.8;
+      setAttrs(t.c, { cx: q[0], cy: q[1], opacity: moving ? (0.85 - t.i * 0.12).toFixed(2) : '0' });
+    }
+
+    // Footprint hints: where a foot is about to step.
+    for (const f of ['L', 'R']) {
+      const key = f + 'f';
+      const from = s.A.pose[key][0], to = s.B.pose[key][0];
+      const mk = P_['mk' + f], ar = P_['ar' + f];
+      if (Math.abs(to - from) > 8 && s.B !== s.A) {
+        const op = Math.min(smooth(0, 0.18, s.x), 1 - smooth(0.7, 1, s.k));
+        setAttrs(mk, { cx: to, cy: 200, opacity: op.toFixed(2) });
+        const d = Math.sign(to - from), y = 209;
+        const a0 = from + d * 3, a1 = to - d * 4;
+        ar.setAttribute('d', `M${f1(a0)} ${y}L${f1(a1)} ${y}M${f1(a1 - d * 4)} ${y - 3.2}L${f1(a1)} ${y}L${f1(a1 - d * 4)} ${y + 3.2}`);
+        ar.setAttribute('opacity', op.toFixed(2));
+      } else { mk.setAttribute('opacity', '0'); ar.setAttribute('opacity', '0'); }
+    }
+
+    // Effects triggered by the keyframe just reached.
+    const fx = s.A.fx || '', age = s.age;
+    const fade = (dur) => (age < dur ? 1 - age / dur : 0);
+    const clapOn = fx.includes('clap') ? fade(0.5) : 0;
+    if (clapOn > 0) {
+      const m = [(j.haL[0] + j.haR[0]) / 2, (j.haL[1] + j.haR[1]) / 2];
+      P_.burst.setAttribute('transform', `translate(${pt(m)}) scale(${(0.7 + (1 - clapOn) * 0.8).toFixed(2)})`);
+    }
+    P_.burst.setAttribute('opacity', clapOn.toFixed(2));
+    const tapOn = fx.includes('tap') ? fade(0.6) : 0;
+    if (tapOn > 0) {
+      const foot = s.A.pose.Lt > 0.5 ? j.anL : j.anR;
+      setAttrs(P_.ripple, { cx: foot[0], cy: 201, rx: 6 + (1 - tapOn) * 14, ry: 1.6 + (1 - tapOn) * 3 });
+    }
+    P_.ripple.setAttribute('opacity', tapOn.toFixed(2));
+    const landOn = fx.includes('land') ? fade(0.5) : 0;
+    if (landOn > 0) {
+      const sp = (1 - landOn) * 9;
+      setAttrs(P_.d1, { cx: j.anL[0] - 6 - sp, cy: 198 - sp * 0.3 }); setAttrs(P_.d2, { cx: j.anL[0] - 2 - sp * 0.5, cy: 196 - sp * 0.5 });
+      setAttrs(P_.d3, { cx: j.anR[0] + 6 + sp, cy: 198 - sp * 0.3 }); setAttrs(P_.d4, { cx: j.anR[0] + 2 + sp * 0.5, cy: 196 - sp * 0.5 });
+    }
+    P_.dust.setAttribute('opacity', (landOn * 0.8).toFixed(2));
+    const sparkOn = fx.includes('sparkle') ? fade(1.2) : 0;
+    if (sparkOn > 0) P_.sparks.setAttribute('transform', `translate(${f1(s.pose.hx)} ${f1(s.pose.hy)}) scale(${(0.6 + 0.5 * Math.sin(Math.min(1, age / 0.4) * Math.PI / 2)).toFixed(2)})`);
+    P_.sparks.setAttribute('opacity', sparkOn.toFixed(2));
+    // Swoosh lines while spinning.
+    const spinning = s.B.pose.turn !== s.A.pose.turn && s.k > 0 && s.k < 1;
+    if (spinning) {
+      const y1 = s.pose.hy - 16, y2 = s.pose.hy + 8, x = s.pose.hx;
+      P_.sw1.setAttribute('d', `M${f1(x - 30)} ${f1(y1)}A30 7 0 0 0 ${f1(x + 30)} ${f1(y1)}`);
+      P_.sw2.setAttribute('d', `M${f1(x - 36)} ${f1(y2)}A36 8 0 0 0 ${f1(x + 36)} ${f1(y2)}`);
+    }
+    P_.swoosh.setAttribute('opacity', spinning ? Math.sin(Math.PI * s.k).toFixed(2) : '0');
+
+    // Floating music notes while playing.
+    const notesOn = live && !reduceMotion && settings.music && pl.mode !== 'loop';
+    [...P_.notes.children].forEach((n, i) => {
+      if (!notesOn) { n.setAttribute('opacity', '0'); return; }
+      const ph = ((pl.ms / 2600) + i * 0.37) % 1;
+      const x = [46, 248, 232][i] + Math.sin(ph * 6 + i) * 5;
+      setAttrs(n, { x, y: 150 - ph * 90, opacity: (Math.sin(ph * Math.PI) * 0.8).toFixed(2) });
+    });
+    return s;
+  }
+
+  // ---------- UI helpers ----------
+  const ICON_PLAY = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>';
+  const ICON_PAUSE = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z"/></svg>';
+  const STAR_SVG = (cls) => `<svg viewBox="0 0 24 24" aria-hidden="true"${cls ? ` class="${cls}"` : ''}><path d="M12 2l3 6.3 6.9.9-5 4.8 1.3 6.8L12 17.5l-6.2 3.3L7.1 14l-5-4.8 6.9-.9z"/></svg>`;
+  const LEVELS = ['', 'Easy', 'Medium', 'Tricky'];
+  const iconSvg = (name) => `<svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[name]}</svg>`;
+  function makeBeats(host) {
+    host.replaceChildren(...Array.from({ length: 8 }, (_, i) => { const s = document.createElement('span'); s.textContent = i + 1; return s; }));
+    return [...host.children];
+  }
+  function setBubble(stage, text, lead, pulse) {
+    const b = stage.bubble;
+    if (b.textContent !== text) {
+      b.textContent = text;
+      b.classList.toggle('lead', !!lead);
+      if (pulse && text && !reduceMotion && b.animate) b.animate([{ transform: 'scale(1.35)' }, { transform: 'scale(1)' }], { duration: 220, easing: 'ease-out' });
+    }
+  }
+  const minutesText = () => {
+    let beats = 0;
+    MOVES.forEach((mv) => { beats += buildTimeline(mv, settings.reps, 'party').total; });
+    return `about ${Math.max(1, Math.round(beats / bpm()))} min`;
+  };
+
+  // ---------- Music (made on the fly with Web Audio) ----------
+  let actx = null, master = null, noiseBuf = null;
+  function ensureAudio() {
+    try {
+      if (!actx) {
+        actx = new (window.AudioContext || window.webkitAudioContext)();
+        master = actx.createGain(); master.gain.value = 0.55; master.connect(actx.destination);
+        noiseBuf = actx.createBuffer(1, actx.sampleRate * 0.3, actx.sampleRate);
+        const d = noiseBuf.getChannelData(0);
+        for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+      }
+      if (actx.state === 'suspended') actx.resume();
+    } catch (e) { actx = null; }
+  }
+  function tone(freq, dur, type, vol, when = 0) {
+    const t = actx.currentTime + when, o = actx.createOscillator(), g = actx.createGain();
+    o.type = type; o.frequency.value = freq;
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(vol, t + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    o.connect(g).connect(master); o.start(t); o.stop(t + dur + 0.05);
+  }
+  function kick() {
+    const t = actx.currentTime, o = actx.createOscillator(), g = actx.createGain();
+    o.frequency.setValueAtTime(140, t); o.frequency.exponentialRampToValueAtTime(45, t + 0.14);
+    g.gain.setValueAtTime(0.7, t); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.2);
+    o.connect(g).connect(master); o.start(t); o.stop(t + 0.25);
+  }
+  function noise(freq, type, dur, vol) {
+    const t = actx.currentTime, s = actx.createBufferSource(), f = actx.createBiquadFilter(), g = actx.createGain();
+    s.buffer = noiseBuf; f.type = type; f.frequency.value = freq;
+    g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    s.connect(f).connect(g).connect(master); s.start(t); s.stop(t + dur + 0.02);
+  }
+  // C – G – Am – F, one chord per 4 beats.
+  const CHORDS = [[261.63, 329.63, 392.0], [196.0, 246.94, 293.66], [220.0, 261.63, 329.63], [174.61, 220.0, 261.63]];
+  const ARP = [0, 1, 2, 1, 2, 0, 1, 2];
+  function musicTick(pl, halfIdx) {
+    if (!settings.music || !actx || actx.state !== 'running') return;
+    try {
+      const beat = halfIdx / 2;
+      const [, sp] = spanAt(pl, beat + 0.001);
+      const kind = sp ? sp.kind : 'move';
+      const B = Math.floor(beat + 0.001), whole = halfIdx % 2 === 0;
+      const chord = CHORDS[Math.floor(((B % 16) + 16) % 16 / 4)];
+      if (kind === 'lead') {
+        if (whole) { const n = ((B % 4) + 4) % 4; tone(n === 3 ? 1568 : 1175, 0.09, 'sine', 0.3); }
+        return;
+      }
+      if (whole) {
+        if (kind !== 'intro') kick();
+        if (B % 2 === 1 && kind !== 'intro') noise(1800, 'bandpass', 0.14, 0.45);
+        tone(chord[0] / (B % 2 ? 2 : 4), 0.3, 'triangle', 0.32);
+      } else {
+        noise(7500, 'highpass', 0.04, 0.12);
+      }
+      tone(chord[ARP[((halfIdx % 8) + 8) % 8]] * 2, 0.22, 'triangle', 0.07);
+      if (kind === 'fin' && whole && sp && Math.abs(beat - sp.b0) < 0.01) [523.25, 659.25, 783.99, 1046.5].forEach((f, i) => tone(f, 0.35, 'triangle', 0.12, i * 0.08));
+    } catch (e) { /* audio unavailable */ }
+  }
+  function advance(pl, dt, withMusic) {
+    const prev = pl.beat;
+    pl.beat += dt * bpm() / 60000;
+    pl.ms += dt;
+    if (withMusic) {
+      const h0 = Math.floor(prev * 2 + 1e-6), h1 = Math.floor(pl.beat * 2 + 1e-6);
+      if (h1 > h0 && h1 - h0 < 4) for (let h = h0 + 1; h <= h1; h++) musicTick(pl, h);
+    }
+    return prev;
+  }
+  function chime() {
+    if (!actx) return;
+    try { [523.25, 659.25, 783.99, 1046.5, 1318.5].forEach((f, i) => tone(f, 0.4, 'triangle', 0.14, i * 0.09)); } catch (e) { /* ignore */ }
+  }
+
+  // ---------- Confetti ----------
+  function confetti(host, x, y, n = 80) {
+    if (reduceMotion) return;
+    const cv = document.createElement('canvas');
+    cv.className = 'confetti';
+    host.appendChild(cv);
+    const W = window.innerWidth, H = window.innerHeight, dpr = Math.min(2, window.devicePixelRatio || 1);
+    cv.width = W * dpr; cv.height = H * dpr;
+    const ctx = cv.getContext('2d');
+    ctx.scale(dpr, dpr);
+    const COLORS = ['#ff5c9d', '#ffd23f', '#16a39a', '#9466f2', '#ff8c42', '#4dabf7'];
+    const fromTop = x == null;
+    const ps = Array.from({ length: n }, () => {
+      const a = fromTop ? Math.PI / 2 : -Math.PI / 2 + (Math.random() - 0.5) * 2.2;
+      const v = fromTop ? 1 + Math.random() * 3 : 5 + Math.random() * 7;
+      return { x: fromTop ? Math.random() * W : x, y: fromTop ? -20 - Math.random() * H * 0.5 : y, vx: Math.cos(a) * v, vy: Math.sin(a) * v, r: Math.random() * 6, vr: (Math.random() - 0.5) * 0.3, s: 5 + Math.random() * 5, c: COLORS[(Math.random() * COLORS.length) | 0], round: Math.random() < 0.3 };
+    });
+    const t0 = performance.now(), life = fromTop ? 3600 : 2200;
+    (function step(now) {
+      const t = now - t0;
+      ctx.clearRect(0, 0, W, H);
+      for (const p of ps) {
+        p.vy += 0.18; p.vx *= 0.99; p.x += p.vx; p.y += p.vy; p.r += p.vr;
+        ctx.save(); ctx.globalAlpha = Math.max(0, 1 - t / life); ctx.translate(p.x, p.y); ctx.rotate(p.r); ctx.fillStyle = p.c;
+        if (p.round) { ctx.beginPath(); ctx.arc(0, 0, p.s / 2, 0, 7); ctx.fill(); } else ctx.fillRect(-p.s / 2, -p.s / 4, p.s, p.s / 2);
+        ctx.restore();
+      }
+      if (t < life) requestAnimationFrame(step); else cv.remove();
+    })(t0);
+  }
+
+  // ---------- Stickers & dance days ----------
+  const dayKey = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  function logDay() { const k = dayKey(new Date()); days[k] = (days[k] || 0) + 1; store.set('lulu.days', days); }
+  function stickerEl(mv, on, i) {
+    const s = document.createElement('span');
+    s.className = 'sticker' + (on ? ' on' : '');
+    s.style.setProperty('--mc', mv.color);
+    s.style.setProperty('--tilt', `${[-7, 5, -3, 8, -6, 4, -8, 6][i % 8]}deg`);
+    s.innerHTML = iconSvg(mv.icon);
+    s.title = `${mv.name}${on ? '' : ' (not earned yet)'}`;
+    s.setAttribute('role', 'img');
+    s.setAttribute('aria-label', `${mv.name} sticker${on ? '' : ', not earned yet'}`);
+    return s;
+  }
+  function renderStickers(popId) {
+    const book = document.getElementById('stickerBook');
+    book.replaceChildren(...MOVES.map((mv, i) => { const s = stickerEl(mv, !!stickers[mv.id], i); if (mv.id === popId) s.classList.add('pop'); return s; }));
+    const n = MOVES.filter((mv) => stickers[mv.id]).length;
+    document.getElementById('stickerNum').textContent = n;
+    document.getElementById('stickerOf').textContent = n === MOVES.length ? `of ${MOVES.length} stickers. You know every move!` : `of ${MOVES.length} stickers`;
+    const week = document.getElementById('week');
+    const today = dayKey(new Date());
+    const cells = [];
+    for (let i = 6; i >= 0; i--) {
+      const d = new Date(); d.setDate(d.getDate() - i);
+      const k = dayKey(d), on = !!days[k];
+      const cell = document.createElement('div');
+      cell.className = (on ? 'on' : '') + (k === today ? ' is-today' : '');
+      cell.innerHTML = `${STAR_SVG()}<span>${d.toLocaleDateString(undefined, { weekday: 'short' })}</span>`;
+      cell.title = `${d.toLocaleDateString()}: ${on ? 'danced' : 'no dancing yet'}`;
+      cell.setAttribute('aria-label', cell.title);
+      cells.push(cell);
+    }
+    week.replaceChildren(...cells);
+    cards.forEach(updateDid);
+  }
+  function earn(mv, fromEl) {
+    const fresh = !stickers[mv.id];
+    stickers[mv.id] = dayKey(new Date());
+    store.set('lulu.stickers', stickers);
+    logDay();
+    renderStickers(fresh ? mv.id : null);
+    chime();
+    if (fromEl) { const r = fromEl.getBoundingClientRect(); confetti(document.body, r.left + r.width / 2, r.top + r.height / 2, 60); }
+  }
+  // Reset with an inline confirm (no browser dialogs).
+  const resetWrap = document.getElementById('resetWrap');
+  function showReset() {
+    resetWrap.innerHTML = '<button type="button" class="link-btn" id="resetBtn">Start a new sticker book</button>';
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      resetWrap.innerHTML = '<span class="confirm">Remove all stickers and stars? <button type="button" id="resetYes">Yes, start over</button><button type="button" id="resetNo">Keep them</button></span>';
+      document.getElementById('resetYes').addEventListener('click', () => { stickers = {}; days = {}; store.set('lulu.stickers', stickers); store.set('lulu.days', days); renderStickers(); showReset(); });
+      document.getElementById('resetNo').addEventListener('click', showReset);
+      document.getElementById('resetNo').focus();
+    });
+  }
+
+  // ---------- Cards ----------
+  const grid = document.getElementById('grid');
+  const cardTpl = document.getElementById('cardTpl');
+  const cards = MOVES.map((mv, i) => {
+    const node = cardTpl.content.firstElementChild.cloneNode(true);
+    node.style.setProperty('--mc', mv.color);
+    node.querySelector('.num').textContent = i + 1;
+    node.querySelector('h3').textContent = mv.name;
+    node.querySelector('.level').innerHTML = [1, 2, 3].map((n) => STAR_SVG(n > mv.level ? 'dim' : '')).join('') + `<span>${LEVELS[mv.level]}</span>`;
+    const ol = node.querySelector('.steps ol');
+    mv.steps.forEach((s) => { const li = document.createElement('li'); li.textContent = s; ol.appendChild(li); });
+    if (mv.tip) { const p = document.createElement('p'); p.className = 'tip'; p.innerHTML = mv.tip; ol.after(p); }
+    grid.appendChild(node);
+    const stage = createStage(node.querySelector('.stage-slot'), mv);
+    const card = {
+      mv, node, pl: createPlayer(stage, mv, 'card'), fresh: true, visible: false, lastKey: '',
+      planEl: node.querySelector('.plan-line'), phaseEl: node.querySelector('.phase strong'), subEl: node.querySelector('.phase span'),
+      toggle: node.querySelector('.toggle'), restart: node.querySelector('.restart'), did: node.querySelector('.did-btn'),
+      stepEls: [...ol.children], beatEls: makeBeats(node.querySelector('.beats')),
+    };
+    card.restart.setAttribute('aria-label', `Start ${mv.name} from the beginning`);
+    card.toggle.addEventListener('click', () => setCardPlaying(card, !card.pl.playing));
+    card.restart.addEventListener('click', () => { card.pl.beat = 0; card.fresh = false; setCardPlaying(card, true); });
+    card.did.addEventListener('click', () => earn(mv, card.did));
+    return card;
+  });
+  function updateDid(c) {
+    const on = !!stickers[c.mv.id];
+    c.did.classList.toggle('earned', on);
+    c.did.innerHTML = `<span class="mini">${iconSvg(c.mv.icon)}</span>${on ? 'Sticker earned! Dance it again' : 'I can do it! Get my sticker'}`;
+  }
+  function updateToggle(c) {
+    c.toggle.innerHTML = c.pl.playing ? ICON_PAUSE : ICON_PLAY;
+    c.toggle.setAttribute('aria-label', `${c.pl.playing ? 'Pause' : 'Play'} ${c.mv.name}`);
+  }
+  function resetCard(c) { c.pl.playing = false; c.fresh = true; c.pl.beat = c.pl.keyBeat; c.pl.ms = 0; updateToggle(c); c.lastKey = ''; renderCard(c); }
+  function setCardPlaying(c, on) {
+    if (on) {
+      ensureAudio();
+      cards.forEach((o) => { if (o !== c && o.pl.playing) { o.pl.playing = false; updateToggle(o); o.lastKey = ''; renderCard(o); } });
+      if (c.fresh) { c.pl.beat = 0; c.fresh = false; }
+    }
+    c.pl.playing = on;
+    updateToggle(c);
+    c.lastKey = '';
+    renderCard(c);
+  }
+  function renderCard(c) {
+    const s = drawPlayer(c.pl, c.pl.playing);
+    const [si, sp] = spanAt(c.pl, c.pl.beat);
+    const key = `${si}|${c.pl.playing}|${c.fresh}`;
+    if (key !== c.lastKey) {
+      c.lastKey = key;
+      if (c.fresh) {
+        c.phaseEl.textContent = 'Press play to dance along!';
+        c.subEl.textContent = `Count ${c.mv.key}: ${c.mv.counts[c.mv.key - 1].replace(/[!…]/g, '')}`;
+      } else {
+        c.phaseEl.textContent = sp.label;
+        const where = sp.kind === 'lead' ? 'Counting in' : sp.kind === 'fin' ? 'All done. Here it comes again!' : `Round ${sp.rep + 1} of ${settings.reps}`;
+        c.subEl.textContent = c.pl.playing ? where : `Paused · ${where}`;
+      }
+      c.stepEls.forEach((li, i) => li.classList.toggle('active', !c.fresh && i === sp.step));
+      const active = !c.fresh && sp.kind === 'move' ? Number(sp.count) - 1 : -1;
+      c.beatEls.forEach((b, i) => b.classList.toggle('on', i === active));
+    }
+    setBubble(c.pl.stage, c.fresh ? '' : sp.count, sp.kind === 'lead', c.pl.playing);
+  }
+  function planLine(c) {
+    c.planEl.textContent = `8 counts · ${settings.reps} times · ${settings.speed[0].toUpperCase() + settings.speed.slice(1)}`;
+  }
+
+  // ---------- Hero ----------
+  const heroStage = createStage(document.getElementById('heroStage'), HERO_MOVE, 'Lulu waving hello');
+  const hero = { pl: createPlayer(heroStage, HERO_MOVE, 'loop'), visible: true };
+  hero.pl.beat = 0.6;
+
+  // ---------- Settings UI ----------
+  function wireSeg(id, key, conv) {
+    const seg = document.getElementById(id);
+    seg.addEventListener('click', (e) => {
+      const b = e.target.closest('button[data-v]');
+      if (!b) return;
+      settings[key] = conv(b.dataset.v);
+      saveSettings();
+      applySettings();
+    });
+    seg.addEventListener('keydown', (e) => {
+      if (!['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) return;
+      const bs = [...seg.querySelectorAll('button')], i = bs.findIndex((b) => b.getAttribute('aria-checked') === 'true');
+      const n = bs[(i + (e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : bs.length - 1)) % bs.length];
+      n.click(); n.focus(); e.preventDefault();
+    });
+    return seg;
+  }
+  const speedSeg = wireSeg('speedSeg', 'speed', String);
+  const repSeg = wireSeg('repSeg', 'reps', Number);
+  function markSeg(seg, v) {
+    seg.querySelectorAll('button').forEach((b) => { const on = b.dataset.v === String(v); b.setAttribute('aria-checked', String(on)); b.tabIndex = on ? 0 : -1; });
+  }
+  function updateMusicBtns() {
+    for (const b of [document.getElementById('musicBtn'), document.getElementById('ptMusic')]) {
+      b.setAttribute('aria-pressed', String(!!settings.music));
+      b.textContent = settings.music ? 'Music on' : 'Music off';
+    }
+    const v = document.getElementById('ptVoice');
+    v.setAttribute('aria-pressed', String(!!settings.voice));
+    v.textContent = settings.voice ? 'Voice on' : 'Voice off';
+  }
+  function applySettings() {
+    markSeg(speedSeg, settings.speed);
+    markSeg(repSeg, settings.reps);
+    cards.forEach((c) => {
+      const frac = c.pl.total ? c.pl.beat / c.pl.total : 0;
+      setPlan(c.pl);
+      if (c.fresh) c.pl.beat = c.pl.keyBeat; else if (frac > 0) c.pl.beat = Math.min(frac, 0.999) * c.pl.total;
+      planLine(c);
+      c.lastKey = '';
+      renderCard(c);
+    });
+    for (const id of ['startParty', 'startParty2']) document.querySelector(`#${id} span`).textContent = `Start Dance Party · ${minutesText()}`;
+    updateMusicBtns();
+  }
+  document.getElementById('musicBtn').addEventListener('click', () => { settings.music = !settings.music; saveSettings(); updateMusicBtns(); });
+
+  // ---------- Theme ----------
+  const themeBtn = document.getElementById('themeBtn');
+  const THEMES = ['auto', 'light', 'dark'];
+  const THEME_NAMES = { auto: 'Auto', light: 'Light', dark: 'Dark' };
+  function applyTheme() {
+    if (settings.theme === 'auto') delete document.documentElement.dataset.theme;
+    else document.documentElement.dataset.theme = settings.theme;
+    themeBtn.querySelector('span').textContent = THEME_NAMES[settings.theme];
+    themeBtn.setAttribute('aria-label', `Colour theme: ${THEME_NAMES[settings.theme]}. Click to change.`);
+  }
+  themeBtn.addEventListener('click', () => { settings.theme = THEMES[(THEMES.indexOf(settings.theme) + 1) % THEMES.length]; saveSettings(); applyTheme(); });
+
+  // ---------- Voice & screen wake lock ----------
+  const live = document.getElementById('ptLive');
+  let sayToken = 0;
+  function say(text) {
+    live.textContent = text;
+    if (!settings.voice || !('speechSynthesis' in window)) return;
+    try {
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text.replace(/[—–…]/g, ', '));
+      u.rate = 1; u.pitch = 1.25;
+      u.lang = document.documentElement.lang || 'en';
+      const token = ++sayToken;
+      setTimeout(() => { if (token === sayToken && settings.voice) speechSynthesis.speak(u); }, 30);
+    } catch (e) { /* speech unavailable */ }
+  }
+  const hush = () => { sayToken++; try { if ('speechSynthesis' in window) speechSynthesis.cancel(); } catch (e) { /* ignore */ } };
+  let wakeLock = null;
+  async function lockScreen() {
+    try { if ('wakeLock' in navigator && !wakeLock) { wakeLock = await navigator.wakeLock.request('screen'); wakeLock.addEventListener('release', () => { wakeLock = null; }); } } catch (e) { wakeLock = null; }
+  }
+  function unlockScreen() { try { if (wakeLock) wakeLock.release(); } catch (e) { /* ignore */ } wakeLock = null; }
+
+  // ---------- Dance Party ----------
+  const dlg = document.getElementById('party');
+  const $ = (id) => document.getElementById(id);
+  const PT = { idx: 0, pl: null, running: false, lastKey: '', played: [], totals: [] };
+  const pt_ = {
+    count: $('ptCount'), title: $('ptTitle'), bar: $('ptBar'), stage: $('ptStage'), label: $('ptLabel'), sub: $('ptSub'),
+    steps: $('ptSteps'), tip: $('ptTip'), play: $('ptPlay'), body: $('ptBody'), controls: $('ptControls'), done: $('ptDone'), main: $('ptMain'),
+  };
+  const ptBeats = makeBeats($('ptBeats'));
+  function loadMove(i) {
+    PT.idx = i;
+    const mv = MOVES[i];
+    PT.pl = createPlayer(createStage(pt_.stage, mv), mv, 'party');
+    pt_.main.style.setProperty('--mc', mv.color);
+    PT.lastKey = '';
+    pt_.count.textContent = `Move ${i + 1} of ${MOVES.length}`;
+    pt_.title.textContent = mv.name;
+    pt_.steps.replaceChildren(...mv.steps.map((s) => { const li = document.createElement('li'); li.textContent = s; return li; }));
+    pt_.tip.innerHTML = mv.tip || '';
+    pt_.tip.hidden = !mv.tip;
+    renderParty();
+  }
+  function setRunning(on) {
+    PT.running = on;
+    pt_.play.innerHTML = on ? `${ICON_PAUSE}Pause` : `${ICON_PLAY}Play`;
+    if (on) { ensureAudio(); lockScreen(); PT.lastKey = ''; } else { hush(); unlockScreen(); }
+    if (PT.pl) { PT.lastKey = ''; renderParty(); }
+  }
+  function openParty() {
+    cards.forEach((c) => { if (c.pl.playing) setCardPlaying(c, false); });
+    PT.totals = MOVES.map((mv) => buildTimeline(mv, settings.reps, 'party').total);
+    PT.played = MOVES.map(() => 0);
+    pt_.body.hidden = false; pt_.controls.hidden = false; pt_.done.hidden = true;
+    if (!dlg.open) dlg.showModal();
+    loadMove(0);
+    setRunning(true);
+  }
+  function finishParty() {
+    setRunning(false);
+    pt_.body.hidden = true; pt_.controls.hidden = true; pt_.done.hidden = false;
+    pt_.count.textContent = ''; pt_.title.textContent = 'Dance Party';
+    pt_.bar.style.width = '100%';
+    const danced = MOVES.filter((mv, i) => PT.played[i] >= PT.totals[i] * 0.6);
+    const fresh = danced.filter((mv) => !stickers[mv.id]);
+    danced.forEach((mv) => { stickers[mv.id] = stickers[mv.id] || dayKey(new Date()); });
+    store.set('lulu.stickers', stickers);
+    if (danced.length) logDay();
+    renderStickers();
+    $('ptDoneText').textContent = danced.length === 0
+      ? 'You skipped through the moves this time. Press Dance again to earn your stickers!'
+      : `You danced ${danced.length} move${danced.length === 1 ? '' : 's'}` + (fresh.length ? ` and earned ${fresh.length} new sticker${fresh.length === 1 ? '' : 's'}!` : '. You already had those stickers, so you got a gold star for today!');
+    $('ptDoneStickers').replaceChildren(...MOVES.map((mv, i) => { const s = stickerEl(mv, !!stickers[mv.id], i); if (fresh.includes(mv)) s.classList.add('pop'); return s; }));
+    const ds = createStage($('ptDoneStage'), HERO_MOVE, 'Lulu celebrating');
+    PT.donePl = createPlayer(ds, { ...HERO_MOVE, pattern: [[1, 'yay', { jump: 9, fx: 'sparkle' }], [2, 'bob'], [3, 'yay', { jump: 9, fx: 'sparkle' }], [4, 'bob'], [5, 'w1'], [5.5, 'w2'], [6, 'w1'], [6.5, 'w2'], [7, 'w1'], [8, 'stand']] }, 'loop');
+    PT.donePl.beat = 0.01;
+    drawPlayer(PT.donePl, false);
+    chime();
+    confetti(dlg, null, null, 140);
+    say(danced.length ? 'You did it, superstar! Great dancing!' : 'Dance Party over.');
+    $('ptAgain').focus();
+  }
+  function renderParty() {
+    const pl = PT.pl, mv = pl.mv;
+    drawPlayer(pl, PT.running);
+    const [si, sp] = spanAt(pl, pl.beat);
+    const key = `${PT.idx}|${si}`;
+    if (key !== PT.lastKey) {
+      PT.lastKey = key;
+      pt_.label.textContent = sp.label;
+      pt_.steps.querySelectorAll('li').forEach((li, i) => li.classList.toggle('active', i === sp.step));
+      const active = sp.kind === 'move' ? Number(sp.count) - 1 : -1;
+      ptBeats.forEach((b, i) => b.classList.toggle('on', i === active));
+      if (PT.running) {
+        if (sp.kind === 'intro') say(`Next up: ${mv.name}! ${mv.say}`);
+        else if (sp.kind === 'move' && sp.count === '1' && sp.rep === settings.reps - 1) say('Last time!');
+        else if (sp.kind === 'move' && sp.count === '1' && sp.rep > 0) say('Again!');
+      }
+    }
+    const where = sp.kind === 'intro' ? 'Get ready' : sp.kind === 'lead' ? 'Counting in' : `Round ${sp.rep + 1} of ${settings.reps}`;
+    pt_.sub.textContent = where + (PT.running ? '' : ' · paused');
+    setBubble(pl.stage, sp.count, sp.kind === 'lead', PT.running);
+    const before = PT.totals.slice(0, PT.idx).reduce((a, b) => a + b, 0);
+    const grand = PT.totals.reduce((a, b) => a + b, 0);
+    pt_.bar.style.width = `${Math.min(100, ((before + pl.beat) / grand) * 100).toFixed(1)}%`;
+  }
+  function tickParty(dt) {
+    if (!pt_.done.hidden) {
+      if (PT.donePl && !reduceMotion) { advance(PT.donePl, dt, false); drawPlayer(PT.donePl, true); }
+      return;
+    }
+    if (!PT.running || !PT.pl) return;
+    const prev = advance(PT.pl, dt, true);
+    PT.played[PT.idx] += PT.pl.beat - prev;
+    if (PT.pl.beat >= PT.pl.total) {
+      if (PT.idx < MOVES.length - 1) loadMove(PT.idx + 1); else finishParty();
+      return;
+    }
+    renderParty();
+  }
+  for (const id of ['startParty', 'startParty2']) $(id).addEventListener('click', openParty);
+  pt_.play.addEventListener('click', () => setRunning(!PT.running));
+  $('ptPrev').addEventListener('click', () => { loadMove(PT.pl.beat > 8 ? PT.idx : Math.max(0, PT.idx - 1)); });
+  $('ptNext').addEventListener('click', () => { if (PT.idx < MOVES.length - 1) loadMove(PT.idx + 1); else finishParty(); });
+  $('ptClose').addEventListener('click', () => dlg.close());
+  $('ptFinish').addEventListener('click', () => dlg.close());
+  $('ptAgain').addEventListener('click', openParty);
+  $('ptMusic').addEventListener('click', () => { settings.music = !settings.music; saveSettings(); updateMusicBtns(); });
+  $('ptVoice').addEventListener('click', () => { settings.voice = !settings.voice; saveSettings(); updateMusicBtns(); if (!settings.voice) hush(); });
+  dlg.addEventListener('keydown', (e) => { if (e.key === ' ' && e.target === document.body || (e.key === ' ' && e.target.tagName !== 'BUTTON')) { e.preventDefault(); if (pt_.done.hidden) setRunning(!PT.running); } });
+  dlg.addEventListener('close', () => { PT.running = false; hush(); unlockScreen(); });
+  document.addEventListener('visibilitychange', () => {
+    last = performance.now();
+    if (document.visibilityState === 'visible' && PT.running && dlg.open) lockScreen();
+  });
+
+  // ---------- Animation loop ----------
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.target === heroStage.el) { hero.visible = e.isIntersecting; continue; }
+      const c = cards.find((x) => x.node === e.target);
+      if (c) c.visible = e.isIntersecting;
+    }
+  }, { threshold: 0.15 });
+  cards.forEach((c) => io.observe(c.node));
+  io.observe(heroStage.el);
+  let last = performance.now();
+  function frame(now) {
+    const dt = Math.min(100, now - last);
+    last = now;
+    if (dlg.open) tickParty(dt);
+    else {
+      for (const c of cards) {
+        if (!c.pl.playing) continue;
+        advance(c.pl, dt, true);
+        if (c.visible) renderCard(c);
+      }
+      if (hero.visible && !reduceMotion) {
+        hero.pl.beat += dt * 96 / 60000; hero.pl.ms += dt;
+        drawPlayer(hero.pl, true);
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  const onMotionChange = (e) => { reduceMotion = e.matches; cards.forEach((c) => { c.lastKey = ''; renderCard(c); }); drawPlayer(hero.pl, false); };
+  if (mqReduce.addEventListener) mqReduce.addEventListener('change', onMotionChange); else if (mqReduce.addListener) mqReduce.addListener(onMotionChange);
+
+  applyTheme();
+  applySettings();
+  showReset();
+  renderStickers();
+  cards.forEach(resetCard);
+  drawPlayer(hero.pl, false);
+  requestAnimationFrame(frame);
+
+  if (/[?&]debug\b/.test(location.search)) window.__dance = { cards, MOVES, hero, evalAt, drawPlayer, renderCard, PT, openParty, finishParty, tickParty, settings };
+})();
+</script>
+</body>
+</html>
