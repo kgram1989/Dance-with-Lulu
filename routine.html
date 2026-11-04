@@ -1,0 +1,1084 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lulu's Big Dance</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="A full two-minute dance routine, danced step by step by Lulu, an animated girl. Follow along with counts, cues and music.">
+<meta name="theme-color" content="#d6337f">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lulu's Big Dance">
+<meta property="og:description" content="A full two-minute dance routine for kids, danced by Lulu with counts and cues.">
+<meta property="og:url" content="https://kgram1989.github.io/Dance-with-Lulu/routine.html">
+<meta property="og:image" content="https://kgram1989.github.io/Dance-with-Lulu/og-image.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23d6337f'/%3E%3Cpath d='M16 5.5l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L16 20.4l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z' fill='%23ffd23f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+  /* Layout: one big stage like a music player, with the routine's sections listed alongside as chapters. */
+  :root {
+    --font-display: "Fredoka", ui-rounded, "Arial Rounded MT Bold", "Trebuchet MS", system-ui, sans-serif;
+    --font-body: "Nunito", ui-rounded, "Segoe UI", system-ui, -apple-system, sans-serif;
+    --bg: #fff6fa; --dot-a: rgba(214, 51, 127, .08); --dot-b: rgba(124, 77, 219, .07);
+    --surface: #ffffff; --surface-2: #fcecf4; --text: #2a2140; --muted: #6b6183; --border: #f0d8e5;
+    --accent: #d6337f; --accent-press: #a82263; --accent-soft: #fde2ef; --on-accent: #ffffff;
+    --purple: #7c4ddb; --sun: #ffc23d; --cue: #f26b0f; --off: #e9dfe6;
+    --skin: #c98b62; --skin-shade: #a86b47; --hair: #3b2216; --cheek: #ff7d9b; --eye: #2a1a14; --mouth: #9b2a3c; --tongue: #ff8fa3;
+    --shirt: #ff5c9d; --star: #ffd23f; --tutu: #b58cff; --tutu-2: #9466f2; --legs: #16a39a; --shoe: #ffcf33; --sole: #ffffff; --bow: #ffd23f;
+    --wall: #f7f0ff; --wall-2: #efe4ff; --floor: #f3c995; --floor-2: #dfa86f; --spot: #fffbe6; --note: #c86dd7;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #170f25; --dot-a: rgba(255, 111, 174, .07); --dot-b: rgba(166, 128, 255, .07);
+      --surface: #221a35; --surface-2: #2c2244; --text: #f5effc; --muted: #b9add3; --border: #3b2f58;
+      --accent: #ff6fae; --accent-press: #c9447f; --accent-soft: #42213a; --on-accent: #22091a;
+      --purple: #a98bff; --sun: #ffcf5a; --cue: #ff9a4d; --off: #3a3050;
+      --wall: #261c3e; --wall-2: #2e2249; --floor: #6d4b36; --floor-2: #563a29; --spot: #fff1b8; --note: #e59bf0;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #170f25; --dot-a: rgba(255, 111, 174, .07); --dot-b: rgba(166, 128, 255, .07);
+    --surface: #221a35; --surface-2: #2c2244; --text: #f5effc; --muted: #b9add3; --border: #3b2f58;
+    --accent: #ff6fae; --accent-press: #c9447f; --accent-soft: #42213a; --on-accent: #22091a;
+    --purple: #a98bff; --sun: #ffcf5a; --cue: #ff9a4d; --off: #3a3050;
+    --wall: #261c3e; --wall-2: #2e2249; --floor: #6d4b36; --floor-2: #563a29; --spot: #fff1b8; --note: #e59bf0;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; color: var(--text); font: 17px/1.55 var(--font-body);
+    background-color: var(--bg);
+    background-image: radial-gradient(var(--dot-a) 2px, transparent 2.5px), radial-gradient(var(--dot-b) 2px, transparent 2.5px);
+    background-size: 44px 44px, 60px 60px; background-position: 0 0, 22px 30px;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding-block: 18px 56px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 600; text-wrap: balance; }
+  a { color: var(--accent); }
+  button, select, input { font: inherit; }
+  button {
+    font-family: var(--font-display); font-size: 0.98rem; font-weight: 600;
+    border: 2px solid var(--border); background: var(--surface); color: var(--text);
+    border-radius: 999px; padding: 6px 14px; cursor: pointer; min-height: 40px;
+    display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  }
+  button:hover { border-color: var(--accent); }
+  button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid var(--purple); outline-offset: 2px; }
+  button.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 4px 0 var(--accent-press); }
+  button.primary:active { box-shadow: 0 1px 0 var(--accent-press); transform: translateY(3px); }
+  button svg { width: 15px; height: 15px; fill: currentColor; flex: none; }
+  button[aria-pressed="false"] { color: var(--muted); }
+
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+  .back { font-family: var(--font-display); font-weight: 600; text-decoration: none; }
+  .back:hover { text-decoration: underline; }
+  .theme-btn { min-height: 34px; padding: 4px 12px; font-size: 0.85rem; }
+  .intro h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.05; margin: 6px 0 8px; }
+  .intro h1 span { color: var(--accent); }
+  .intro p { color: var(--muted); max-width: 64ch; margin: 0 0 18px; }
+
+  .layout { display: grid; gap: 16px; grid-template-columns: 1fr; }
+  @media (min-width: 960px) { .layout { grid-template-columns: minmax(0, 1.7fr) minmax(300px, 1fr); align-items: start; } }
+  .player { background: var(--surface); border: 2px solid var(--border); border-radius: 24px; overflow: hidden; min-width: 0; }
+  .stage { position: relative; background: var(--wall); }
+  .stage svg.scene { display: block; width: 100%; height: auto; }
+  .bubble {
+    position: absolute; top: 12px; left: 12px; width: 58px; height: 58px; border-radius: 50%;
+    display: grid; place-items: center; font: 700 2rem/1 var(--font-display); font-variant-numeric: tabular-nums;
+    background: var(--accent); color: #fff; box-shadow: 0 3px 0 rgba(0,0,0,.15);
+  }
+  .bubble.soft { background: var(--surface); color: var(--muted); border: 2px solid var(--border); }
+  .now { display: grid; gap: 2px; padding: 10px 16px; min-height: 72px; align-content: center; border-top: 2px solid var(--border); background: var(--surface); }
+  .now .cue { font: 600 clamp(1.15rem, 2.8vw, 1.6rem)/1.2 var(--font-display); color: var(--text); }
+  .now .next { font-size: 0.9rem; font-weight: 700; color: var(--muted); }
+
+  .transport { display: grid; gap: 10px; padding: 12px 16px 14px; border-top: 2px solid var(--border); }
+  .row { display: flex; align-items: center; gap: 8px 10px; flex-wrap: wrap; }
+  .play { width: 52px; height: 52px; padding: 0; flex: none; }
+  .play svg { width: 20px; height: 20px; }
+  .time { font: 600 0.95rem var(--font-display); font-variant-numeric: tabular-nums; color: var(--muted); min-width: 92px; }
+  .scrub { flex: 1 1 200px; position: relative; min-width: 0; }
+  .scrub input { width: 100%; accent-color: var(--accent); margin: 0; height: 28px; }
+  .ticks { position: relative; height: 8px; margin-top: -2px; }
+  .ticks i { position: absolute; top: 0; width: 2px; height: 8px; background: var(--border); border-radius: 1px; }
+  .seg { display: inline-flex; flex-wrap: wrap; gap: 4px; background: var(--surface-2); border-radius: 22px; padding: 4px; }
+  .seg button { border: 0; background: transparent; min-height: 32px; padding: 3px 12px; white-space: nowrap; }
+  .seg button[aria-checked="true"] { background: var(--accent); color: var(--on-accent); }
+  .lbl { font-family: var(--font-display); font-weight: 600; font-size: 0.92rem; color: var(--muted); }
+  .music { display: grid; gap: 8px; padding: 12px 16px 16px; border-top: 2px solid var(--border); background: var(--surface-2); }
+  .music p { margin: 0; font-size: 0.9rem; color: var(--muted); }
+  .music .file-name { font-weight: 700; color: var(--text); overflow-wrap: anywhere; }
+  .file-btn { position: relative; overflow: hidden; }
+  .file-btn input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+  .file-btn:focus-within { outline: 3px solid var(--purple); outline-offset: 2px; border-radius: 999px; }
+  .nudge button { min-height: 32px; padding: 2px 10px; font-size: 0.85rem; }
+
+  .chapters { background: var(--surface); border: 2px solid var(--border); border-radius: 24px; padding: 14px 10px 10px; min-width: 0; }
+  .chapters h2 { font-size: 1.15rem; margin: 0 8px 8px; }
+  .chapters ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; max-height: 640px; overflow: auto; position: relative; }
+  .chapters li button {
+    width: 100%; border: 0; border-radius: 14px; background: transparent; padding: 8px 10px; min-height: 0;
+    display: grid; grid-template-columns: 44px 1fr; gap: 2px 8px; text-align: left; align-items: start; font-family: var(--font-body);
+  }
+  .chapters li button:hover { background: var(--surface-2); }
+  .chapters .t { font: 600 0.85rem var(--font-display); color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 2px; }
+  .chapters .n { font: 600 1rem/1.25 var(--font-display); color: var(--text); }
+  .chapters .d { grid-column: 2; font-size: 0.85rem; color: var(--muted); font-weight: 600; line-height: 1.4; }
+  .chapters li.on button { background: var(--accent-soft); }
+  .chapters li.on .n, .chapters li.on .t { color: var(--accent); }
+  footer { margin-top: 28px; font-size: 0.9rem; color: var(--muted); text-align: center; }
+
+  /* Lulu */
+  .fig path, .fig circle, .fig ellipse { stroke: none; }
+  .skin { fill: var(--skin); } .ear, .nose { fill: var(--skin-shade); }
+  .hair { fill: var(--hair); } .bow { fill: var(--bow); }
+  .shirt { fill: var(--shirt); } .star { fill: var(--star); }
+  .tutu { fill: var(--tutu); } .tutu2 { fill: var(--tutu-2); }
+  .legs { fill: var(--legs); } .shoe { fill: var(--shoe); } .sole { fill: var(--sole); }
+  .eye { fill: var(--eye); } .eye-hi { fill: #fff; }
+  .fig .lash, .fig .happy { fill: none; stroke: var(--eye); stroke-width: 1.4; stroke-linecap: round; }
+  .fig .smile { fill: none; stroke: var(--mouth); stroke-width: 1.6; stroke-linecap: round; }
+  .mouth { fill: var(--mouth); } .tongue { fill: var(--tongue); }
+  .cheek { fill: var(--cheek); opacity: .5; }
+  .hair-line { fill: none !important; stroke: #5a3626 !important; stroke-width: 1.2; stroke-linecap: round; }
+  .wall { fill: var(--wall); } .wall-band { fill: var(--wall-2); }
+  .floor { fill: var(--floor); } .board { stroke: var(--floor-2); stroke-width: .7; }
+  .spot { fill: url(#spotGrad); }
+  .shadow { fill: #000; filter: url(#softBlur); }
+  .string { fill: none; stroke: var(--muted); stroke-width: .6; opacity: .6; }
+  .note { fill: var(--note); font: 700 14px var(--font-body); }
+  .hint-mark { fill: none; stroke: var(--cue); stroke-width: 1.4; stroke-dasharray: 2.6 1.8; }
+  .burst line { stroke: var(--sun); stroke-width: 2.2; stroke-linecap: round; }
+  .spark { fill: var(--sun); }
+  .swoosh { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 12 7; }
+  .confetti { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 50; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="spotGrad"><stop offset="0" stop-color="var(--spot)" stop-opacity="0.85"/><stop offset="1" stop-color="var(--spot)" stop-opacity="0"/></radialGradient>
+    <filter id="softBlur" x="-30%" y="-300%" width="160%" height="700%"><feGaussianBlur stdDeviation="1.6"/></filter>
+  </defs>
+</svg>
+<div class="wrap">
+  <div class="top">
+    <a class="back" href="./">&larr; All the moves</a>
+    <button type="button" class="theme-btn" id="themeBtn" aria-label="Colour theme: automatic"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0 12.5V2.5a5.5 5.5 0 0 1 0 11z"/></svg><span>Auto</span></button>
+  </div>
+  <header class="intro">
+    <h1>Lulu's <span>Big Dance</span></h1>
+    <p>A whole two-minute routine, danced by Lulu from start to finish. Press play and copy her like a mirror. The big words tell you what to do now, and the small words tell you what's coming next. Tap any part of the list to practise it.</p>
+  </header>
+
+  <div class="layout">
+    <section class="player" aria-label="Dance player">
+      <div class="stage" id="stage">
+        <svg class="scene" viewBox="0 0 300 200" role="img" aria-labelledby="sceneTitle">
+          <title id="sceneTitle">Lulu dancing the routine</title>
+          <rect class="wall" x="0" y="0" width="300" height="185"/>
+          <rect class="wall-band" x="0" y="140" width="300" height="45"/>
+          <g id="bunting"></g>
+          <rect class="floor" x="0" y="184" width="300" height="16"/>
+          <path class="board" d="M0 191.5H300M40 184v7.5M110 184v7.5M180 184v7.5M250 184v7.5M75 191.5V200M145 191.5V200M215 191.5V200M285 191.5V200"/>
+          <ellipse class="spot" cx="150" cy="185" rx="95" ry="11"/>
+          <g id="notes"><text class="note" x="0" y="0">&#9834;</text><text class="note" x="0" y="0">&#9835;</text><text class="note" x="0" y="0">&#9834;</text></g>
+          <g id="dancer">
+            <ellipse class="shadow" data-p="shadow" cx="150" cy="185.5" rx="22" ry="2.6" opacity="0.2"/>
+            <g data-p="trails"></g>
+            <g class="fig" data-p="fig">
+              <g data-p="legs">
+                <g data-p="legL"><path class="legs" data-p="thL"/><path class="legs" data-p="shL"/><g data-p="footL"><ellipse class="sole" data-p="soleL"/><ellipse class="shoe" data-p="shoeL"/></g></g>
+                <g data-p="legR"><path class="legs" data-p="thR"/><path class="legs" data-p="shR"/><g data-p="footR"><ellipse class="sole" data-p="soleR"/><ellipse class="shoe" data-p="shoeR"/></g></g>
+              </g>
+              <g data-p="torso">
+                <rect class="skin" x="-4.2" y="-46" width="8.4" height="14" rx="4"/>
+                <path class="shirt" d="M-10.5 -4L-10.2 -12C-11.4 -20 -12.6 -27 -13.4 -33Q-13.8 -38.6 -8 -39Q0 -33.6 8 -39Q13.8 -38.6 13.4 -33C12.6 -27 11.4 -20 10.2 -12L10.5 -4Z"/>
+                <path class="star" data-p="star"/>
+                <path class="tutu2" data-p="sk2"/><path class="tutu" data-p="sk1"/>
+              </g>
+              <g data-p="head">
+                <circle class="hair" cx="0" cy="-18" r="19.6"/>
+                <g data-p="ptL"><ellipse class="hair" cx="-24.5" cy="-19" rx="6.6" ry="9.6" transform="rotate(38 -24.5 -19)"/><g transform="translate(-17.5 -26) rotate(-35)"><path class="bow" d="M0 0L-4.6-3.4V3.4ZM0 0L4.6-3.4V3.4Z"/><circle class="bow" r="1.7"/></g></g>
+                <g data-p="ptR"><ellipse class="hair" cx="24.5" cy="-19" rx="6.6" ry="9.6" transform="rotate(-38 24.5 -19)"/><g transform="translate(17.5 -26) rotate(35)"><path class="bow" d="M0 0L-4.6-3.4V3.4ZM0 0L4.6-3.4V3.4Z"/><circle class="bow" r="1.7"/></g></g>
+                <circle class="ear" cx="-17.2" cy="-15" r="3.2"/><circle class="ear" cx="17.2" cy="-15" r="3.2"/>
+                <circle class="skin" cx="0" cy="-17" r="17.5"/>
+                <g data-p="face">
+                  <ellipse class="cheek" cx="-10.6" cy="-9.6" rx="3.3" ry="2.1"/><ellipse class="cheek" cx="10.6" cy="-9.6" rx="3.3" ry="2.1"/>
+                  <ellipse class="nose" cx="0" cy="-11.6" rx="1.3" ry="0.95"/>
+                  <g data-p="eyesOpen">
+                    <ellipse class="eye" cx="-6.2" cy="-15" rx="2.4" ry="3.1"/><ellipse class="eye" cx="6.2" cy="-15" rx="2.4" ry="3.1"/>
+                    <circle class="eye-hi" cx="-5.4" cy="-16.2" r="0.9"/><circle class="eye-hi" cx="7" cy="-16.2" r="0.9"/>
+                    <path class="lash" d="M-8.4 -17l-1.9-1.2M8.4 -17l1.9-1.2"/>
+                  </g>
+                  <path class="happy" data-p="eyesHappy" d="M-8.7 -14Q-6.2 -17.8 -3.7 -14M3.7 -14Q6.2 -17.8 8.7 -14" opacity="0"/>
+                  <path class="smile" data-p="mouthS" d="M-4 -7.4Q0 -3.6 4 -7.4"/>
+                  <g data-p="mouthO" opacity="0"><path class="mouth" d="M-4.5 -8Q0 0.4 4.5 -8Q0 -6.6 -4.5 -8Z"/><ellipse class="tongue" cx="0" cy="-3.4" rx="2.2" ry="1.1"/></g>
+                </g>
+                <path class="hair" data-p="bangs" d="M-18 -19C-18.6 -33 -8 -37.6 0 -37.6C8 -37.6 18.6 -33 18 -19C15.5 -24.5 12 -25.5 9 -23.5C7 -27.6 3 -27.6 0 -25C-3 -27.6 -7 -27.6 -9 -23.5C-12 -25.5 -15.5 -24.5 -18 -19Z"/>
+                <g data-p="backView" opacity="0"><circle class="hair" cx="0" cy="-17.6" r="18.8"/><path class="hair-line" d="M0 -36V-4M-6 -33Q-3 -20 -5 -6M6 -33Q3 -20 5 -6"/></g>
+              </g>
+              <g data-p="armL"><path class="skin" data-p="uaL"/><path class="shirt" data-p="slL"/><path class="skin" data-p="faL"/><path class="skin" data-p="fgL"/><circle class="skin" data-p="hdL" r="4"/></g>
+              <g data-p="armR"><path class="skin" data-p="uaR"/><path class="shirt" data-p="slR"/><path class="skin" data-p="faR"/><path class="skin" data-p="fgR"/><circle class="skin" data-p="hdR" r="4"/></g>
+            </g>
+            <g data-p="fx">
+              <ellipse class="hint-mark" data-p="mkL" rx="8.5" ry="2.6" opacity="0"/><ellipse class="hint-mark" data-p="mkR" rx="8.5" ry="2.6" opacity="0"/>
+              <g class="burst" data-p="burst" opacity="0"><line x1="0" y1="-7" x2="0" y2="-12"/><line x1="5" y1="-5" x2="8.5" y2="-8.5"/><line x1="7" y1="0" x2="12" y2="0"/><line x1="-5" y1="-5" x2="-8.5" y2="-8.5"/><line x1="-7" y1="0" x2="-12" y2="0"/><line x1="5" y1="5" x2="8.5" y2="8.5"/><line x1="-5" y1="5" x2="-8.5" y2="8.5"/></g>
+              <g data-p="sparks" opacity="0"></g>
+              <g data-p="swoosh" opacity="0"><path class="swoosh" data-p="sw1"/><path class="swoosh" data-p="sw2"/></g>
+            </g>
+          </g>
+        </svg>
+        <div class="bubble soft" id="bubble" aria-hidden="true"></div>
+      </div>
+      <div class="now" aria-live="polite"><div class="cue" id="cue"></div><div class="next" id="next"></div></div>
+      <div class="transport">
+        <div class="row">
+          <button type="button" class="primary play" id="playBtn" aria-label="Play"></button>
+          <button type="button" id="restartBtn" aria-label="Start from the beginning"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2a6 6 0 1 0 6 6h-2a4 4 0 1 1-1.2-2.8L9 7h5V2l-1.8 1.8A6 6 0 0 0 8 2z"/></svg></button>
+          <div class="scrub">
+            <input type="range" id="scrub" min="0" max="1176" step="1" value="0" aria-label="Position in the dance">
+            <div class="ticks" id="ticks" aria-hidden="true"></div>
+          </div>
+          <span class="time" id="time">0:00 / 1:58</span>
+        </div>
+        <div class="row">
+          <span class="lbl" id="speedLbl">Speed</span>
+          <div class="seg" role="radiogroup" aria-labelledby="speedLbl" id="speedSeg">
+            <button type="button" role="radio" data-v="0.5">Slow</button>
+            <button type="button" role="radio" data-v="0.75">Medium</button>
+            <button type="button" role="radio" data-v="1">Real speed</button>
+          </div>
+          <button type="button" id="mirrorBtn" aria-pressed="false">Mirror off</button>
+        </div>
+      </div>
+      <div class="music">
+        <div class="row">
+          <span class="lbl" id="musicLbl">Music</span>
+          <div class="seg" role="radiogroup" aria-labelledby="musicLbl" id="musicSeg">
+            <button type="button" role="radio" data-v="beat">Lulu's beat</button>
+            <button type="button" role="radio" data-v="file">My video</button>
+            <button type="button" role="radio" data-v="off">Off</button>
+          </div>
+        </div>
+        <p id="musicHelp"></p>
+        <div class="row" id="fileRow" hidden>
+          <label class="file-btn"><button type="button" class="primary" tabindex="-1" aria-hidden="true">Choose video or song</button><input type="file" id="fileInput" accept="video/*,audio/*" aria-label="Choose your dance video or song"></label>
+          <span class="nudge row" role="group" aria-label="Line up the music">
+            <span class="lbl">Music timing</span>
+            <button type="button" data-n="-0.1">Earlier</button>
+            <button type="button" data-n="0.1">Later</button>
+            <span class="time" id="offsetTxt">0.0 s</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <aside class="chapters" aria-labelledby="chapH">
+      <h2 id="chapH">The routine, part by part</h2>
+      <ol id="chapters"></ol>
+    </aside>
+  </div>
+  <footer><p>Dance in a clear space, in bare feet or sneakers, with a grown-up nearby. The kneeling parts are gentle: use a soft mat or carpet for your knee.</p></footer>
+</div>
+<video id="media" playsinline preload="auto" hidden></video>
+
+<script>
+(() => {
+  'use strict';
+  const SVGNS = 'http://www.w3.org/2000/svg';
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* storage unavailable */ } },
+  };
+  const mqReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let reduceMotion = mqReduce.matches;
+
+  // ---------- Geometry ----------
+  const RAD = Math.PI / 180;
+  const dir = (deg) => [Math.cos(deg * RAD), Math.sin(deg * RAD)];
+  const add = (p, v, s = 1) => [p[0] + v[0] * s, p[1] + v[1] * s];
+  const sub = (a, b) => [a[0] - b[0], a[1] - b[1]];
+  const norm = (v) => { const d = Math.hypot(v[0], v[1]) || 1; return [v[0] / d, v[1] / d]; };
+  const rotv = (v, deg) => { const c = Math.cos(deg * RAD), s = Math.sin(deg * RAD); return [v[0] * c - v[1] * s, v[0] * s + v[1] * c]; };
+  const clamp = (x, lo, hi) => Math.min(hi, Math.max(lo, x));
+  const mix = (a, b, k) => [a[0] + (b[0] - a[0]) * k, a[1] + (b[1] - a[1]) * k];
+  const f1 = (v) => v.toFixed(1);
+  const pt = (p) => `${f1(p[0])} ${f1(p[1])}`;
+  const ease = (x) => 0.5 - 0.5 * Math.cos(Math.PI * x);
+  function ik(root, target, a, b, s) {
+    const dx = target[0] - root[0], dy = target[1] - root[1];
+    let d = Math.hypot(dx, dy);
+    const base = Math.atan2(dy, dx);
+    d = Math.min(Math.max(d, Math.abs(a - b) + 0.01), a + b - 0.01);
+    const off = Math.acos((a * a + d * d - b * b) / (2 * a * d));
+    const u = base + s * off;
+    const mid = [root[0] + a * Math.cos(u), root[1] + a * Math.sin(u)];
+    const l = Math.atan2(target[1] - mid[1], target[0] - mid[0]);
+    return [mid, [mid[0] + b * Math.cos(l), mid[1] + b * Math.sin(l)]];
+  }
+  function capsule(a, b, r1, r2) {
+    const d = norm(sub(b, a)), n = [-d[1], d[0]];
+    return `M${pt(add(a, n, r1))}L${pt(add(b, n, r2))}A${f1(r2)} ${f1(r2)} 0 0 0 ${pt(add(b, n, -r2))}` +
+           `L${pt(add(a, n, -r1))}A${f1(r1)} ${f1(r1)} 0 0 0 ${pt(add(a, n, r1))}Z`;
+  }
+  const setAttrs = (el, o) => { for (const k in o) el.setAttribute(k, typeof o[k] === 'number' ? f1(o[k]) : o[k]); };
+  function starPath(cx, cy, R, r, n = 5) {
+    let d = '';
+    for (let i = 0; i < n * 2; i++) { const a = -90 + i * (180 / n), rr = i % 2 ? r : R; d += (i ? 'L' : 'M') + pt([cx + rr * Math.cos(a * RAD), cy + rr * Math.sin(a * RAD)]); }
+    return d + 'Z';
+  }
+
+  // ---------- Lulu's body ----------
+  // Same figure as the move cards, plus knees you can place (for kneeling, knee lifts and kicks)
+  // and a forward bend. The floor (ankle line) is at y = 178.
+  const L = { ua: 24, fa: 23, th: 30, sh: 29 };
+  const SH = [14, -36], HJ = [7, 2], NECK = [0, -41];
+  const FLOOR = 178;
+  function reach(dx, dy, bend = 1) {
+    const a = ik([0, 0], [dx, dy], L.ua, L.fa, 1), b = ik([0, 0], [dx, dy], L.ua, L.fa, -1);
+    const [el, ha] = (a[0][0] > b[0][0]) === (bend > 0) ? a : b;
+    return [Math.atan2(el[1], el[0]) / RAD, Math.atan2(ha[1] - el[1], ha[0] - el[0]) / RAD];
+  }
+  // Arm poses: [upper arm, forearm] in a mirrored frame (0 = out to the side, 90 = down, -90 = up, 180 = across).
+  const A = {
+    down: [78, 86], relax: [82, 92], out: [-3, -6], outLow: reach(34, 24), lowOut: [42, 48], v: [-48, -52],
+    up: [-76, -82], clap: reach(-10.5, 12), chest: reach(-11, 11), cheeks: reach(5, -17), head: reach(-7, -36),
+    hips: reach(-3, 25), hair: reach(7, -26), across: [176, 178], acrossLow: reach(-27, 27), lowFront: reach(-11, 37),
+    diagUp: [-42, -46], diagDown: [52, 56], back: [62, 70], pump: reach(3, 15), bentUp: [-8, -82], flick: [12, 16],
+    wrap: reach(-20, 30), floor: [74, 80],
+  };
+  const BASE = { hx: 150, hy: 118, t: 0, n: 0, LA: A.down, RA: A.down, Lf: [143, FLOOR], Rf: [157, FLOOR],
+    Lk: [0, 0], Rk: [0, 0], Lkb: 0, Rkb: 0, ko: 0.5, bow: 0, Lt: 0, Rt: 0, Lh: 0, Rh: 0, turn: 0, mouth: 0, sk: 0, Lp: 0, Rp: 0, eyes: 0, back: '' };
+  const P = (...o) => Object.assign({}, BASE, ...o);
+  const feet = (l, r, y = FLOOR) => ({ Lf: [l, y], Rf: [r, y] });
+  const mirror = (p) => Object.assign({}, p, {
+    hx: 300 - p.hx, t: -p.t, n: -p.n, LA: p.RA, RA: p.LA,
+    Lf: [300 - p.Rf[0], p.Rf[1]], Rf: [300 - p.Lf[0], p.Lf[1]], Lk: [300 - p.Rk[0], p.Rk[1]], Rk: [300 - p.Lk[0], p.Lk[1]],
+    Lkb: p.Rkb, Rkb: p.Lkb, Lt: p.Rt, Rt: p.Lt, Lh: p.Rh, Rh: p.Lh, Lp: p.Rp, Rp: p.Lp,
+    back: p.back === 'L' ? 'R' : p.back === 'R' ? 'L' : '',
+  });
+
+  const wrap180 = (d) => ((((d) % 360) + 540) % 360) - 180;
+  const lerpAng = (a, b, k) => a + wrap180(b - a) * k;
+  function lerpArm(a, b, k) {
+    const u = lerpAng(a[0], b[0], k);
+    const bA = wrap180(a[1] - a[0]), bB = wrap180(b[1] - b[0]);
+    return [u, u + bA + wrap180(bB - bA) * k];
+  }
+  function lerpPose(a, b, k) {
+    const o = {};
+    for (const key in a) {
+      const va = a[key], vb = key in b ? b[key] : va;
+      if (key === 'back') o.back = va || vb;
+      else if (key === 'turn') o.turn = va + ((((vb - va) % 360) + 360) % 360) * k;
+      else if (key === 'LA' || key === 'RA') o[key] = lerpArm(va, vb, k);
+      else if (Array.isArray(va)) o[key] = mix(va, vb, k);
+      else o[key] = va + (vb - va) * k;
+    }
+    return o;
+  }
+
+  function solve(p) {
+    const hip = [p.hx, p.hy];
+    const sy = 1 - 0.32 * p.bow; // bending forward: the body looks shorter from the front
+    const W = (v) => add(hip, rotv([v[0], v[1] * sy], p.t));
+    const j = { hip, neck: W(NECK), sy };
+    for (const [s, sign] of [['L', -1], ['R', 1]]) {
+      const Ar = p[s + 'A'];
+      const up = Math.pow(clamp(-Math.sin(Ar[0] * RAD), 0, 1), 1.5);
+      const sh = W([(SH[0] + 3 * up) * sign, SH[1] - 7 * up / sy]);
+      const ang = (a) => (sign > 0 ? a : 180 - a) + p.t;
+      const el = add(sh, dir(ang(Ar[0])), L.ua);
+      const ha = add(el, dir(ang(Ar[1])), L.fa);
+      const hj = W([HJ[0] * sign, HJ[1]]);
+      const an = p[s + 'f'];
+      let [kn] = ik(hj, an, L.th, L.sh, sign > 0 ? -1 : 1);
+      const mid = mix(hj, an, 0.5);
+      kn = mix(mid, kn, p.ko);
+      kn = mix(kn, p[s + 'k'], p[s + 'kb']); // a placed knee (kneeling, knee lifts)
+      Object.assign(j, { ['sh' + s]: sh, ['el' + s]: el, ['ha' + s]: ha, ['hj' + s]: hj, ['kn' + s]: kn, ['an' + s]: an });
+    }
+    return j;
+  }
+
+  // ---------- Stage ----------
+  const parts = {};
+  document.querySelectorAll('#stage [data-p]').forEach((n) => { parts[n.dataset.p] = n; });
+  (function decorate() {
+    const yAt = (x) => { const u = x / 300; return 3 + 24 * u * (1 - u); };
+    let bd = '<path class="string" d="M0 3Q150 27 300 3"/>';
+    const FLAGS = ['#ff5c9d', '#ffd23f', '#16a39a', '#9466f2', '#ff8c42'];
+    for (let i = 0, x = 6; x < 292; x += 16, i++) {
+      const y = yAt(x), y2 = yAt(x + 11);
+      bd += `<path fill="${FLAGS[i % FLAGS.length]}" d="M${f1(x)} ${f1(y)}L${f1(x + 11)} ${f1(y2)}L${f1(x + 5.5)} ${f1((y + y2) / 2 + 10)}Z" opacity=".9"/>`;
+    }
+    document.getElementById('bunting').innerHTML = bd;
+    parts.star.setAttribute('d', starPath(0, -24, 5.6, 2.4));
+    parts.sparks.innerHTML = [[-34, -70, 1], [32, -78, 0.8], [-40, -30, 0.7], [38, -38, 0.9], [0, -98, 0.7]]
+      .map(([x, y, s]) => `<path class="spark" transform="translate(${x} ${y}) scale(${s})" d="${starPath(0, 0, 6, 2.4, 4)}"/>`).join('');
+  })();
+  const TRAIL_COLORS = ['#ff5c9d', '#ffb02e', '#ffd23f', '#3fd0a0', '#4dabf7', '#9775fa'];
+  const trails = [];
+  for (let i = 0; i < 6; i++) for (const s of ['L', 'R']) {
+    const c = document.createElementNS(SVGNS, 'circle');
+    c.setAttribute('r', f1(3.2 - i * 0.35)); c.setAttribute('fill', TRAIL_COLORS[i]); c.setAttribute('opacity', '0');
+    parts.trails.appendChild(c); trails.push({ c, i, s });
+  }
+  function skirtPath(w, y1, n) {
+    let d = `M-10.6 -12L10.6 -12L${f1(w)} ${f1(y1)}`;
+    const seg = (2 * w) / n;
+    for (let i = 0; i < n; i++) { const x0 = w - i * seg; d += `Q${f1(x0 - seg / 2)} ${f1(y1 + 5)} ${f1(x0 - seg)} ${f1(y1)}`; }
+    return d + 'Z';
+  }
+  const st = { skirtKey: null, backKey: null, legOrder: '' };
+  function drawFigure(p, o) {
+    const j = solve(p);
+    const c = Math.cos(p.turn * RAD), sx = 0.35 + 0.65 * Math.abs(c);
+    parts.fig.setAttribute('transform', Math.abs(sx - 1) < 0.002 ? '' : `translate(${f1(p.hx)} 0) scale(${sx.toFixed(3)} 1) translate(${f1(-p.hx)} 0)`);
+    const backView = c < 0;
+    if (st.backKey !== backView) {
+      st.backKey = backView;
+      parts.backView.setAttribute('opacity', backView ? 1 : 0);
+      parts.face.setAttribute('opacity', backView ? 0 : 1);
+      parts.bangs.setAttribute('opacity', backView ? 0 : 1);
+      parts.star.setAttribute('opacity', backView ? 0 : 1);
+    }
+    const order = p.back === 'R' ? 'R' : 'L';
+    if (st.legOrder !== order) { st.legOrder = order; parts.legs.appendChild(order === 'R' ? parts.legL : parts.legR); }
+    for (const [s, sign] of [['L', -1], ['R', 1]]) {
+      const hj = j['hj' + s], kn = j['kn' + s], an = j['an' + s];
+      parts['th' + s].setAttribute('d', capsule(hj, kn, 6.4, 5.2));
+      parts['sh' + s].setAttribute('d', capsule(kn, an, 5.2, 4.1));
+      const tap = p[s + 't'];
+      const sc = [an[0] + sign * 1.3, an[1] + 3.4];
+      setAttrs(parts['shoe' + s], { cx: sc[0], cy: sc[1] - 0.4, rx: 7 - 1.8 * tap, ry: 3.9 + 0.9 * tap });
+      setAttrs(parts['sole' + s], { cx: sc[0], cy: sc[1] + 1.4, rx: 7.3 - 1.8 * tap, ry: 2.4 });
+      parts['foot' + s].setAttribute('opacity', (1 - p[s + 'h']).toFixed(2)); // a foot tucked behind a kneeling knee
+    }
+    parts.torso.setAttribute('transform', `translate(${f1(p.hx)} ${f1(p.hy)}) rotate(${f1(p.t)}) scale(1 ${j.sy.toFixed(3)})`);
+    const skKey = p.sk.toFixed(2);
+    if (st.skirtKey !== skKey) {
+      st.skirtKey = skKey;
+      const w = 21 + p.sk * 9, y1 = 9 - p.sk * 5;
+      parts.sk2.setAttribute('d', skirtPath(w + 2, y1 + 2, 6));
+      parts.sk1.setAttribute('d', skirtPath(w, y1, 5));
+    }
+    // Head: bending forward tips the face down (features slide down, more hair shows).
+    parts.head.setAttribute('transform', `translate(${pt(j.neck)}) rotate(${f1(p.t + p.n)})`);
+    parts.face.setAttribute('transform', p.bow > 0.01 ? `translate(0 ${f1(5 * p.bow)}) scale(1 ${(1 - 0.25 * p.bow).toFixed(3)})` : '');
+    parts.bangs.setAttribute('transform', p.bow > 0.01 ? `translate(0 ${f1(3 * p.bow)})` : '');
+    const fling = p.sk * 30;
+    parts.ptL.setAttribute('transform', `rotate(${f1(clamp(o.swing - p.n * 0.5 + fling, -45, 50))} -17.5 -26)`);
+    parts.ptR.setAttribute('transform', `rotate(${f1(clamp(o.swing - p.n * 0.5 - fling, -50, 45))} 17.5 -26)`);
+    const blink = o.clock != null && (o.clock % 3400) < 130 ? 0.12 : 1;
+    parts.eyesOpen.setAttribute('transform', blink === 1 ? '' : 'translate(0 -15) scale(1 0.12) translate(0 15)');
+    parts.eyesOpen.setAttribute('opacity', (1 - p.eyes).toFixed(2));
+    parts.eyesHappy.setAttribute('opacity', p.eyes.toFixed(2));
+    parts.mouthS.setAttribute('opacity', (1 - p.mouth).toFixed(2));
+    parts.mouthO.setAttribute('opacity', p.mouth.toFixed(2));
+    for (const s of ['L', 'R']) {
+      const sh = j['sh' + s], el = j['el' + s], ha = j['ha' + s];
+      const ud = norm(sub(el, sh)), fd = norm(sub(ha, el));
+      parts['ua' + s].setAttribute('d', capsule(sh, el, 3.5, 3.0));
+      parts['sl' + s].setAttribute('d', capsule(add(sh, ud, -1.5), add(sh, ud, 8.5), 5.6, 4.8));
+      parts['fa' + s].setAttribute('d', capsule(el, ha, 3.0, 2.6));
+      const hand = add(ha, fd, 1.4);
+      setAttrs(parts['hd' + s], { cx: hand[0], cy: hand[1] });
+      const pnt = p[s + 'p'];
+      parts['fg' + s].setAttribute('d', pnt > 0.05 ? capsule(hand, add(hand, fd, 6.5 * pnt), 1.5, 1.2) : '');
+    }
+    const lift = FLOOR - Math.max(j.anL[1], j.anR[1]);
+    const air = clamp(lift / 18, 0, 1);
+    setAttrs(parts.shadow, { cx: (j.anL[0] + j.anR[0]) / 2, rx: (Math.abs(j.anR[0] - j.anL[0]) / 2 + 16) * (1 - 0.35 * air), opacity: (0.2 * (1 - 0.6 * air)).toFixed(3) });
+    return j;
+  }
+
+  // ---------- The routine ----------
+  // Timed to the dance video: one beat is 0.375 s (160 beats a minute), dancers count every 2 beats,
+  // so an 8-count lasts 6 s. Counts line up with the music from 0:24 on. c(bar, count) gives the time of a count.
+  const BEAT = 0.375, COUNT = 0.75, BAR0 = -0.405;
+  const c = (bar, n) => +(BAR0 + 6 * bar + (n - 1) * COUNT).toFixed(3);
+  const END = 117.6;
+
+  const stand = P();
+  const kneelBase = { hy: 150, ...feet(165, 136, FLOOR), Rf: [165, FLOOR], Lf: [136, 176], Rk: [168, 149], Rkb: 1, Lk: [139, FLOOR + 2], Lkb: 1, Lh: 1 };
+  const POSES = {
+    stand,
+    start: P({ ...feet(141, 159), LA: A.hair, RA: A.hair, mouth: 1 }),
+    wide: P({ hy: 119, ...feet(138, 162), LA: A.out, RA: A.out, mouth: 1 }),
+    dive: P({ hy: 136, hx: 147, bow: 0.6, ...feet(128, 168), ko: 1, LA: A.lowFront, RA: A.lowFront, eyes: 1 }),
+    curl: P(kneelBase, { bow: 0.85, LA: reach(-24, 25), RA: reach(2, 26), eyes: 1, n: 4 }),
+    curlB: P(kneelBase, { hy: 151.5, bow: 0.9, LA: reach(-24, 27), RA: reach(2, 28), eyes: 1, n: 2 }),
+    sweepLow: P({ hx: 134, hy: 144, t: -12, bow: 0.3, ...feet(110, 170), ko: 1, LA: A.floor, RA: A.diagUp }),
+    stretch: P({ hy: 132, t: -18, n: -4, ...feet(118, 182), ko: 0.8, LA: A.down, RA: [-72, -96], mouth: 1 }),
+    stretch2: P({ hy: 134, t: -22, n: -6, ...feet(118, 182), ko: 0.8, LA: A.down, RA: [-76, -100], mouth: 1 }),
+    plie: P({ hy: 139, ...feet(118, 182), ko: 1, bow: 0.15, LA: A.lowFront, RA: A.lowFront }),
+    squatLow: P({ hy: 137, ...feet(120, 180), ko: 1, LA: A.lowFront, RA: A.lowFront }),
+    swingR: P({ hy: 132, t: 6, ...feet(122, 178), ko: 0.8, RA: reach(-30, 20), LA: A.back }),
+    leanReach: P({ hy: 134, t: 8, bow: 0.3, ...feet(122, 178), ko: 0.8, RA: reach(-4, 36), LA: A.back }),
+    lungeCross: P({ hx: 162, hy: 138, t: 6, ...feet(130, 190), ko: 1, LA: reach(-22, 16), RA: reach(-22, 12) }),
+    vUp: P({ hy: 116, ...feet(138, 162), LA: A.v, RA: A.v, mouth: 1, eyes: 1, Lt: 0.3, Rt: 0.3 }),
+    tArms: P({ ...feet(140, 160), LA: A.out, RA: A.out, mouth: 1 }),
+    tArms2: P({ hy: 120, ...feet(140, 160), LA: A.out, RA: A.out, mouth: 1 }),
+    walkL: P({ t: 2, Lf: [144, 170], LA: [74, 56], RA: A.relax }),
+    walkR: P({ t: -2, Rf: [156, 170], RA: [74, 56], LA: A.relax }),
+    swingLunge: P({ hx: 136, hy: 138, t: -8, ...feet(110, 166), ko: 1, LA: [70, 80], RA: reach(-30, 28) }),
+    bendL: P({ hy: 128, t: -10, bow: 0.7, ...feet(128, 172), ko: 0.7, LA: [20, 26], RA: reach(-34, 10), eyes: 1 }),
+    openUp: P({ ...feet(140, 160), LA: A.outLow, RA: A.outLow, mouth: 1 }),
+    stepFwd: P({ hy: 121, Rf: [158, 170], LA: A.relax, RA: A.relax }),
+    kneelFace: P(kneelBase, { LA: A.cheeks, RA: A.cheeks, mouth: 1 }),
+    kneelHead: P(kneelBase, { hy: 149, LA: A.head, RA: A.head, mouth: 1, eyes: 1 }),
+    rise: P({ hy: 121, ...feet(138, 162), LA: A.relax, RA: A.relax }),
+    kneeUpL: P({ hy: 116, Lf: [141, 156], Lk: [139, 132], Lkb: 1, LA: [-40, -96], RA: [-40, -96], mouth: 1 }),
+    bounceDown: P({ hy: 124, ...feet(136, 164), ko: 0.8, LA: A.lowOut, RA: A.lowOut }),
+    sideL: P({ hx: 140, hy: 121, t: -3, ...feet(124, 152), LA: A.outLow, RA: A.lowOut }),
+    heelL: P({ hy: 117, Lf: [146, 164], Lk: [143, 150], Lkb: 0.6, LA: A.pump, RA: A.relax }),
+    pointL: P({ hx: 142, hy: 121, t: -4, n: -10, ...feet(126, 156), LA: A.out, RA: A.across, Lp: 1 }),
+    crossL: P({ hx: 143, hy: 121, t: -3, n: -8, ...feet(128, 156), LA: A.chest, RA: reach(-38, 4), Rp: 1 }),
+    pushL: P({ hx: 143, hy: 123, t: -4, n: -10, ...feet(126, 158), ko: 0.8, LA: A.out, RA: A.across }),
+    swingStepL: P({ hx: 144, hy: 120, ...feet(130, 156), LA: A.outLow, RA: reach(-24, 26) }),
+    brushL: P({ hx: 142, hy: 120, t: -4, ...feet(128, 156), RA: A.acrossLow, LA: A.lowOut }),
+    hair: P({ hx: 156, t: -6, n: 6, ...feet(144, 166), RA: A.hair, LA: A.hips, mouth: 1 }),
+    chest: P({ hy: 119, LA: A.chest, RA: A.chest }),
+    turnHalf: P({ hy: 119, LA: A.chest, RA: A.chest, turn: 180 }),
+    turnFull: P({ hy: 119, LA: A.chest, RA: A.chest, turn: 0, mouth: 1 }),
+    claspL: P({ hx: 146, hy: 121, t: 4, n: -8, ...feet(138, 158), LA: A.clap, RA: A.clap, eyes: 1 }),
+    armsOutL: P({ hx: 142, hy: 120, ...feet(126, 156), LA: A.out, RA: A.out, mouth: 1 }),
+    armsIn: P({ hy: 121, ...feet(143, 157), LA: reach(-22, 24), RA: reach(-22, 24) }),
+    chinDown: P({ hy: 124, ...feet(140, 160), ko: 0.8, LA: A.cheeks, RA: A.cheeks, mouth: 1 }),
+    chinUp: P({ hy: 117, ...feet(140, 160), LA: A.cheeks, RA: A.cheeks, mouth: 1, Lt: 0.4, Rt: 0.4 }),
+    skipL: P({ hy: 116, Lf: [143, 160], Lk: [141, 138], Lkb: 1, LA: [-20, -60], RA: A.back, mouth: 1 }),
+    skipTurn: P({ hy: 117, LA: A.out, RA: A.out, turn: 180, sk: 0.8 }),
+    hopKickL: P({ hy: 116, hx: 153, Lf: [118, 158], Lk: [126, 140], Lkb: 1, LA: A.out, RA: A.out, mouth: 1 }),
+    wideL: P({ hx: 144, t: 6, n: -6, ...feet(130, 168), LA: [-14, -18], RA: [8, 4], mouth: 1 }),
+    marchL: P({ Lf: [144, 166], Lk: [143, 145], Lkb: 0.6, LA: [74, 50], RA: A.relax }),
+    smallL: P({ hx: 147, ...feet(140, 156), LA: A.relax, RA: A.relax }),
+    flickR: P({ hx: 152, t: -3, ...feet(142, 162), RA: A.flick, LA: A.relax, Rp: 1 }),
+    kneeChest: P({ hy: 116, Rf: [159, 158], Rk: [161, 134], Rkb: 1, LA: A.clap, RA: A.clap }),
+    throwDiag: P({ hy: 120, t: 5, ...feet(136, 164), RA: A.diagUp, LA: A.diagDown, mouth: 1 }),
+    lungeSwing: P({ hx: 136, hy: 138, t: -6, ...feet(110, 166), ko: 1, LA: [70, 80], RA: reach(-28, 30) }),
+    twist: P({ hy: 121, t: 8, ...feet(134, 166), LA: A.outLow, RA: reach(-30, 22) }),
+    disco: P({ hx: 146, t: 4, ...feet(134, 164), RA: [-54, -56], LA: [60, 62], Rp: 1, mouth: 1 }),
+    scoop: P({ hy: 130, bow: 0.75, ...feet(130, 170), ko: 0.7, LA: A.lowFront, RA: A.lowFront, eyes: 1 }),
+    riseUp: P({ hy: 114, ...feet(140, 160), LA: A.v, RA: A.v, mouth: 1, Lt: 0.5, Rt: 0.5 }),
+    kneeLiftR: P({ hy: 116, Rf: [159, 158], Rk: [161, 134], Rkb: 1, LA: A.lowOut, RA: A.lowOut }),
+    kickBackL: P({ hy: 117, Lf: [146, 162], Lk: [143, 150], Lkb: 0.7, LA: [8, 14], RA: [8, 14] }),
+    armsOut: P({ ...feet(140, 160), LA: A.out, RA: A.out }),
+    airplane: P({ hy: 122, t: -6, bow: 0.35, ...feet(134, 166), LA: [26, 32], RA: [26, 32] }),
+    kneeUpBent: P({ hy: 116, Lf: [141, 156], Lk: [139, 132], Lkb: 1, LA: A.bentUp, RA: A.relax }),
+    sideKickR: P({ hx: 143, hy: 118, t: -9, Lf: [137, FLOOR], Rf: [200, 152], LA: A.out, RA: A.out, mouth: 1 }),
+    lungeLow: P({ hx: 160, hy: 142, ...feet(126, 192), ko: 1, LA: A.lowOut, RA: A.lowOut }),
+    swayChestL: P({ hx: 146, t: 4, n: -6, ...feet(140, 160), LA: A.chest, RA: A.chest }),
+    pointSideL: P({ hx: 147, hy: 124, n: -10, ...feet(136, 162), ko: 0.8, LA: A.out, RA: A.chest, Lp: 1 }),
+    swingAcrossL: P({ hx: 143, hy: 120, t: -3, ...feet(128, 156), RA: reach(-32, 16), LA: A.back }),
+    handsHead: P({ hy: 125, ...feet(136, 164), ko: 0.8, LA: A.head, RA: A.head, mouth: 1 }),
+    diagWideL: P({ hx: 144, t: -6, ...feet(124, 166), LA: A.diagUp, RA: A.diagDown }),
+    squatChest: P({ hy: 135, ...feet(124, 176), ko: 1, LA: A.clap, RA: A.clap }),
+    squatUp: P({ hy: 124, ...feet(124, 176), ko: 1, LA: A.clap, RA: A.clap }),
+    deepSquat: P({ hy: 141, ...feet(120, 180), ko: 1, LA: A.clap, RA: A.clap, mouth: 1 }),
+    lungeArmsL: P({ hx: 138, hy: 136, t: -6, n: -8, ...feet(110, 168), ko: 1, LA: A.out, RA: A.across }),
+    handsFace: P({ ...feet(140, 160), LA: A.cheeks, RA: A.cheeks, mouth: 1 }),
+    deepLunge: P({ hx: 162, hy: 142, ...feet(128, 194), ko: 1, LA: A.bentUp, RA: A.bentUp, mouth: 1 }),
+    pointFwd: P({ ...feet(138, 162), RA: [-22, -26], LA: A.hips, Rp: 1 }),
+    end: P({ ...feet(140, 160), RA: reach(-10, 14), LA: [40, 46], mouth: 1, eyes: 1, sk: 0.3 }),
+  };
+  // Mirror images ("…R" is the same move to the other side).
+  for (const name of ['walkL', 'bendL', 'kneeUpL', 'sideL', 'heelL', 'pointL', 'crossL', 'pushL', 'swingStepL', 'brushL', 'claspL', 'armsOutL',
+    'skipL', 'hopKickL', 'wideL', 'marchL', 'smallL', 'kickBackL', 'swayChestL', 'pointSideL', 'swingAcrossL', 'diagWideL', 'lungeArmsL']) {
+    POSES[name.slice(0, -1) + 'R'] = mirror(POSES[name]);
+  }
+  POSES.kneelFaceL = P(POSES.kneelFace, { n: -10, t: -3, hx: 148 });
+  POSES.kneelFaceR = P(POSES.kneelFace, { n: 10, t: 3, hx: 152 });
+  POSES.kneelHeadL = P(POSES.kneelHead, { n: -8 });
+
+  // Keyframes: k(time, pose, cue, options). A cue is the instruction shown when that step starts.
+  const KF = [];
+  const k = (t, pose, cue, o) => KF.push(Object.assign({ t, pose: POSES[pose], name: pose, cue }, o || {}));
+  // Repeat a list of poses on a steady step, e.g. alternating sides.
+  const steps = (t0, dt, names, cue, o) => names.forEach((n, i) => k(+(t0 + i * dt).toFixed(3), n, i === 0 ? cue : undefined, o));
+
+  // 0:00 Opening: arms up, open wide, dive down and curl up on one knee.
+  k(0, 'start', 'Hands by your head');
+  k(0.36, 'wide', 'Open your arms wide');
+  k(0.95, 'dive', 'Dive down…');
+  k(1.4, 'curl', '…and curl up small on one knee');
+  k(2.0, 'curlB'); k(2.6, 'curl');
+  // 0:03 Rise and stretch.
+  k(3.35, 'sweepLow', 'Sweep up from the floor');
+  k(4.1, 'stretch', 'Big side stretch, arm over your head');
+  k(4.85, 'stretch2');
+  k(5.45, 'plie', 'Wide squat, hands low');
+  k(6.0, 'squatLow');
+  // 0:06 Swing and shine.
+  k(6.35, 'swingR', 'Swing your arm across');
+  k(6.75, 'leanReach');
+  k(7.1, 'lungeCross', 'Lunge and cross your arms');
+  k(7.6, 'vUp', 'Arms up high!');
+  k(8.1, 'tArms', 'Arms out wide like a star');
+  k(8.6, 'tArms2');
+  k(9.35, 'stand', 'Arms down');
+  steps(10.1, COUNT, ['walkL', 'walkR', 'walkL', 'walkR'], 'Walk in place');
+  // 0:12 Swing low.
+  k(12.2, 'stand');
+  k(12.85, 'swingLunge', 'Lunge and swing your arms low');
+  k(13.6, 'bendL', 'Bend forward and swing');
+  k(14.35, 'bendR');
+  k(14.8, 'openUp', 'Stand up tall');
+  k(15.35, 'stepFwd', 'Step forward…');
+  // 0:16 Kneel and pose.
+  k(16.0, 'kneelFace', '…and kneel. Hands by your cheeks');
+  k(17.6, 'kneelFaceL', 'Tilt your head side to side');
+  k(18.8, 'kneelFaceR');
+  k(20.0, 'kneelFaceL');
+  k(21.0, 'kneelHead', 'Hands on your head');
+  k(21.8, 'kneelHeadL');
+  k(22.5, 'kneelFace', 'Hands by your cheeks again');
+  k(23.35, 'rise', 'Stand up!');
+  // 0:24 Bounce up: knee lifts, then bouncy side steps.
+  steps(c(4, 2), COUNT, ['kneeUpL', 'bounceDown', 'kneeUpR', 'bounceDown', 'kneeUpL', 'bounceDown'], 'Knee up, arms up!');
+  steps(c(4, 8), COUNT, ['sideL', 'sideR', 'sideL'], 'Bouncy steps side to side');
+  // 0:30 Jog with heel kicks, then point both arms to the sides.
+  steps(c(5, 1), BEAT, ['heelL', 'heelR', 'heelL', 'heelR', 'heelL', 'heelR', 'heelL', 'heelR'], 'Jog and kick your heels', { jump: 3 });
+  steps(c(5, 5), COUNT, ['pointL', 'pointR', 'pointL', 'pointR'], 'Point both arms to the side');
+  // 0:36 Point across your body, then heel kicks.
+  steps(c(6, 1), COUNT, ['crossL', 'crossR', 'crossL', 'crossR', 'crossL'], 'Point across your body');
+  steps(c(6, 6), BEAT, ['heelL', 'heelR', 'heelL', 'heelR', 'heelL', 'heelR'], 'Heel kicks!', { jump: 3 });
+  // 0:42 Heel kicks, push to the side, step and swing.
+  steps(c(7, 1), BEAT, ['heelL', 'heelR', 'heelL', 'heelR'], 'Keep kicking', { jump: 3 });
+  steps(c(7, 3), COUNT, ['pushL', 'pushL', 'pushR', 'pushR'], 'Push your arms to the side');
+  steps(c(7, 7), COUNT, ['swingStepR', 'swingStepL'], 'Step and swing');
+  // 0:48 Brush across, touch your hair, turn around.
+  steps(c(8, 1), COUNT, ['brushL', 'brushR', 'brushL'], 'Step and brush your hand across');
+  k(c(8, 4), 'hair', 'Touch your hair');
+  k(c(8, 5), 'chest', 'Hands on your chest');
+  k(c(8, 6), 'turnHalf', 'Turn all the way around', { ease: 'in' });
+  k(c(8, 7), 'turnFull', undefined, { ease: 'out' });
+  k(c(8, 8), 'chest');
+  // 0:54 Shy sway, then arms out and in.
+  steps(c(9, 1), COUNT, ['claspL', 'claspR', 'claspL', 'claspR'], 'Hands together. Shy sway');
+  steps(c(9, 5), COUNT, ['armsOutL', 'armsIn', 'armsOutR', 'armsIn'], 'Swing your arms out… and in');
+  // 1:00 Bounce with hands by your chin, then skip and turn.
+  steps(c(10, 1), BEAT, ['chinDown', 'chinUp', 'chinDown', 'chinUp', 'chinDown', 'chinUp', 'chinDown', 'chinUp'], 'Hands by your chin. Little bounces');
+  steps(c(10, 5), COUNT, ['skipL', 'skipR'], 'Skip!', { jump: 6 });
+  k(c(10, 7), 'skipTurn', 'Skip and turn', { ease: 'in', jump: 6 });
+  k(c(10, 8), 'skipR', undefined, { ease: 'out', jump: 6 });
+  // 1:06 Hop kicks, then arms wide and sway.
+  steps(c(11, 1), BEAT, ['hopKickL', 'stand', 'hopKickR', 'stand', 'hopKickL', 'stand', 'hopKickR', 'stand'], 'Hop and kick to the side', { jump: 5 });
+  steps(c(11, 5), COUNT, ['wideL', 'wideR', 'wideL', 'wideR'], 'Arms wide. Sway side to side');
+  // 1:12 Arms wide, then march.
+  steps(c(12, 1), COUNT, ['wideL', 'wideR', 'wideL', 'wideR'], 'Keep swaying, arms wide');
+  steps(c(12, 5), BEAT, ['marchL', 'marchR', 'marchL', 'marchR', 'marchL', 'marchR', 'marchL', 'marchR'], 'March in place');
+  // 1:18 Small steps, flick, knee up, throw your arms.
+  steps(c(13, 1), COUNT, ['smallL', 'smallR', 'smallL'], 'Little steps');
+  k(c(13, 4), 'flickR', 'Flick your arm out');
+  k(c(13, 5), 'kneeChest', 'Knee up, hands to chest');
+  k(c(13, 5.5), 'throwDiag', 'Throw your arm up!');
+  k(c(13, 6), 'lungeSwing', 'Lunge and swing down');
+  k(c(13, 6.75), 'twist');
+  k(c(13, 7), 'disco', 'Point up high!');
+  k(c(13, 8), 'disco');
+  // 1:24 Scoop, rise, knee lift, kick back, airplane arms.
+  k(c(14, 1), 'scoop', 'Scoop down low');
+  k(c(14, 2), 'riseUp', 'Rise up high!');
+  k(c(14, 3), 'kneeLiftR', 'Knee up');
+  k(c(14, 3.5), 'kickBackL', 'Kick back', { jump: 4 });
+  k(c(14, 4), 'armsOut', 'Arms out');
+  k(c(14, 5), 'airplane', 'Lean like an airplane');
+  k(c(14, 6), 'stand');
+  k(c(14, 6.5), 'kneeUpBent', 'Knee up, arm up');
+  k(c(14, 7), 'swingStepR', 'Swing');
+  k(c(14, 8), 'armsOut');
+  // 1:30 Side kick, lunge, then point and bounce.
+  k(c(15, 1), 'armsOut');
+  k(c(15, 1.5), 'sideKickR', 'Kick to the side!', { jump: 3 });
+  k(c(15, 2.5), 'lungeLow', 'Low lunge');
+  k(c(15, 3.5), 'chest', 'Stand up, hands on your chest');
+  k(c(15, 4), 'swayChestL', 'Sway');
+  steps(c(15, 5), BEAT * 2, ['pointSideL', 'pointSideL', 'pointSideR', 'pointSideR'], 'Point to the side and bounce');
+  // 1:36 Swing across, hands on head, arms wide.
+  steps(c(16, 1), COUNT, ['swingAcrossL', 'swingAcrossR', 'swingAcrossL', 'swingAcrossR'], 'Swing your arm across');
+  k(c(16, 5), 'handsHead', 'Hands on your head, knees bent');
+  k(c(16, 6), 'armsOut', 'Arms out');
+  steps(c(16, 7), COUNT, ['diagWideL', 'diagWideR'], 'Big diagonal arms');
+  // 1:42 Squat bounce, deep squat, push to the sides.
+  k(c(17, 1), 'squatChest', 'Hands together, squat');
+  k(c(17, 1.5), 'squatUp');
+  k(c(17, 2), 'squatChest');
+  k(c(17, 3), 'deepSquat', 'Deep squat!');
+  k(c(17, 4), 'armsOut', 'Arms out');
+  steps(c(17, 5), COUNT, ['pushL', 'pushR', 'lungeArmsL', 'pushR'], 'Push to one side, then the other');
+  // 1:48 Swing, hands to face, deep lunge, arms wide.
+  k(c(18, 1), 'crossL', 'Arm across');
+  steps(c(18, 2), COUNT, ['pointL', 'pointR'], 'Both arms to the side');
+  k(c(18, 4), 'stand', 'Arms down');
+  k(c(18, 5), 'handsFace', 'Hands to your face');
+  k(c(18, 6), 'deepLunge', 'Deep lunge, arms up');
+  steps(c(18, 7), COUNT, ['wideL', 'wideR'], 'Arms wide');
+  k(c(18, 8) + 0.4, 'pointFwd', 'Point!');
+  // 1:54 Squat bounces and finish.
+  k(c(19, 1), 'squatChest', 'Squat and bounce');
+  k(c(19, 1.5), 'squatUp');
+  k(c(19, 2), 'squatChest');
+  k(c(19, 2.5), 'squatUp');
+  k(c(19, 3), 'deepSquat', 'Deep squat!');
+  k(c(19, 4), 'stand', 'Stand up tall');
+  k(c(19, 5), 'end', 'Hand on your heart. Ta-da!', { fx: 'sparkle' });
+  k(END, 'end');
+  KF.sort((a, b) => a.t - b.t);
+
+  const SECTIONS = [
+    [0, 'Dive and curl', 'Arms up, open wide, then dive down and curl up small on one knee.'],
+    [3.3, 'Rise and stretch', 'Sweep up from the floor into a big side stretch, then a wide squat.'],
+    [6.3, 'Swing and shine', 'Swing and lunge, cross your arms, then arms up high and out wide.'],
+    [10.1, 'Walk and swing low', 'Walk in place, lunge, then bend forward and swing your arms.'],
+    [15.3, 'Kneel and pose', 'Kneel on one knee with your hands by your cheeks. Tilt your head, then hands on your head.'],
+    [23.3, 'Knee lifts and bounces', 'Knee up with arms up, bounce down, then bouncy steps side to side.'],
+    [c(5, 1), 'Jog and point', 'Jog and kick your heels, then point both arms to one side, then the other.'],
+    [c(6, 1), 'Point across and kick', 'Point across your body, then quick heel kicks.'],
+    [c(7, 1), 'Push and swing', 'More heel kicks, push your arms to the side, then step and swing.'],
+    [c(8, 1), 'Brush and turn', 'Step side to side brushing your hand across, touch your hair, then turn all the way around.'],
+    [c(9, 1), 'Shy sway', 'Hands together at your chest, sway side to side. Then swing your arms out and in.'],
+    [c(10, 1), 'Chin bounces and skips', 'Hands by your chin with little bounces, then skip and turn.'],
+    [c(11, 1), 'Hop kicks and sway', 'Hop and kick to the side, then arms wide and sway.'],
+    [c(12, 1), 'Sway and march', 'Keep swaying with wide arms, then march in place.'],
+    [c(13, 1), 'Flick and throw', 'Little steps, flick your arm, knee up, throw your arm up and point high.'],
+    [c(14, 1), 'Scoop and airplane', 'Scoop down, rise up, knee lift, kick back, then lean like an airplane.'],
+    [c(15, 1), 'Kick and point', 'Kick to the side, low lunge, sway, then point and bounce.'],
+    [c(16, 1), 'Swing and hands on head', 'Swing your arm across, hands on your head, then big diagonal arms.'],
+    [c(17, 1), 'Squat and push', 'Hands together and squat, deep squat, then push your arms side to side.'],
+    [c(18, 1), 'Arms and deep lunge', 'Arms to the side, hands to your face, deep lunge, arms wide, point.'],
+    [c(19, 1), 'Squat and finish', 'Squat bounces, stand tall, then hand on your heart. Ta-da!'],
+  ].map(([t, name, desc]) => ({ t: Math.max(0, t), name, desc }));
+
+  // ---------- Timeline ----------
+  function evalAt(T) {
+    T = clamp(T, 0, END);
+    let lo = 0, hi = KF.length - 1;
+    while (lo < hi - 1) { const m = (lo + hi) >> 1; if (KF[m].t <= T) lo = m; else hi = m; }
+    const Ak = KF[lo], Bk = KF[Math.min(lo + 1, KF.length - 1)];
+    const len = Math.max(1e-6, Bk.t - Ak.t), local = T - Ak.t, x = clamp(local / len, 0, 1);
+    let kk;
+    if (Bk.ease === 'in') kk = x * x;
+    else if (Bk.ease === 'out') kk = 1 - (1 - x) * (1 - x);
+    else { const w = Math.min(len, 0.55); kk = ease(clamp((local - (len - w)) / w, 0, 1)); } // hold, then move into the next step
+    const pose = lerpPose(Ak.pose, Bk.pose, kk);
+    if (Bk.jump) { const l = Bk.jump * Math.sin(Math.PI * kk); pose.hy -= l; pose.Lf[1] -= l; pose.Rf[1] -= l; pose.Lk[1] -= l * pose.Lkb; pose.Rk[1] -= l * pose.Rkb; }
+    else for (const f of ['Lf', 'Rf']) {
+      const dx = Math.abs(Bk.pose[f][0] - Ak.pose[f][0]);
+      if (dx > 4 && Ak.pose[f][1] >= FLOOR - 1 && Bk.pose[f][1] >= FLOOR - 1) pose[f][1] -= Math.sin(Math.PI * kk) * Math.min(9, 2 + dx * 0.22);
+    }
+    return { pose, i: lo, A: Ak, B: Bk, k: kk, x, age: local, T };
+  }
+  const cueIndex = KF.map((kf, i) => (kf.cue ? i : -1)).filter((i) => i >= 0);
+  function cueAt(T) {
+    let cur = null, next = null;
+    for (const i of cueIndex) { if (KF[i].t <= T + 0.12) cur = KF[i]; else { next = KF[i]; break; } }
+    return { cur, next };
+  }
+  function sectionAt(T) { let s = 0; SECTIONS.forEach((x, i) => { if (x.t <= T + 0.05) s = i; }); return s; }
+  const countAt = (T) => (((Math.floor((T - BAR0) / COUNT)) % 8) + 8) % 8 + 1;
+
+  // ---------- Drawing a moment ----------
+  let lastSwingT = 0;
+  function draw(T, live) {
+    const s = evalAt(T);
+    const prev = evalAt(T - 0.08);
+    const swing = clamp(-(s.pose.hx - prev.pose.hx) * 3 + (s.pose.hy - prev.pose.hy) * 1.6, -32, 32);
+    const j = drawFigure(s.pose, { swing, clock: live && !reduceMotion ? T * 1000 : null });
+    lastSwingT = T;
+    // Hand trails.
+    const samples = live ? [1, 2, 3, 4, 5, 6].map((i) => solve(evalAt(T - i * 0.035).pose)) : null;
+    for (const tr of trails) {
+      if (!live) { tr.c.setAttribute('opacity', '0'); continue; }
+      const q = samples[tr.i]['ha' + tr.s], before = tr.i === 0 ? j['ha' + tr.s] : samples[tr.i - 1]['ha' + tr.s];
+      const moving = Math.hypot(q[0] - before[0], q[1] - before[1]) > 0.9;
+      setAttrs(tr.c, { cx: q[0], cy: q[1], opacity: moving ? (0.85 - tr.i * 0.12).toFixed(2) : '0' });
+    }
+    // Footprints where a foot is about to step.
+    for (const f of ['L', 'R']) {
+      const from = s.A.pose[f + 'f'], to = s.B.pose[f + 'f'];
+      const mk = parts['mk' + f];
+      if (Math.abs(to[0] - from[0]) > 8 && to[1] >= FLOOR - 1) setAttrs(mk, { cx: to[0], cy: 185, opacity: Math.min(clamp(s.x / 0.15, 0, 1), 1 - clamp((s.k - 0.7) / 0.3, 0, 1)).toFixed(2) });
+      else mk.setAttribute('opacity', '0');
+    }
+    // Sparkles, claps and spin swooshes.
+    const sparkOn = (s.A.fx || '').includes('sparkle') ? clamp(1 - s.age / 2.5, 0, 1) : 0;
+    if (sparkOn > 0) parts.sparks.setAttribute('transform', `translate(${f1(s.pose.hx)} ${f1(s.pose.hy)}) scale(${(0.6 + 0.5 * Math.min(1, s.age / 0.4)).toFixed(2)})`);
+    parts.sparks.setAttribute('opacity', sparkOn.toFixed(2));
+    const clapping = s.A.name && /clasp|squatChest|deepSquat|kneeChest/.test(s.A.name) && s.age < 0.35 && /stand|Up|armsOut|chest|clasp/.test(KF[Math.max(0, s.i - 1)].name || '');
+    const clapOn = clapping ? 1 - s.age / 0.35 : 0;
+    if (clapOn > 0) parts.burst.setAttribute('transform', `translate(${pt(mix(j.haL, j.haR, 0.5))}) scale(${(0.7 + (1 - clapOn) * 0.8).toFixed(2)})`);
+    parts.burst.setAttribute('opacity', clapOn.toFixed(2));
+    const spinning = s.B.pose.turn !== s.A.pose.turn && s.k > 0 && s.k < 1;
+    if (spinning) {
+      const y1 = s.pose.hy - 16, y2 = s.pose.hy + 8, x = s.pose.hx;
+      parts.sw1.setAttribute('d', `M${f1(x - 30)} ${f1(y1)}A30 7 0 0 0 ${f1(x + 30)} ${f1(y1)}`);
+      parts.sw2.setAttribute('d', `M${f1(x - 36)} ${f1(y2)}A36 8 0 0 0 ${f1(x + 36)} ${f1(y2)}`);
+    }
+    parts.swoosh.setAttribute('opacity', spinning ? Math.sin(Math.PI * s.k).toFixed(2) : '0');
+    // Music notes float up while playing.
+    const notes = document.getElementById('notes').children;
+    for (let i = 0; i < notes.length; i++) {
+      const n = notes[i];
+      if (!live || reduceMotion || music.mode === 'off') { n.setAttribute('opacity', '0'); continue; }
+      const ph = ((T / 2.6) + i * 0.37) % 1;
+      setAttrs(n, { x: [34, 262, 246][i] + Math.sin(ph * 6 + i) * 5, y: 140 - ph * 90, opacity: (Math.sin(ph * Math.PI) * 0.8).toFixed(2) });
+    }
+    return s;
+  }
+
+  // ---------- Music ----------
+  // "Lulu's beat" is an original groove made in the browser at the routine's tempo (160 beats a minute):
+  // soft and spacious for the slow opening, then a full beat from 0:24. "My video" plays a file
+  // the dancer picks on their own device; nothing is uploaded.
+  const music = { mode: 'beat', file: null, offset: store.get('lulu.bigdance.offset', 0) };
+  let actx = null, master = null, noiseBuf = null;
+  function ensureAudio() {
+    try {
+      if (!actx) {
+        actx = new (window.AudioContext || window.webkitAudioContext)();
+        master = actx.createGain(); master.gain.value = 0.5; master.connect(actx.destination);
+        noiseBuf = actx.createBuffer(1, actx.sampleRate * 0.4, actx.sampleRate);
+        const d = noiseBuf.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+      }
+      if (actx.state === 'suspended') actx.resume();
+    } catch (e) { actx = null; }
+  }
+  function tone(freq, dur, type, vol, when = 0, glide) {
+    const t = actx.currentTime + when, o = actx.createOscillator(), g = actx.createGain();
+    o.type = type; o.frequency.setValueAtTime(freq, t);
+    if (glide) o.frequency.exponentialRampToValueAtTime(glide, t + dur);
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(vol, t + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    o.connect(g).connect(master); o.start(t); o.stop(t + dur + 0.05);
+  }
+  function noise(freq, type, dur, vol) {
+    const t = actx.currentTime, s = actx.createBufferSource(), f = actx.createBiquadFilter(), g = actx.createGain();
+    s.buffer = noiseBuf; f.type = type; f.frequency.value = freq;
+    g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    s.connect(f).connect(g).connect(master); s.start(t); s.stop(t + dur + 0.02);
+  }
+  // A minor feel: Am – F – C – G, one chord per 8 beats. Drum pattern per 8 eighth-notes: low drum, high drum.
+  const ROOTS = [110, 87.31, 130.81, 98];
+  const CHORD = [[220, 261.63, 329.63], [174.61, 220, 261.63], [261.63, 329.63, 392], [196, 246.94, 293.66]];
+  const LOW = [1, 0, 0, 1, 0, 0, 1, 0], HIGH = [0, 0, 1, 0, 0, 1, 0, 1];
+  const HOOK = [440, 0, 523.25, 587.33, 659.25, 0, 587.33, 523.25, 440, 0, 392, 440, 523.25, 0, 440, 0];
+  function musicTick(h, T) {
+    if (music.mode !== 'beat' || !actx || actx.state !== 'running') return;
+    try {
+      const e = ((h % 8) + 8) % 8, beat = Math.floor(h / 2), bar = Math.floor(beat / 8);
+      const ch = ((bar % 4) + 4) % 4;
+      if (T < 23.4) { // soft opening
+        if (h % 16 === 0) CHORD[ch].forEach((f) => tone(f, 2.6, 'sine', 0.05));
+        if (e % 2 === 0) noise(6000, 'highpass', 0.05, 0.05);
+        if (e === 0) tone(65, 0.4, 'sine', 0.35, 0, 45);
+        if (Math.abs(T - 1.0) < 0.1) tone(880, 1.2, 'triangle', 0.08, 0, 220);
+        return;
+      }
+      if (LOW[e]) tone(95, 0.22, 'sine', 0.55, 0, 50);
+      if (HIGH[e]) { tone(330, 0.09, 'triangle', 0.14, 0, 260); noise(2600, 'bandpass', 0.07, 0.22); }
+      noise(8000, 'highpass', 0.03, e % 2 ? 0.05 : 0.09);
+      if (e === 0 || e === 3) tone(ROOTS[ch], 0.32, 'triangle', 0.28);
+      const m = HOOK[((h % 16) + 16) % 16];
+      if (m && T > 47.5 && Math.floor(beat / 32) % 2 === 0) tone(m, 0.16, 'square', 0.035);
+      if (h % 16 === 0) CHORD[ch].forEach((f) => tone(f * 2, 0.5, 'triangle', 0.035));
+      if (Math.abs(T - c(19, 5)) < 0.1) [523.25, 659.25, 783.99, 1046.5].forEach((f, i) => tone(f, 0.6, 'triangle', 0.12, i * 0.08));
+    } catch (e) { /* audio unavailable */ }
+  }
+  const halfIndex = (T) => Math.floor((T - 0.345) / (BEAT / 2) + 1e-6);
+
+  // ---------- Player ----------
+  const media = document.getElementById('media');
+  const S = { T: 0, playing: false, speed: Number(store.get('lulu.bigdance.speed', 0.75)), mirror: false, lastH: null };
+  if (![0.5, 0.75, 1].includes(S.speed)) S.speed = 0.75;
+  const usingFile = () => music.mode === 'file' && music.file;
+  function setPlaying(on) {
+    if (on && S.T >= END - 0.05) seek(0);
+    S.playing = on;
+    if (on) {
+      ensureAudio();
+      S.lastH = halfIndex(S.T) - 1;
+      if (usingFile()) { syncMedia(); media.play().catch(() => { S.playing = false; renderButtons(); }); }
+    } else if (!media.paused) media.pause();
+    renderButtons();
+  }
+  function syncMedia() {
+    if (!usingFile()) return;
+    media.playbackRate = S.speed;
+    const want = S.T - music.offset;
+    if (want >= 0 && Math.abs(media.currentTime - want) > 0.08) media.currentTime = want;
+  }
+  function seek(T) {
+    S.T = clamp(T, 0, END);
+    S.lastH = halfIndex(S.T) - 1;
+    if (usingFile()) syncMedia();
+    render(true);
+  }
+  function finish() {
+    S.playing = false; S.T = END; if (!media.paused) media.pause();
+    renderButtons(); render(true);
+    confetti();
+  }
+
+  // ---------- UI ----------
+  const $ = (id) => document.getElementById(id);
+  const ICON_PLAY = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>';
+  const ICON_PAUSE = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z"/></svg>';
+  const fmt = (t) => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`;
+  function renderButtons() {
+    $('playBtn').innerHTML = S.playing ? ICON_PAUSE : ICON_PLAY;
+    $('playBtn').setAttribute('aria-label', S.playing ? 'Pause' : 'Play');
+  }
+  const chapterEls = SECTIONS.map((sec, i) => {
+    const li = document.createElement('li');
+    li.innerHTML = `<button type="button"><span class="t">${fmt(sec.t)}</span><span class="n"></span><span class="d"></span></button>`;
+    li.querySelector('.n').textContent = `${i + 1}. ${sec.name}`;
+    li.querySelector('.d').textContent = sec.desc;
+    li.querySelector('button').addEventListener('click', () => { seek(sec.t); });
+    $('chapters').appendChild(li);
+    const tick = document.createElement('i'); tick.style.left = `${(sec.t / END) * 100}%`; $('ticks').appendChild(tick);
+    return li;
+  });
+  let lastKey = '';
+  function render(force) {
+    const live = S.playing;
+    const s = draw(S.T, live);
+    const { cur, next } = cueAt(S.T);
+    const sec = sectionAt(S.T);
+    const cnt = countAt(S.T);
+    const key = `${cur ? cur.t : -1}|${sec}|${cnt}|${S.T >= END - 0.05}`;
+    if (key !== lastKey || force) {
+      lastKey = key;
+      $('cue').textContent = S.T >= END - 0.05 ? 'Ta-da! You danced the whole thing!' : cur ? cur.cue : '';
+      $('next').textContent = next && S.T < END - 0.05 ? `Next: ${next.cue}` : '';
+      const b = $('bubble');
+      b.textContent = S.T < 23.3 ? '' : String(cnt);
+      b.classList.toggle('soft', S.T < 23.3);
+      b.hidden = S.T < 23.3 || S.T >= END - 0.05;
+      chapterEls.forEach((li, i) => li.classList.toggle('on', i === sec));
+      if (live) { const on = chapterEls[sec]; const ol = $('chapters'); if (on.offsetTop < ol.scrollTop || on.offsetTop > ol.scrollTop + ol.clientHeight - 60) ol.scrollTop = Math.max(0, on.offsetTop - 20); }
+    }
+    $('scrub').value = Math.round(S.T * 10);
+    $('time').textContent = `${fmt(S.T)} / ${fmt(END)}`;
+    return s;
+  }
+  $('playBtn').addEventListener('click', () => setPlaying(!S.playing));
+  $('restartBtn').addEventListener('click', () => { seek(0); setPlaying(true); });
+  $('scrub').addEventListener('input', (e) => seek(Number(e.target.value) / 10));
+  function wireSeg(id, get, set) {
+    const seg = $(id);
+    const mark = () => seg.querySelectorAll('button').forEach((b) => { const on = b.dataset.v === String(get()); b.setAttribute('aria-checked', String(on)); b.tabIndex = on ? 0 : -1; });
+    seg.addEventListener('click', (e) => { const b = e.target.closest('button[data-v]'); if (b) { set(b.dataset.v); mark(); } });
+    seg.addEventListener('keydown', (e) => {
+      if (!['ArrowLeft', 'ArrowRight'].includes(e.key)) return;
+      const bs = [...seg.querySelectorAll('button')], i = bs.findIndex((b) => b.getAttribute('aria-checked') === 'true');
+      const n = bs[(i + (e.key === 'ArrowRight' ? 1 : bs.length - 1)) % bs.length]; n.click(); n.focus(); e.preventDefault();
+    });
+    mark();
+  }
+  wireSeg('speedSeg', () => S.speed, (v) => { S.speed = Number(v); store.set('lulu.bigdance.speed', S.speed); if (usingFile()) media.playbackRate = S.speed; });
+  wireSeg('musicSeg', () => music.mode, (v) => { music.mode = v; updateMusicUI(); if (v !== 'file' && !media.paused) media.pause(); else if (v === 'file' && S.playing && music.file) setPlaying(true); });
+  function updateMusicUI() {
+    $('fileRow').hidden = music.mode !== 'file';
+    $('offsetTxt').textContent = `${music.offset >= 0 ? '+' : ''}${music.offset.toFixed(1)} s`;
+    const help = $('musicHelp');
+    if (music.mode === 'beat') help.textContent = "An original beat made just for this dance, at the same speed as the song.";
+    else if (music.mode === 'off') help.textContent = 'No music. Lulu dances in silence.';
+    else if (!music.file) help.textContent = "Pick the dance video (or its song) from your device and Lulu will dance to it in time. The file stays on your device and isn't uploaded.";
+    else { help.innerHTML = ''; help.append('Playing: '); const b = document.createElement('span'); b.className = 'file-name'; b.textContent = music.file.name; help.append(b, '. If the music and Lulu drift apart, nudge the timing.'); }
+  }
+  $('fileInput').addEventListener('change', (e) => {
+    const f = e.target.files && e.target.files[0];
+    if (!f) return;
+    if (music.url) URL.revokeObjectURL(music.url);
+    music.file = f; music.url = URL.createObjectURL(f);
+    media.src = music.url;
+    media.load();
+    updateMusicUI();
+    if (S.playing) setPlaying(true);
+  });
+  media.addEventListener('ended', () => { if (usingFile() && S.playing) finish(); });
+  document.querySelectorAll('.nudge button').forEach((b) => b.addEventListener('click', () => {
+    music.offset = Math.round((music.offset + Number(b.dataset.n)) * 10) / 10;
+    store.set('lulu.bigdance.offset', music.offset);
+    updateMusicUI(); syncMedia();
+  }));
+  $('mirrorBtn').addEventListener('click', () => {
+    S.mirror = !S.mirror;
+    $('dancer').setAttribute('transform', S.mirror ? 'translate(300 0) scale(-1 1)' : '');
+    $('mirrorBtn').setAttribute('aria-pressed', String(S.mirror));
+    $('mirrorBtn').textContent = S.mirror ? 'Mirror on' : 'Mirror off';
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === ' ' && !/BUTTON|INPUT/.test(e.target.tagName)) { e.preventDefault(); setPlaying(!S.playing); }
+  });
+
+  // Theme (shared with the moves page).
+  const settings = Object.assign({ theme: 'auto' }, store.get('lulu.settings', {}));
+  const THEMES = ['auto', 'light', 'dark'], THEME_NAMES = { auto: 'Auto', light: 'Light', dark: 'Dark' };
+  function applyTheme() {
+    if (settings.theme === 'auto' || !THEMES.includes(settings.theme)) delete document.documentElement.dataset.theme;
+    else document.documentElement.dataset.theme = settings.theme;
+    const name = THEME_NAMES[settings.theme] || 'Auto';
+    $('themeBtn').querySelector('span').textContent = name;
+    $('themeBtn').setAttribute('aria-label', `Colour theme: ${name}. Click to change.`);
+  }
+  $('themeBtn').addEventListener('click', () => {
+    const all = store.get('lulu.settings', {});
+    settings.theme = THEMES[(THEMES.indexOf(settings.theme) + 1) % THEMES.length];
+    store.set('lulu.settings', Object.assign(all, { theme: settings.theme }));
+    applyTheme();
+  });
+
+  function confetti() {
+    if (reduceMotion) return;
+    const cv = document.createElement('canvas'); cv.className = 'confetti'; document.body.appendChild(cv);
+    const W = innerWidth, H = innerHeight, dpr = Math.min(2, devicePixelRatio || 1);
+    cv.width = W * dpr; cv.height = H * dpr;
+    const ctx = cv.getContext('2d'); ctx.scale(dpr, dpr);
+    const COLORS = ['#ff5c9d', '#ffd23f', '#16a39a', '#9466f2', '#ff8c42', '#4dabf7'];
+    const ps = Array.from({ length: 140 }, () => ({ x: Math.random() * W, y: -20 - Math.random() * H * 0.5, vx: (Math.random() - 0.5) * 2, vy: 1 + Math.random() * 3, r: Math.random() * 6, vr: (Math.random() - 0.5) * 0.3, s: 5 + Math.random() * 5, c: COLORS[(Math.random() * 6) | 0] }));
+    const t0 = performance.now();
+    (function step(now) {
+      const t = now - t0; ctx.clearRect(0, 0, W, H);
+      for (const p of ps) { p.vy += 0.12; p.x += p.vx; p.y += p.vy; p.r += p.vr; ctx.save(); ctx.globalAlpha = Math.max(0, 1 - t / 3600); ctx.translate(p.x, p.y); ctx.rotate(p.r); ctx.fillStyle = p.c; ctx.fillRect(-p.s / 2, -p.s / 4, p.s, p.s / 2); ctx.restore(); }
+      if (t < 3600) requestAnimationFrame(step); else cv.remove();
+    })(t0);
+  }
+
+  // ---------- Loop ----------
+  let last = performance.now();
+  function frame(now) {
+    const dt = Math.min(100, now - last) / 1000;
+    last = now;
+    if (S.playing) {
+      if (usingFile() && !media.paused && media.readyState >= 2) S.T = media.currentTime + music.offset; // follow the music
+      else S.T += dt * S.speed;
+      if (S.T >= END) { finish(); }
+      else {
+        const h = halfIndex(S.T);
+        if (S.lastH != null && h > S.lastH && h - S.lastH < 6) for (let x = S.lastH + 1; x <= h; x++) musicTick(x, S.T);
+        S.lastH = h;
+        render();
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  document.addEventListener('visibilitychange', () => { last = performance.now(); });
+  mqReduce.addEventListener ? mqReduce.addEventListener('change', (e) => { reduceMotion = e.matches; }) : null;
+
+  applyTheme();
+  updateMusicUI();
+  renderButtons();
+  seek(0);
+  requestAnimationFrame(frame);
+  if (/[?&]debug\b/.test(location.search)) window.__bigdance = { S, KF, POSES, SECTIONS, evalAt, solve, render, seek, draw, END };
+})();
+</script>
+</body>
+</html>

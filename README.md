@@ -29,6 +29,18 @@ It's built the same way as [Back Exercises](https://github.com/kgram1989/Back-Ex
 
 Settings and stickers are stored only in the browser on your device.
 
+## Lulu's Big Dance (`routine.html`)
+
+A full two-minute routine, taken step by step from a group dance video and danced by Lulu from start to finish. It has about 20 parts, each a few counts long: a dive and curl, side stretches, kneeling poses, knee lifts, heel-kick jogs, points, a turn, skips, hop kicks, squats and a ta-da finish.
+
+- **Player**: play, pause, restart, a scrubber with marks for each part, and speeds of Slow (½), Medium (¾) and Real speed.
+- **Cues**: big words say what to do now and small words say what's next. The count bubble shows 1–8 once the beat starts.
+- **Parts list**: tap any part to jump to it and practise it.
+- **Mirror**: flips Lulu so her left matches yours.
+- **Music**:
+  - *Lulu's beat* is an original groove made in the browser at the routine's tempo (160 beats per minute). It's soft for the slow opening and full from 0:24.
+  - *My video* plays your own copy of the dance video or song from your device, and Lulu follows it to the second. The file is never uploaded, and the song itself isn't included in this repository. Use **Earlier / Later** if a different copy of the song starts at a different point.
+
 ## Deploy with GitHub Pages
 
 1. In the repository, open **Settings → Pages**.
